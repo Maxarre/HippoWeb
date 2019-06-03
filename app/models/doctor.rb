@@ -6,4 +6,5 @@ class Doctor < ApplicationRecord
 
   has_many :patients
   has_many :consultations, through: :patients
+  has_many :meetings, through: :patients, source: :consultations
 end

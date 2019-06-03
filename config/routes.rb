@@ -11,9 +11,7 @@ Rails.application.routes.draw do
   # get 'docters/update'
   devise_for :doctors
   root to: 'pages#home'
-  resources :doctors do
-    resources :patients
-    resources :consultations
-  end
+  get "dashboard", to: "doctors#dashboard"
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
