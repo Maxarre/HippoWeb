@@ -1,7 +1,7 @@
 class CreatePatients < ActiveRecord::Migration[5.2]
   def change
     create_table :patients do |t|
-      t.references :doctor, foreign_key: true
+      t.references :user, foreign_key: true
       t.string :gender
       t.string :email
       t.string :first_name

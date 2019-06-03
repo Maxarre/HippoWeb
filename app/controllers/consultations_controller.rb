@@ -22,7 +22,7 @@ class ConsultationsController < ApplicationController
   end
 
   def update
-    @consultation = Doctor.find(params[:id])
+    @consultation = User.find(params[:id])
     @consultation.update(params[:consultation])
     redirect_to profile_path(@consultation)
   end
