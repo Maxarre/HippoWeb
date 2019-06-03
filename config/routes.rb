@@ -16,8 +16,7 @@ Rails.application.routes.draw do
   post "patients/:id/consultations", to: "consultations#create"
   # get "consultations/:id/emails/new", to: "emails#new"
   # post "consultations/:id/emails", to: "email#create"
-  get "/dashboard", to: "doctors#dashboard"
-  get "patients/:id", to: "patients#show"
+  get "patients/:id", to: "patients#show", as: 'profile'
   get "consultations/:id/emails", to: "emails#index"
   # get "emails/:id", to: "emails/:id#show"
   get "/patients/:id/edit", to: "patients#edit"
@@ -26,3 +25,4 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
+
