@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   get "patients/:id", to: "patients#show", as: 'profile'
   get "consultations/:id/emails", to: "emails#index"
   # get "emails/:id", to: "emails/:id#show"
-  get "/patients/:id/edit", to: "patients#edit"
+  get "patients/:id/edit", to: "patients#edit"
   patch "/patients/:id", to: "patients#update"
 
 
