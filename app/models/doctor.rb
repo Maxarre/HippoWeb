@@ -3,4 +3,7 @@ class Doctor < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  has_many :patients
+  has_many :consultations, through: :patients
 end
