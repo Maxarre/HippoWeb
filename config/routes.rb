@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # get 'consultations/show'
   # get 'consultations/edit'
   # get 'consultations/new'
@@ -9,9 +10,8 @@ Rails.application.routes.draw do
   # get 'docters/show'
   # get 'docters/dashboard'
   # get 'docters/update'
-  devise_for :doctors
   root to: 'pages#home'
-  get "dashboard", to: "doctors#dashboard"
+  get "dashboard", to: "users#dashboard"
   get "patients/:id/consultations/new", to: "consultations#new"
   post "patients/:id/consultations", to: "consultations#create"
   # get "consultations/:id/emails/new", to: "emails#new"
