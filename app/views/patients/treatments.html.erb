@@ -1,13 +1,12 @@
 <div class="container">
-  <h1>TREATMENTS BAYBEY!</h1>
 
   <div class="card">
     <div class="creation_category">
-       <h5>Patient Information</h5>
+      <h5>Patient Information</h5>
       <p>General information about the patient</p>
     </div>
     <div class="creation_category">
-      <h5>Medical Treatment</h5>
+      <h5>Medical Record</h5>
       <p>Medical report of the patient situation</p>
     </div>
     <div id="selected_category" class="creation_category">
@@ -20,6 +19,15 @@
     </div>
   </div>
 
-  <%= link_to "SKIP", insurance_path, class: "btn btn-outline-secondary" %>
-  <%= link_to "NEXT", insurance_path, class: "btn btn-primary" %>
+  <div class="card">
+    <h2 id="mr">Treatments</h2>
+    <div class="inside_detail">
+      <button type="button" class="btn btn-outline-primary">Add a Treatment</button>
+    </div>
+    <div class="row">
+      <%= link_to "SKIP", insurance_path, class: "btn btn-outline-secondary" %>
+      <%= link_to "NEXT", insurance_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+
 </div>
