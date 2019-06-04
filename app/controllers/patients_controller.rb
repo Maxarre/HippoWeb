@@ -13,6 +13,7 @@ class PatientsController < ApplicationController
 
   def create
     @patient = Patient.new(patient_params)
+    @patient.user = current_user
     if @patient.save
       redirect_to dashboard_path
     else
