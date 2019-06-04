@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   # get 'docters/update'
   root to: "users#dashboard"
   get "dashboard", to: "users#dashboard"
+  get "medicalrecord", to: "patients#medicalrecord"
+  get "treatments", to: "patients#treatments"
+  get "insurance", to: "patients#insurance"
   get "patients/:id/consultations/new", to: "consultations#new"
   post "patients/:id/consultations", to: "consultations#create"
   # get "consultations/:id/emails/new", to: "emails#new"
