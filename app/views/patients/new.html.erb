@@ -1,9 +1,12 @@
-<div class="container">
+<div style="margin-top: 25px;">
+  <%= link_to dashboard_path, class:"erase" do %>
+    <div class="back-to-dashboard d-flex">
+      <i class="fas fa-chevron-left" id="down"></i>
+      <p>Back to dashboard</p>
+    </div>
+  <% end  %>
 
-  <%= link_to "Dashboard", dashboard_path %>
-
-  <div class="row">
-
+  <div class="d-flex justify-content-around">
     <div class="card">
       <div id="selected_category" class="creation_category">
         <h5>Patient Information</h5>
