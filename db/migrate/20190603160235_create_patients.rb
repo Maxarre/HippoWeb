@@ -9,6 +9,8 @@ class CreatePatients < ActiveRecord::Migration[5.2]
       t.string :phone
       t.string :job_title
       t.string :address
+      t.string :city
+      t.string :zipcode
       t.date :date_of_birth
 
       t.timestamps

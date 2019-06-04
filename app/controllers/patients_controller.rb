@@ -14,7 +14,7 @@ class PatientsController < ApplicationController
   def create
     @patient = Patient.new(patient_params)
     if @patient.save
-      redirect_to patients_path
+      redirect_to dashboard_path
     else
       render :new
     end
@@ -40,6 +40,6 @@ class PatientsController < ApplicationController
   private
 
   def patient_params
-    params.require(:patient).permit(:gender, :email, :first_name, :last_name, :phone, :job_title, :address, :date_of_birth)
+    params.require(:patient).permit(:gender, :email, :first_name, :last_name, :phone, :job_title, :address, :city, :zipcode, :date_of_birth)
   end
 end

@@ -1,0 +1,29 @@
+.searchbar {
+  display: flex;
+  align-item: center;
+  width: 82vw;
+  height: 30px;
+  position: relative;
+
+  p {
+    font-size: 15px;
+    color: #7D7683;
+    width: 82vw;
+  }
+
+  #search {
+    width: 82vw;
+    border: none;
+    line-height: 3em;
+  }
+
+  .right-side {
+    position: absolute;
+    right: 5px;
+  }
+
+  .left-side {
+    position: absolute;
+    left: 5px;
+  }
+}
