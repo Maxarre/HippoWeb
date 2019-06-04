@@ -21,7 +21,11 @@
         <header>Gender</header>
         <p><%= @patient.gender  %></p>
         <header>Address</header>
+        <div class="patient_address">
         <p><%= @patient.address  %></p>
+        <p><%= @patient.city  %></p>
+        <p><%= @patient.zipcode  %></p>
+        </div>
         <header>Email</header>
         <p><%= @patient.email  %></p>
         <header>Phone</header>
@@ -36,21 +40,19 @@
           <div class="tab d-flex"><i class="fas fa-pills" id="down"></i><p>Treatment</p></div>
           <div class="tab d-flex"><i class="far fa-envelope" id="down"></i><p>Email History</p></div>
         </div>
-
-          <div class="d-flex">
-            <div class="full"></div>
-            <div class="empty"></div>
-            <div class="empty"></div>
-            <div class="empty"></div>
-          </div>
+        <div class="d-flex">
+          <div class="full"></div>
+          <div class="empty"></div>
+          <div class="empty"></div>
+          <div class="empty"></div>
         </div>
-
-        <div class="dashboard_index">
-
-        </div>
+      </div>
+      <div class="dashboard_index">
         <div class="d-flex justify-content-between">
-          <h4>Filter:All</h4>
+          <h5>Filter: <a href=""> All</a></h5>
           <a class="follow-up" href="">New Follow-up</a>
+      </div>
+      <div style="height: 4000px;"></div>
       </div>
     </div>
   </div>
