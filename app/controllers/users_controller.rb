@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
   def dashboard
-    @user = current_user.user
-    @patient = current_user.patient
-    @consultation = current_user.consultation
+    @patient = current_user.patients
+    @consultation = current_user.consultations
   end
 
   def index
