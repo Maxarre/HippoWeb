@@ -45,7 +45,10 @@
           <%= f.input :email %>
           <%= f.input :phone %>
         </div>
-        <%= f.button :submit, "Next", class: "btn btn-primary" %>
+        <div class="row">
+          <%= link_to "Skip", dashboard_path, class: "btn btn-outline-secondary" %>
+          <%= f.button :submit, "Next", class: "btn btn-primary" %>
+        </div>
       </div>
     <% end %>
 
