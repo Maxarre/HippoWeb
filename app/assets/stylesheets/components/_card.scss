@@ -1,9 +1,10 @@
-#selected_category {
+#selected_category h5 {
   color: #4ca1fa;
 }
 
 .creation_category {
   margin: 20px;
+  color: lightgrey;
 }
 
 .border-bottom {
@@ -38,4 +39,31 @@
 
 .margin-right-50 {
   margin-right: 50px
+}
+
+#selected_category p {
+  color: #474747;
+}
+
+
+#mr {
+  border-bottom: 1px solid lightgrey;
+}
+
+#mr_category {
+  border-bottom: 1px solid lightgrey;
+  margin: 0px 50px;
+  color: #7a7a7a;
+}
+
+#form_label {
+  color: #7a7a7a;
+}
+
+#mr_fas {
+  color: #b2b2b2;
+}
+
+.btn-success {
+  color: white;
 }

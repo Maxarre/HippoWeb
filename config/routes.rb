@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :users
   # get 'consultations/show'
   # get 'consultations/edit'
-  # get 'consultations/new'
   # get 'patients/index'
   # get 'patients/show'
   # get 'patients/edit'
@@ -16,7 +15,7 @@ Rails.application.routes.draw do
   get "treatments", to: "patients#treatments"
   get "insurance", to: "patients#insurance"
   get "patients/:id/consultations/new", to: "consultations#new"
-  post "patients/:id/consultations", to: "consultations#create"
+  post "patients/:id/consultations", to: "consultations#create", as: "patient_consultations"
   # get "consultations/:id/emails/new", to: "emails#new"
   # post "consultations/:id/emails", to: "email#create"
   # get "patients/:id", to: "patients#show", as: 'profile'

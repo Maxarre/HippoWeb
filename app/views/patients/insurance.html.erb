@@ -1,13 +1,12 @@
 <div class="container">
-  <h1>INSURANCE BAYBEY!</h1>
 
   <div class="card">
     <div class="creation_category">
-       <h5>Patient Information</h5>
+      <h5>Patient Information</h5>
       <p>General information about the patient</p>
     </div>
     <div class="creation_category">
-      <h5>Medical Treatment</h5>
+      <h5>Medical Record</h5>
       <p>Medical report of the patient situation</p>
     </div>
     <div class="creation_category">
@@ -20,5 +19,19 @@
     </div>
   </div>
 
-  <%= link_to "ADD PATIENT", dashboard_path, class: "btn btn-success" %>
+  <div class="card">
+    <h2 id="mr">Insurance</h2>
+    <form>
+      <div class="form-group">
+        <label id="form_label">Insurance company name</label>
+        <input class="form-control">
+      </div>
+      <div class="form-group">
+        <label id="form_label">Insurance number</label>
+        <input class="form-control">
+      </div>
+    </form>
+    <%= link_to "ADD PATIENT", dashboard_path, class: "btn btn-success" %>
+  </div>
+
 </div>

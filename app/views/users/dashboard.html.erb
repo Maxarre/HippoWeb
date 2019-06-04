@@ -1,7 +1,7 @@
 <div class="calendar-container">
-  
+
   <% @consultations.each do |consultation| %>
-      <%= render 'shared/card_meeting', consultation: consultation %>
+      <%= render 'shared/card_consultation', consultation: consultation %>
   <% end %>
 
 <%= link_to "+ Add Patient", new_patient_path, class: "btn btn-primary" %>
