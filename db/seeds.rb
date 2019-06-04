@@ -9,3 +9,4 @@
 
 User.create(email: 'doctor@cox.com', password: '424242', first_name: 'Perry', last_name: 'Cox', phone: '0697042328', office_address: '0 rue Crespin du Gast', office_info: 'Code: 4210', photo: 'https://upload.wikimedia.org/wikipedia/en/thumb/8/87/Cox-season9.jpg/250px-Cox-season9.jpg')
 Patient.create(first_name: 'Jane', last_name: 'Doe', phone: '6050990840', job_title: 'Dead', address: '1 rue Crespin du Gast', city: 'Paris', zipcode: '75011', date_of_birth: '26/09/1987', gender: 'female', email: 'jane.doe@gmail.com', user_id: 1)
+Consultation.create(patient_id: 1, start_time: '14h30', end_time: '15h30', type: 'Operation')

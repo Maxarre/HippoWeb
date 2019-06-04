@@ -1,0 +1,34 @@
+<div class="consultation-container d-flex">
+  <div class='card-left'></div>
+
+  <div class="consultation-card card-container">
+    <p>
+      <h2><%= consultation.start_time %> - <%= consultation.end_time %></h2>
+      <span class="consultation-type <%= 'lightbluebutton' if consultation.type == 'First meeting' %> <%= 'bluebutton' if consultation.type == 'Operation' %> <%= 'yellowbutton' if consultation.type == 'Consultation' %>"><%= consultation.type %></span>
+    </p>
+    <div class="d-flex">
+      <div class="consultation-form">
+        <%= simple_form_for [@patient, @consultation] do |f| %>
+        <h3 class='form-title'>Patient's complain</h3>
+        <%= f.input :patient_complain %>
+        <h3 class='form-title'>Diagnostic</h3>
+        <%= f.input :diagnostic %>
+        <h3 class='form-title'>Care plan</h3>
+        <%= f.input :care_plan %>
+        <h3 class='form-title'>Prescription & information for the patients</h3>
+        <%= f.input :prescription %>
+        <%= f.button :submit %>
+        <% end %>
+      </div>
+      <div class="consultation-actions">
+        <ul>
+          <li class='list-inline'><i class="fas fa-link"></i></li>
+          <li class='list-inline'><i class="fas fa-paperclip"></i></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class='card-right'></div>
+</div>
