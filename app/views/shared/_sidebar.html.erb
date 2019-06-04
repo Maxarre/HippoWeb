@@ -1,0 +1,21 @@
+
+<div class="sidebar">
+  <h2>Hippoweb</h2>
+  <div class="doctor_profile">
+    <ul class="list-inline">
+      <li><%= current_user.photo %></li>
+      <li>
+        <p>Dr. <%=current_user.first_name%> <%= current_user.last_name %>
+        </p>
+        <p><h5><%= current_user.email %><h5></p>
+    </li>
+    </ul>
+  </div>
+  <ul>
+    <li class="list-inline"><i class="far fa-calendar-alt"></i> Dashboard</li>
+    <li class="list-inline"><i class="far fa-user"></i> Patients</li>
+    <li class="list-inline"><i class="far fa-envelope"></i> Email list</li>
+    <li class='hl list-inline'></li>
+    <li class="settings list-inline"><i class="fas fa-cog"></i> Settings</li>
+  </ul>
+</div>
