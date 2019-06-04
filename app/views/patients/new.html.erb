@@ -5,7 +5,7 @@
   <div class="row">
 
     <div class="card">
-      <div class="creation_category">
+      <div id="selected_category" class="creation_category">
         <h5>Patient Information</h5>
         <p>General information about the patient</p>
       </div>
@@ -46,8 +46,8 @@
           <%= f.input :phone %>
         </div>
         <div class="row">
-          <%= link_to "Skip", dashboard_path, class: "btn btn-outline-secondary" %>
-          <%= f.button :submit, "Next", class: "btn btn-primary" %>
+          <%= link_to "SKIP", medicalrecord_path, class: "btn btn-outline-secondary" %>
+          <%= f.button :submit, "NEXT", class: "btn btn-primary" %>
         </div>
       </div>
     <% end %>

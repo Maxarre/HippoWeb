@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>MEDICAL RECORD BAYBEY!</h1>
+
+  <div class="card">
+    <div class="creation_category">
+       <h5>Patient Information</h5>
+      <p>General information about the patient</p>
+    </div>
+    <div id="selected_category" class="creation_category">
+      <h5>Medical Treatment</h5>
+      <p>Medical report of the patient situation</p>
+    </div>
+    <div class="creation_category">
+      <h5>Treatment</h5>
+      <p>A detail list of the treatment data</p>
+    </div>
+    <div class="creation_category">
+      <h5>Insurance</h5>
+      <p>All insurance information of the patient</p>
+    </div>
+  </div>
+
+  <%= link_to "SKIP", treatments_path, class: "btn btn-outline-secondary" %>
+  <%= link_to "NEXT", treatments_path, class: "btn btn-primary" %>
+</div>
