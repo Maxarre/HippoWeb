@@ -18,6 +18,23 @@
 .tab {
   width: 25%;
   text-align: center;
+  p, i {
+    font-size: 20px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+  p {
+    margin-right: auto;
+    margin-left: 5px;
+  }
+  i {
+    margin-left: auto;
+    margin-right: 5px;
+  }
+}
+
+.fas {
+  line-height: 1.5;
 }
 
 
