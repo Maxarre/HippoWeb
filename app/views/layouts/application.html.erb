@@ -14,9 +14,9 @@
   </head>
   <body>
   <div class="d-flex">
-    <%= render 'shared/sidebar' %>
+    <%= render 'shared/sidebar' if user_signed_in? %>
     <div class="appcontainer">
-      <%= render 'shared/searchbar' %>
+      <%= render 'shared/searchbar' if user_signed_in? %>
       <%= yield %>
     </div>
 
