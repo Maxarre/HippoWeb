@@ -1,2 +1,58 @@
 <h1>Patients#show</h1>
 <p>Find me in app/views/patients/show.html.erb</p>
+
+
+<div>
+  <a href="">Back to dashboard</a>
+  <div class="d-flex justify-content-around">
+    <div class="card_free patient_description">
+      <div class="patient_general_info">
+        <h2><%= @patient.first_name  %> <%= @patient.last_name  %></h2>
+        <h5><%= @patient.date_of_birth  %></h5>
+        <h4 class="patient-category">Patient Category</h4>
+        <div class="mail_link"><a href=""><i class="far fa-envelope"></i></a></div>
+      </div>
+      <div class="patient_detailed_info">
+        <header>First Name</header>
+        <p><%= @patient.first_name  %></p>
+        <header>Last Name</header>
+        <p><%= @patient.last_name  %></p>
+        <header>Gender</header>
+        <p><%= @patient.gender  %></p>
+        <header>Address</header>
+        <p><%= @patient.address  %></p>
+        <header>Email</header>
+        <p><%= @patient.email  %></p>
+        <header>Phone</header>
+        <p><%= @patient.phone  %></p>
+      </div>
+
+
+
+
+
+
+    </div>
+    <div class="patient_index">
+      <div class="tabs d-flex w-100 justify-content-around card_free">
+        <div class="tab">
+          <p>First column</p>
+        </div>
+        <div class="tab">
+          <p>First column</p>
+        </div>
+        <div class="tab">
+          <p>First column</p>
+        </div>
+        <div class="tab">
+          <p>First column</p>
+        </div>
+      </div>
+  </div>
+  </div>
+
+
+
+
+
+</div>
