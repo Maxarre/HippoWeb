@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   post "patients/:id/consultations", to: "consultations#create", as: "patient_consultations"
   # get "consultations/:id/emails/new", to: "emails#new"
   # post "consultations/:id/emails", to: "email#create"
-  get "patients/:id", to: "patients#show", as: 'profile'
+  # get "patients/:id", to: "patients#show", as: 'profile'
   get "consultations/:id/emails", to: "emails#index"
   # get "emails/:id", to: "emails/:id#show"
   # get "patients/new", to: "patients#new"
