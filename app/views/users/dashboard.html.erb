@@ -1,2 +1,5 @@
-<h1>Docters#dashboard</h1>
-<p>Find me in app/views/docters/dashboard.html.erb</p>
+<div class="calendar-container">
+  <% @consultations.each do |consultation| %>
+      <%= render 'shared/card_meeting', consultation: consultation %>
+  <% end %>
+</div>

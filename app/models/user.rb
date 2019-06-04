@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :patients
-  has_many :consultations
+  has_many :consultations, through: :patients
 end

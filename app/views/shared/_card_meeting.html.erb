@@ -1,0 +1,7 @@
+<div class="meeting-card <%= 'lightblueborder' if consultation.type == 'First meeting' %> <%= 'blueborder' if consultation.type == 'Operation' %> <%= 'yellowborder' if consultation.type == 'Consultation' %>">
+  <h3><%= consultation.type %></h3>
+  <p>Consultation time: <strong><%= consultation.start_time %> - <%= consultation.end_time %></strong></p>
+  <ul>
+    <li><%= consultation.patient.first_name%> <%= consultation.patient.last_name  %></li>
+  </ul>
+</div>
