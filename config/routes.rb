@@ -10,17 +10,20 @@ Rails.application.routes.draw do
   # get 'docters/show'
   # get 'docters/dashboard'
   # get 'docters/update'
-  root to: 'pages#home'
+  root to: "users#dashboard"
   get "dashboard", to: "users#dashboard"
   get "patients/:id/consultations/new", to: "consultations#new"
   post "patients/:id/consultations", to: "consultations#create"
   # get "consultations/:id/emails/new", to: "emails#new"
   # post "consultations/:id/emails", to: "email#create"
-  get "patients/:id", to: "patients#show", as: 'profile'
+  # get "patients/:id", to: "patients#show", as: 'profile'
   get "consultations/:id/emails", to: "emails#index"
   # get "emails/:id", to: "emails/:id#show"
-  get "patients/:id/edit", to: "patients#edit"
-  patch "/patients/:id", to: "patients#update"
+  # get "patients/new", to: "patients#new"
+  # get "patients/:id/edit", to: "patients#edit"
+  # patch "/patients/:id", to: "patients#update"
+
+  resources :patients, only: [:create, :new, :edit, :update, :show]
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
