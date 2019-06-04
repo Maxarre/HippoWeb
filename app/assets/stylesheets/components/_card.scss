@@ -2,6 +2,45 @@
   color: #4ca1fa;
 }
 
+.creation_category {
+  margin: 20px;
+  color: lightgrey;
+}
+
+.border-bottom {
+  border-bottom: solid 1px #8F99A3;
+}
+
+.all-category {
+  padding: 20px;
+}
+
+.form_width {
+
+}
+
+.to-the-left {
+  position: absolute;
+  right: 20px;
+}
+
+.bigger {
+  width: 6vw;
+}
+
+#patient_gender {
+  height: 30px;
+  color: #495057;
+  background-color: #fff;
+  border-color: #93c4fd;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(22, 127, 251, 0.25)
+}
+
+.margin-right-50 {
+  margin-right: 50px
+}
+
 #selected_category p {
   color: #474747;
 }
@@ -21,12 +60,8 @@
   color: #7a7a7a;
 }
 
-.fas {
+#mr_fas {
   color: #b2b2b2;
-}
-
-.creation_category {
-  color: lightgrey;
 }
 
 .btn-success {
