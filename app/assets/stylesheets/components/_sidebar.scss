@@ -2,13 +2,15 @@
   padding: 0px !important;
 }
 
-
 .sidebar {
+  position: sticky;
+  top: 0px;
   width: 18%;
   height: 100vh;
   // max-width: 275px;
   background-color: white;
   padding-left: 7px;
+  min-width: 250px;
   .settings {
     position: absolute;
     bottom: 20px;
@@ -24,6 +26,9 @@
   li {
     padding: 10px 0;
   };
+  ul {
+    padding-left: 20px;
+  }
   .doctor_profile {
     margin: 10px 0;
   };
@@ -38,4 +43,21 @@
     padding: 0px;
   };
   .far {padding: 0 7px}
+}
+
+.doctor-avatar {
+  margin-top: 12px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+}
+
+.position-doc-info {
+  padding: 0 20px;
+}
+
+.position-doc-info-card {
+  padding-top: 20px;
+  padding: 0 20px;
+  height: 80px;
 }

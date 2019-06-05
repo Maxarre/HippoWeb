@@ -16,6 +16,7 @@
 .tab {
   width: 25%;
   text-align: center;
+  height: 48px;
   p, i {
     font-size: 20px;
     margin-top: 12px;
@@ -33,51 +34,29 @@
 
 .empty {
   width: 25%;
-  height: 4px;
-  margin-top: -8px;
+  height: 2px;
+  margin-top: -5px;
 }
 
 .full {
   width: 25%;
-  height: 4px;
+  height: 2px;
   background-color: #404751;
-  margin-top: -8px;
+  margin-top: -5px;
 }
 
-
-.back-to-dashboard {
-  padding-left : 1.5%;
-  font-size: 20px;
-  p {
-    text-decoration: none;
-    color: #6A707E;
-    padding-left: 5px;
-  }
-  i {
-    color: #52A6EB;
-    height: -5px;
-  }
-  p:hover {
-    opacity: 0.7;
-  }
+.erase {
+  text-decoration: none;
+  color: black;
 }
 
 .erase:hover {
   text-decoration: none;
+  opacity: 0.7;
 }
 
 #down {
   line-height: 1.5;
-}
-
-.follow-up {
-  background-color: #68D083;
-  color: white;
-  border-radius: 3px;
-  line-height: 1.5s;
-  padding: 15px;
-  width: 300px;
-  text-align: center;
 }
 
 .dashboard_index {
@@ -85,9 +64,34 @@
 }
 
 .container-index {
-  margin: 0 20px;
+  margin-top: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .category-index {
   text-align: center;
+  margin: 20px 0px;
+  line-height: 1em;
+  p {
+    margin-bottom: 0px;
+  }
+  h5 {
+    color: #707683;
+    margin-bottom: 0px;
+  }
+}
+
+.border-right {
+  border-right: 1px solid lightgrey;
+}
+
+
+.border-bottom {
+  border-bottom: 1px solid lightgrey;
+}
+
+.sticky {
+  position: sticky;
+  top: 60px;
 }
