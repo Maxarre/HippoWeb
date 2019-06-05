@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   # get 'docters/dashboard'
   # get 'docters/update'
   root to: "users#dashboard"
+  get "home", to: "pages#home"
   get "dashboard", to: "users#dashboard", as: 'dashboard'
   get "medicalrecord", to: "patients#medicalrecord", as: 'medicalrecord'
   get "treatments", to: "patients#treatments", as: 'treatments'
