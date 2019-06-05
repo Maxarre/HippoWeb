@@ -1,19 +1,27 @@
 <div class="sidebar">
-  <h2>Hippoweb</h2>
+  <h2 style="padding-left:15px;">Hippoweb</h2>
   <div class="doctor_profile">
-    <ul class="list-inline">
-      <li><%= image_tag current_user.photo, class: "avatar" %></li>
-      <li>
+    <div class="d-flex position-doc-info-card">
+      <%= image_tag current_user.photo, class: "doctor-avatar" %>
+      <ul class="list-inline position-doc-info"><li>
         <p>Dr. <%=current_user.first_name%> <%= current_user.last_name %></p>
-        <p><h5><%= current_user.email %><h5></p>
-    </li>
-    </ul>
+        <p><h5><%= current_user.email %><h5></p></li>
+      </ul>
+    </div>
   </div>
   <ul>
-    <li class="list-inline"><i class="far fa-calendar-alt"></i> Dashboard</li>
-    <li class="list-inline"><i class="far fa-user"></i> Patients</li>
-    <li class="list-inline"><i class="far fa-envelope"></i> Email list</li>
+    <%= link_to dashboard_path, class:"erase d-flex" do %>
+      <li class="list-inline erase"><i class="far fa-calendar-alt"></i> Dashboard</li>
+    <% end  %>
+    <%= link_to patients_path, class:"erase d-flex" do %>
+      <li class="list-inline"><i class="far fa-user"></i> Patients</li>
+    <% end  %>
+    <%= link_to dashboard_path, class:"erase d-flex" do %>
+      <li class="list-inline"><i class="far fa-envelope"></i> Email list</li>
+    <% end  %>
     <li class='hl list-inline'></li>
-    <li class="settings list-inline"><i class="fas fa-cog"></i> Settings</li>
+    <%= link_to dashboard_path, class:"erase d-flex" do %>
+      <li class="settings list-inline"><i class="fas fa-cog"></i> Settings</li>
+    <% end  %>
   </ul>
 </div>
