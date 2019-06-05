@@ -26,7 +26,7 @@ class ConsultationsController < ApplicationController
   end
 
   def update
-    @consultation = User.find(params[:id])
+    @consultation = Consultation.find(params[:id])
     @consultation.update(consultation_params)
     redirect_to patient_path
   end
@@ -37,6 +37,6 @@ class ConsultationsController < ApplicationController
   private
 
   def consultation_params
-    params.require(:consultation).permit(:patient_id)
+    params.require(:consultation).permit(:patient_id, :patient_complain, :diagnostic, :care_plan, :prescription)
   end
 end
