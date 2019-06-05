@@ -7,7 +7,7 @@
   <div class="consultation-card card-container">
     <p>
       <h2><%= consultation.start_time %> - <%= consultation.end_time %></h2>
-      <span class="consultation-type <%= 'lightbluebutton' if consultation.type == 'First meeting' %> <%= 'bluebutton' if consultation.type == 'Operation' %> <%= 'yellowbutton' if consultation.type == 'Consultation' %>"><%= consultation.type %></span>
+      <span class="consultation-type <%= 'lightbluebutton' if consultation.type == 'First meeting' %> <%= 'bluebutton' if consultation.type == 'Operation' %> <%= 'yellowbutton' if consultation.type == 'Consultation' %>"><%= consultation.consultation_type %></span>
     </p>
     <div class="d-flex">
       <div class="consultation-form">
