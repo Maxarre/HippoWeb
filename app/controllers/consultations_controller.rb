@@ -21,14 +21,14 @@ class ConsultationsController < ApplicationController
   def edit
     @patient = Patient.find(params[:id])
     @consultation = @patient.consultations.last
+
     # @consultation = @patient.consultations.where("consultation.consultation-type", "pending").first
-    redirect_to patient_path
   end
 
   def update
     @consultation = User.find(params[:id])
-    @consultation.update(params[:consultation])
-    redirect_to profile_path(@consultation)
+    @consultation.update(consultation_params)
+    redirect_to patient_path
   end
 
   def destroy
@@ -37,6 +37,6 @@ class ConsultationsController < ApplicationController
   private
 
   def consultation_params
-    params.require(:consultation).permit
+    params.require(:consultation).permit(:patient_id)
   end
 end
