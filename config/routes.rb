@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   # get "patients/:id/edit", to: "patients#edit"
   # patch "/patients/:id", to: "patients#update"
 
-  resources :patients, only: [:create, :new, :edit, :update, :show]
+  resources :patients, only: [:create, :new, :edit, :update, :show, :index]
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

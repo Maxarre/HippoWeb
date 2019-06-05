@@ -1,8 +1,6 @@
 .searchbar {
   display: flex;
   align-item: center;
-  width: 82vw;
-  height: 30px;
   position: relative;
   background-color: #FAFAFA;
 
@@ -12,8 +10,12 @@
     width: 82vw;
   }
 
+  form {
+    width: 100%;
+  }
+
   #search {
-    width: 82vw;
+    width: 100%;
     border: none;
     line-height: 3em;
   }
