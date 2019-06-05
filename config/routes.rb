@@ -14,7 +14,6 @@ Rails.application.routes.draw do
   get "medicalrecord", to: "patients#medicalrecord", as: 'medicalrecord'
   get "treatments", to: "patients#treatments", as: 'treatments'
   get "insurance", to: "patients#insurance", as: 'insurance'
-
   # get "patients/:id/consultations/new", to: "consultations#new", as: "new_consultation"
   # post "patients/:id/consultations", to: "consultations#create", as: "patient_consultations"
   # get "consultations/:id/emails/new", to: "emails#new"
@@ -26,9 +25,9 @@ Rails.application.routes.draw do
   # get "patients/:id/edit", to: "patients#edit"
   # patch "/patients/:id", to: "patients#update"
 
-
+  resources :consultations, only: [:create, :index, :show, :new]
   resources :patients, only: [:create, :new, :edit, :update, :show, :index] do
-    resources :consultations, only: [:create, :index, :edit, :update, :show]
+    resources :consultations, only: [:edit, :update]
   end
   resources :consultations, only: [:new, :create]
 
