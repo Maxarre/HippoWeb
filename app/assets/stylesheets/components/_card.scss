@@ -1,5 +1,8 @@
 #selected_category h5 {
   color: #4ca1fa;
+  p {
+  color: #474747;
+  }
 }
 
 .creation_category {
@@ -11,12 +14,17 @@
   border-bottom: solid 1px #8F99A3;
 }
 
-.all-category {
+.general-padding-20 {
   padding: 20px;
 }
 
-.form_width {
+.general-padding-50 {
+  padding: 20px 50px;
+}
 
+.general-margin-40 {
+  margin-top: 10px;
+  margin-left: 40px;
 }
 
 .to-the-left {
@@ -24,8 +32,13 @@
   right: 20px;
 }
 
-.bigger {
+.bigger-date {
   width: 6vw;
+}
+
+.wider {
+  width: 250px;
+  margin-left: 39vw;
 }
 
 #patient_gender {
@@ -41,27 +54,25 @@
   margin-right: 50px
 }
 
-#selected_category p {
-  color: #474747;
+.mr {
+  border-bottom: 1px solid lightgrey;
+  margin: 20px;
 }
 
-
-#mr {
+.mr_category {
   border-bottom: 1px solid lightgrey;
-}
-
-#mr_category {
-  border-bottom: 1px solid lightgrey;
-  margin: 0px 50px;
+  margin: 40px 50px;
   color: #7a7a7a;
 }
 
-#form_label {
+.form_label {
   color: #7a7a7a;
 }
 
-#mr_fas {
+.mr_fas {
   color: #b2b2b2;
+  padding-top: none;
+  margin-bottom: 20px;
 }
 
 .btn-success {

@@ -1,37 +1,45 @@
-<div class="container">
-
-  <div class="card">
-    <div class="creation_category">
-      <h5>Patient Information</h5>
-      <p>General information about the patient</p>
+<div style="margin-top: 35px;">
+  <%= link_to dashboard_path, class:"erase" do %>
+    <div class="back-to-dashboard d-flex">
+      <i class="fas fa-chevron-left" id="down"></i>
+      <p>Back to dashboard</p>
     </div>
-    <div class="creation_category">
+  <% end  %>
+
+  <div class="d-flex justify-content-around">
+    <div class="card_free" style="height: 380px;">
+      <div id="selected_category" class="creation_category border-bottom">
+        <h5>Patient Information</h5>
+        <p>General information about the patient</p>
+      </div>
+
+      <div class="creation_category border-bottom">
       <h5>Medical Record</h5>
-      <p>Medical report of the patient situation</p>
+        <p>Medical report of the patient situation</p>
+      </div>
+      <div class="creation_category border-bottom">
+        <h5>Treatment</h5>
+        <p>A detail list of the treatment data</p>
+      </div>
+      <div class="creation_category">
+        <h5>Insurance</h5>
+        <p>All insurance information of the patient</p>
+      </div>
     </div>
-    <div class="creation_category">
-      <h5>Treatment</h5>
-      <p>A detail list of the treatment data</p>
-    </div>
-    <div id="selected_category" class="creation_category">
-      <h5>Insurance</h5>
-      <p>All insurance information of the patient</p>
+
+    <div class="card general-padding-20" style="width: 72%; height: 40vh;">
+      <h2 class="mr">Insurance</h2>
+      <form class=general-padding-50>
+        <div class="form-group">
+          <label class="form_label">Insurance company name</label>
+          <input class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form_label">Insurance number</label>
+          <input class="form-control">
+        </div>
+      </form>
+        <%= link_to "ADD PATIENT", dashboard_path, class: "btn btn-success wider"%>
     </div>
   </div>
-
-  <div class="card">
-    <h2 id="mr">Insurance</h2>
-    <form>
-      <div class="form-group">
-        <label id="form_label">Insurance company name</label>
-        <input class="form-control">
-      </div>
-      <div class="form-group">
-        <label id="form_label">Insurance number</label>
-        <input class="form-control">
-      </div>
-    </form>
-    <%= link_to "ADD PATIENT", dashboard_path, class: "btn btn-success" %>
-  </div>
-
 </div>
