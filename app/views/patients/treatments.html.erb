@@ -1,33 +1,44 @@
-<div class="container">
-
-  <div class="card">
-    <div class="creation_category">
-      <h5>Patient Information</h5>
-      <p>General information about the patient</p>
+<div style="margin-top: 35px;">
+  <%= link_to dashboard_path, class:"erase" do %>
+    <div class="back-to-dashboard d-flex">
+      <i class="fas fa-chevron-left" id="down"></i>
+      <p>Back to dashboard</p>
     </div>
-    <div class="creation_category">
+  <% end  %>
+
+  <div class="d-flex justify-content-around">
+    <div class="card_free" style="height: 380px;">
+      <div id="selected_category" class="creation_category border-bottom">
+        <h5>Patient Information</h5>
+        <p>General information about the patient</p>
+      </div>
+
+      <div class="creation_category border-bottom">
       <h5>Medical Record</h5>
-      <p>Medical report of the patient situation</p>
+        <p>Medical report of the patient situation</p>
+      </div>
+      <div class="creation_category border-bottom">
+        <h5>Treatment</h5>
+        <p>A detail list of the treatment data</p>
+      </div>
+      <div class="creation_category">
+        <h5>Insurance</h5>
+        <p>All insurance information of the patient</p>
+      </div>
     </div>
-    <div id="selected_category" class="creation_category">
-      <h5>Treatment</h5>
-      <p>A detail list of the treatment data</p>
-    </div>
-    <div class="creation_category">
-      <h5>Insurance</h5>
-      <p>All insurance information of the patient</p>
+
+    <div class="card_free general-padding-20" style="width: 72%; height: 60vh;">
+      <h2 class="mr">Treatments</h2>
+      <div class="inside_detail">
+        <button type="button" class="btn btn-outline-primary general-margin-40">Add a Treatment</button>
+      </div>
+      <div class="d-flex justify-content-end" style="padding-top: 34%">
+        <%= link_to "SKIP", insurance_path, class: "btn btn-outline-secondary margin-right-50" %>
+        <%= link_to "NEXT", insurance_path, class: "btn btn-primary margin-right-50" %>
+      </div>
+      </div>
     </div>
   </div>
-
-  <div class="card">
-    <h2 id="mr">Treatments</h2>
-    <div class="inside_detail">
-      <button type="button" class="btn btn-outline-primary">Add a Treatment</button>
-    </div>
-    <div class="row">
-      <%= link_to "SKIP", insurance_path, class: "btn btn-outline-secondary" %>
-      <%= link_to "NEXT", insurance_path, class: "btn btn-primary" %>
-    </div>
-  </div>
-
 </div>
+
+

@@ -1,15 +1,13 @@
 .meeting-card {
-    color: #707683;
-    padding: 10px;
-    background-color: white;
-    box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.2);
-    width: 27vw;
-
+  color: #707683;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.2);
+  width: 27vw;
   h3 {
     font-size: 20px;
     font-weight: bolder;
   }
-
   p, li {
     font-weight: lighter;
   }
@@ -26,9 +24,6 @@
 .lightblueborder {
   border-left: solid #334D6E
 }
-
-
-
 
 .yellowbutton {
   background-color: #109CF1;
@@ -54,22 +49,22 @@
 
 .consultation-container {
   width: 82vw;
+}
 
-  .card-container {
-  margin: 50px 50px;
-  padding: 2vh 7vw;
-  width: 56vw;
-  background-color: white;
-  box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.2);
-  width: 70vw;
-  }
+.card-container {
+margin: 50px 50px;
+padding: 2vh 7vw;
+width: 56vw;
+background-color: white;
+box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.2);
+width: 70vw;
+}
 
-  .card-left {
-  width: 8vw;
-  }
+.card-left {
+width: 8vw;
+}
 
-  .card-right {
-  width: 8vw;
-  }
+.card-right {
+width: 8vw;
 }
 
