@@ -5,7 +5,7 @@
   <div class="consultation-card card-container">
     <p>
       <h2>New meeting</h2>
-      <span class="consultation-type <%= 'lightbluebutton' if consultation.type == 'First meeting' %> <%= 'bluebutton' if consultation.type == 'Operation' %> <%= 'yellowbutton' if consultation.type == 'Consultation' %>"><%= consultation.consultation_type %></span>
+      <span class="consultation-type <%= 'lightbluebutton' if @consultation.consultation_type == 'First meeting' %> <%= 'bluebutton' if @consultation.consultation_type == 'Operation' %> <%= 'yellowbutton' if @consultation.consultation_type == 'Consultation' %>"><%= @consultation.consultation_type %></span>
     </p>
     <div class="d-flex">
       <div class="consultation-form">
