@@ -1,2 +1,50 @@
-<h1>Consultations#edit</h1>
-<p>Find me in app/views/consultations/edit.html.erb</p>
+<div class="consultation-container d-flex">
+  <div class='card-left'>
+  </div>
+
+  <div class="consultation-card card-container">
+    <p>
+      <h2><%= @consultation.start_time %> - <%= @consultation.end_time %></h2>
+      <span class="consultation-type <%= 'lightbluebutton' if @consultation.consultation_type == 'First meeting' %> <%= 'bluebutton' if @consultation.consultation_type == 'Operation' %> <%= 'yellowbutton' if @consultation.consultation_type == 'Consultation' %>"><%= @consultation.consultation_type %></span>
+    </p>
+    <div class="d-flex" style="width: 100%">
+      <div class="consultation-form" style="width: 100%">
+        <%= simple_form_for [@patient, @consultation] do |f| %>
+        <div class='d-flex align-items-center' style="width: 100%">
+          <%= f.input :patient_complain, placeholder: 'Add notes for the complains', wrapper_html: { class: 'input-card' } %>
+          <ul>
+            <li class='list-inline'><i class="fas fa-link"></i></li>
+            <li class='list-inline'><i class="fas fa-paperclip"></i></li>
+          </ul>
+        </div>
+        <div class="d-flex align-items-center" style="width: 100%">
+          <%= f.input :diagnostic, placeholder: 'Add notes for the diagnostic', wrapper_html: { class: 'input-card' } %>
+          <ul>
+            <li class='list-inline'><i class="fas fa-link"></i></li>
+            <li class='list-inline'><i class="fas fa-paperclip"></i></li>
+          </ul>
+        </div>
+        <div class="d-flex align-items-center" style="width: 100%">
+          <%= f.input :care_plan, placeholder: 'Add notes for the care plan', wrapper_html: { class: 'input-card' } %>
+          <ul>
+            <li class='list-inline'><i class="fas fa-link"></i></li>
+            <li class='list-inline'><i class="fas fa-paperclip"></i></li>
+          </ul>
+        </div>
+        <div class="d-flex align-items-center" style="width: 100%">
+          <%= f.input :prescription, placeholder: 'Add prescription for the patient', wrapper_html: { class: 'input-card' } %>
+          <ul>
+            <li class='list-inline'><i class="fas fa-link"></i></li>
+            <li class='list-inline'><i class="fas fa-paperclip"></i></li>
+          </ul>
+        </div>
+        <%= f.button :submit %>
+        <% end %>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class='card-right'></div>
+</div>

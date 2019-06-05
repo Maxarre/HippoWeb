@@ -21,6 +21,8 @@ class ConsultationsController < ApplicationController
   def edit
     @patient = Patient.find(params[:id])
     @consultation = @patient.consultations.last
+    # @consultation = @patient.consultations.where("consultation.consultation-type", "pending").first
+    redirect_to patient_path
   end
 
   def update
