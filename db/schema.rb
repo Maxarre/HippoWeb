@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2019_06_03_160311) do
     t.string "status"
     t.datetime "start_time"
     t.datetime "end_time"
-    t.string "type"
+    t.string "consultation_type"
     t.text "required_documents"
     t.text "patient_complain"
     t.text "diagnostic"

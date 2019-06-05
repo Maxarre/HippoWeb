@@ -9,18 +9,18 @@ class ConsultationsController < ApplicationController
   end
 
   def new
-    @patient = Patient.find(params[:id])
-    @consultation = Consultation.new(patient_id: params[:id])
+    @consultation = Consultation.new
   end
 
   def create
     @consultation = Consultation.new(patient_id: params[:id])
     @consultation.save
-    redirect_to profile_path
+    redirect_to dashboard_path
   end
 
   def edit
-    @consultation = Consultation.find(params[:id])
+    @patient = Patient.find(params[:id])
+    @consultation = @patient.consultations.last
   end
 
   def update
