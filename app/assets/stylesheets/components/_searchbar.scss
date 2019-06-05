@@ -1,7 +1,8 @@
 .searchbar {
+  position: sticky;
+  top: 0px;
   display: flex;
   align-item: center;
-  position: relative;
   background-color: #FAFAFA;
 
   p {
