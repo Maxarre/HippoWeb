@@ -11,7 +11,7 @@
       <h3>New meeting</h3>
       <span class="consultation-type <%= 'lightbluebutton' if consultation.consultation_type == 'First meeting' %> <%= 'bluebutton' if consultation.consultation_type == 'Operation' %> <%= 'yellowbutton' if consultation.consultation_type == 'Consultation' %>"><%= consultation.consultation_type %></span>
     </p>
-    <h3 class='form-title'>Consultation title</h3>
+    <!-- <h3 class='form-title'>Consultation title</h3> -->
         <%#= f.input :consultation_type, collection: ["First meeting", "Consultation", "Operation"] %>
 
     <%= simple_form_for @consultation do |f| %>
