@@ -19,6 +19,7 @@ class ConsultationsController < ApplicationController
   end
 
   def edit
+    @consultation = Consultation.find(params[:id])
     @patient = Patient.find(params[:id])
     # @consultation = @patient.consultations.where("consultation.consultation-type", "pending").first
   end
