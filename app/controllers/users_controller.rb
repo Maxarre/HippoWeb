@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   def dashboard
-    @consultations = current_user.consultations
+    @consultations = []
+    (Date.today..Date.today + 1.week).each do |date|
+      found_consultations = current_user.consultations.select { |consultation| consultation.start_time.to_date == date }
+      @consultations << found_consultations unless found_consultations.empty?
+    end
   end
 
   def index
