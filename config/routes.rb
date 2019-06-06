@@ -31,6 +31,7 @@ Rails.application.routes.draw do
     resources :consultations, only: [:edit, :update]
   end
   resources :consultations, only: [:new, :create]
+  resources :emails, only: [:new, :create, :show]
 
 
 
