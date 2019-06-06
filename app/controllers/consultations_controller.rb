@@ -13,7 +13,7 @@ class ConsultationsController < ApplicationController
   end
 
   def create
-    @consultation = Consultation.new(patient_id: params[:id])
+    @consultation = Consultation.new(consultation_params)
     @consultation.save
     redirect_to dashboard_path
   end
