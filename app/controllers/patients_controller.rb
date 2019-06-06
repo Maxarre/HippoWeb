@@ -1,15 +1,11 @@
 class PatientsController < ApplicationController
   def index
-    # @patient = Patient.all
-    # @consultations = Consultation.all
-    if params[:query].present?
-      sql_query = "first_name ILIKE :query OR last_name ILIKE :query"
-      @patient = Patient.where(sql_query, query: "%#{params[:query]}%")
-      @consultations = Consultation.all
+    if params[:patient]
+      @patient = Patient.where(id: params[:patient].to_i)
     else
       @patient = Patient.all
-      @consultations = Consultation.all
     end
+    @consultations = Consultation.all
   end
 
   def show

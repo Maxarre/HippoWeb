@@ -3,11 +3,18 @@
   <!-- <p class="right-side"><i class="far fa-bell"></i></p> -->
   <%= form_tag patients_path, id: "search_form", method: :get do %>
     <%= select_tag "patient", options_from_collection_for_select(
-      ActiveSupport::Patient.all.
-        map { |patient| patient.tzinfo }.
-        sort_by { |patientinfo| patientinfo.name },
-      :first_name, :last_name),
+      Patient.all, :id, :full_name),
       class: 'select2'
     %>
   <% end %>
 </div>
+
+<script>
+  window.onload = function() {
+    $('.select2').on('select2:select', function (e) {
+      var data = e.params.data;
+      console.log(data);
+      document.getElementById("search_form").submit()
+    });
+  }
+</script>
