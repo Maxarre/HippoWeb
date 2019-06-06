@@ -27,7 +27,8 @@ class ConsultationsController < ApplicationController
   def update
     @consultation = Consultation.find(params[:id])
     @consultation.update(consultation_params)
-    redirect_to patient_path
+    @consultation.patient = Patient.find(params[:patient_id])
+    redirect_to patient_path(@consultation.patient)
   end
 
   def destroy
