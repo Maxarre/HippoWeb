@@ -55,6 +55,12 @@
             <%= link_to "Nouveau Follow-up", edit_patient_consultation_path(@patient), class:"follow-up" %>
           </div>
         </div>
+        <div class="consultation-index">
+          <% @patient.consultations.each do |consultation| %>
+              <%= render 'shared/card_consultation', consultation: consultation %>
+          <% end %>
+        </div>
+
       </div>
       <div style="height: 4000px;"></div>
     </div>
