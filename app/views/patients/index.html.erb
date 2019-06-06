@@ -29,7 +29,7 @@
       </div>
     </div>
     <% @patient.each do |patient| %>
-      <div class="content d-flex border-bottom" style="padding-left: 10px;">
+      <div class="content link d-flex border-bottom" style="padding-left: 10px;">
         <div class="d-flex category-index" style="width: 15vw">
           <p><%= "#{patient.first_name} #{patient.last_name}" %></p>
         </div>
@@ -48,6 +48,7 @@
         <div class="d-flex category-index" style="width: 15vw">
           <p><%= @consultations.find_by(patient_id: patient.id).patient_note_attachment %></p>
         </div>
+        <%= link_to '', patient_path(patient) %>
       </div>
     <% end %>
   </div>

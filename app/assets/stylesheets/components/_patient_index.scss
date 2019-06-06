@@ -16,7 +16,6 @@
 .tab {
   width: 25%;
   text-align: center;
-  height: 48px;
   p, i {
     font-size: 20px;
     margin-top: 12px;
@@ -96,4 +95,9 @@
 .sticky {
   position: sticky;
   top: 60px;
+}
+
+.consultation-type {
+  width: fit-content;
+  line-height: 1;
 }

@@ -11,8 +11,8 @@
       <div class="patient_general_info">
         <h2><%= @patient.first_name  %> <%= @patient.last_name  %></h2>
         <h5 style="margin-bottom: 15px; font-size: 20px;"><%= @patient.date_of_birth  %></h5>
-        <h4 class="patient-category">Patient Category</h4>
         <div class="mail_link"><a href=""><i class="far fa-envelope"></i></a></div>
+        <h4 class="patient-category">Patient Category</h4>
       </div>
       <div class="patient_detailed_info">
         <header>First Name</header>
@@ -58,8 +58,10 @@
          <div class="consultation-index">
           <% @patient.consultations.each do |consultation| %>
               <div class="consultation-card card-container">
-                <h2>Past consultation :<%= consultation.start_time %></h2>
-                <p style="margin: 20px; width:120px;" class="consultation-type <%= 'lightbluebutton' if consultation.consultation_type == 'First meeting' %> <%= 'bluebutton' if consultation.consultation_type == 'Operation' %> <%= 'yellowbutton' if consultation.consultation_type == 'Consultation' %>"><%= consultation.consultation_type %></p>
+                <div class="d-flex justify-content-between">
+                <h2>Past consultation: <%= consultation.start_time.time.hour %>h<%= consultation.start_time.time.hour %></h2><h2><%= consultation.start_time.to_date %></h2>
+                </div>
+                <p style="margin: 20px;" class="consultation-type <%= 'lightbluebutton' if consultation.consultation_type == 'First meeting' %> <%= 'bluebutton' if consultation.consultation_type == 'Operation' %> <%= 'yellowbutton' if consultation.consultation_type == 'Consultation' %>"><%= consultation.consultation_type %></p>
                 <div class="consultation-id-container" style="margin: 20px;">
                   <h3 class='form-title'>Patient's complain</h3>
                     <div class='d-flex align-items-center' style="width: 90%; margin-bottom: 20px;">
