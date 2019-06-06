@@ -36,6 +36,18 @@
         <div class="d-flex category-index" style="width: 15vw">
           <p><%= patient.email %></p>
         </div>
+        <div class="d-flex category-index" style="width: 15vw">
+          <p><%= patient.gender %></p>
+        </div>
+        <div class="d-flex category-index" style="width: 15vw">
+          <p><%= @consultations.find_by(patient_id: patient.id).consultation_type %></p>
+        </div>
+        <div class="d-flex category-index" style="width: 15vw">
+          <p><%= patient.job_title %></p>
+        </div>
+        <div class="d-flex category-index" style="width: 15vw">
+          <p><%= @consultations.find_by(patient_id: patient.id).patient_note_attachment %></p>
+        </div>
       </div>
     <% end %>
   </div>
