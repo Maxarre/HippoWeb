@@ -39,9 +39,10 @@ end
 
 type_array = ["First meeting", "Operation", "Consultation"]
 status_array = ["Upcoming", "Passed"]
+i = 1
 10.times do
   consultation = Consultation.new(
-    patient_id: Faker::Number.between(1, 10),
+    patient_id: i,
     status: status_array.sample,
     start_time: Faker::Time.backward(3, :morning),
     end_time: Faker::Time.backward(3, :evening),
@@ -54,5 +55,6 @@ status_array = ["Upcoming", "Passed"]
     note_patient: Faker::Lorem.paragraph_by_chars,
     patient_note_attachment: Faker::Books::Dune.quote,
     )
+    i += 1
   consultation.save!
 end
