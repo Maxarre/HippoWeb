@@ -1,6 +1,10 @@
 class PatientsController < ApplicationController
   def index
-    @patient = Patient.all
+    if params[:patient]
+      @patient = Patient.where(id: params[:patient].to_i)
+    else
+      @patient = Patient.all
+    end
     @consultations = Consultation.all
   end
 
