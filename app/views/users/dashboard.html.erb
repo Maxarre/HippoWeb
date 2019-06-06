@@ -8,73 +8,28 @@
 
 <div class="calendar-container">
   <div class="d-flex">
+  <% @consultations.each do |day_consultations| %>
     <div>
-      <h1>Today</h1>
-      <div class="consultation-each">
-        <% @consultations.each do |consultation| %>
-         <div class="meeting-card <%= 'lightblueborder' if consultation.consultation_type == 'First meeting' %> <%= 'blueborder' if consultation.consultation_type == 'Operation' %> <%= 'yellowborder' if consultation.consultation_type == 'Consultation' %>">
-            <h3><%= consultation.consultation_type %></h3>
-            <p>Consultation time: <strong><%= consultation.start_time.strftime("%H:%M") %> - <%= consultation.end_time.strftime("%H:%M") %></strong></p>
-            <ul>
-              <li class='list-inline'><%= consultation.patient.first_name%> <%= consultation.patient.last_name  %></li>
-            </ul>
-          </div>
-        <% end %>
-      </div>
-    </div>
-
-    <div>
-      <h1>Tomorrow</h1>
-      <div class="consultation-each">
-        <% @consultations.each do |consultation| %>
-         <div class="meeting-card <%= 'lightblueborder' if consultation.consultation_type == 'First meeting' %> <%= 'blueborder' if consultation.consultation_type == 'Operation' %> <%= 'yellowborder' if consultation.consultation_type == 'Consultation' %>">
-            <h3><%= consultation.consultation_type %></h3>
-            <p>Consultation time: <strong><%= consultation.start_time.strftime("%H:%M") %> - <%= consultation.end_time.strftime("%H:%M") %></strong></p>
-            <ul>
-              <li class='list-inline'><%= consultation.patient.first_name%> <%= consultation.patient.last_name  %></li>
-            </ul>
-          </div>
-        <% end %>
-      </div>
-    </div>
-
-    <div>
-      <h1><%= Date.today + 2 %></h1>
-      <div class="consultation-each">
-        <% @consultations.each do |consultation| %>
-         <div class="meeting-card <%= 'lightblueborder' if consultation.consultation_type == 'First meeting' %> <%= 'blueborder' if consultation.consultation_type == 'Operation' %> <%= 'yellowborder' if consultation.consultation_type == 'Consultation' %>">
-            <h3><%= consultation.consultation_type %></h3>
-            <p>Consultation time: <strong><%= consultation.start_time.strftime("%H:%M") %> - <%= consultation.end_time.strftime("%H:%M") %></strong></p>
-            <ul>
-              <li class='list-inline'><%= consultation.patient.first_name%> <%= consultation.patient.last_name  %></li>
-            </ul>
-          </div>
-        <% end %>
-      </div>
-    </div>
-
-    <div>
-      <h1>After Tomorrow</h1>
-      <div class="consultation-each">
-        <% @consultations.each do |consultation| %>
-         <div class="meeting-card <%= 'lightblueborder' if consultation.consultation_type == 'First meeting' %> <%= 'blueborder' if consultation.consultation_type == 'Operation' %> <%= 'yellowborder' if consultation.consultation_type == 'Consultation' %>">
-            <h3><%= consultation.consultation_type %></h3>
-            <p>Consultation time: <strong><%= consultation.start_time.strftime("%H:%M") %> - <%= consultation.end_time.strftime("%H:%M") %></strong></p>
-            <ul>
-              <li class='list-inline'><%= consultation.patient.first_name%> <%= consultation.patient.last_name  %></li>
-            </ul>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
-
-    <% @consultations.each do |consultation| %>
-      <%= render 'shared/card_consultation', consultation: consultation %>
+      <% if day_consultations.first.start_time.to_date == Date.today  %>
+        <h2>Today</h2>
+      <% elsif day_consultations.first.start_time.to_date == Date.today + 1.day %>
+        <h2>Tomorow</h2>
+      <% elsif day_consultations.first.start_time.to_date == Date.today + 2.day %>
+        <h2>After-Tomorow</h2>
+      <% else %>
+        <h2> <%= day_consultations.first.start_time.to_date %></h2>
     <% end %>
-
+      <div class="consultation-each">
+          <% day_consultations.each do |consultation| %>
+            <div class="meeting-card <%= 'lightblueborder' if consultation.consultation_type == 'First meeting' %> <%= 'blueborder' if consultation.consultation_type == 'Operation' %> <%= 'yellowborder' if consultation.consultation_type == 'Consultation' %>">
+              <h3><%= consultation.consultation_type %></h3>
+              <p>Consultation time: <strong><%= consultation.start_time.strftime("%H:%M") %> - <%= consultation.end_time.strftime("%H:%M") %></strong></p>
+              <ul><li class='list-inline'><%= consultation.patient.first_name%> <%= consultation.patient.last_name  %></li></ul>
+              <%= link_to '', patient_path(consultation.patient) %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
-
-
-
-

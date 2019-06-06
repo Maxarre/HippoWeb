@@ -1,6 +1,7 @@
 .interface-position{
   margin: 20px;
   margin-top: 30px;
+  height: 60px;
 }
 
 .button-position {
@@ -8,15 +9,45 @@
 }
 
 .calendar-container {
-  width: 100%;
+  width: 77vw;
   margin-top: 40px;
   margin-right: 20px;
   margin-left: 20px;
+  overflow-x: auto;
+  h1 {
+    height: 50px;
+  }
+    &::-webkit-scrollbar {
+      width: 1em;
+  }
+
+  &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #109CF1;
+  }
 }
+
 .consultation-each{
   margin-top: 20px;
-  margin-right: 50px;
-}
-.dash-card {
+  margin-right: 30px;
+  height: calc(100vh - 254px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex: 0 0 25%;
 
+  &::-webkit-scrollbar {
+      width: 1em;
+  }
+
+  &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #109CF1;
+  }
 }
+
