@@ -8,13 +8,16 @@ class EmailsController < ApplicationController
   end
 
   def new
+    @consultation = Consultation.find(params[:consultation_id])
     @email = Email.new
   end
 
   def create
+    @consultation = Consultation.find(params[:consultation_id])
     @email = Email.new(email_params)
+    @email.consultation = @consultation
     if @email.save
-      redirect_to patient_path
+      redirect_to patient_path(@consultation.patient)
     else
       render :new
     end
@@ -23,6 +26,6 @@ class EmailsController < ApplicationController
   private
 
   def email_params
-    params.require(:email).permit(:consultation, :title, :content, :description, :subject, :photo1_url, :photo2_url, :photo3_url, :article_1_url, :article_2_url, :article_3_url)
+    params.require(:email).permit(:consultation_id, :title, :content, :subject)
   end
 end
