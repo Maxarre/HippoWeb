@@ -8,5 +8,9 @@
 
 <div class="calendar-container">
 
+    <% @consultations.each do |consultation| %>
+      <%= render 'shared/card_consultation', consultation: consultation %>
+    <% end %>
+
 </div>
 
