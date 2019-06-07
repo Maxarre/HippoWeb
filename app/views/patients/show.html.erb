@@ -63,7 +63,7 @@
         </div>
       </div>
        <div class="consultation-index">
-        <% @patient.consultations.each do |consultation| %>
+        <% @patient.consultations.where("start_time < ?", Time.now).each do |consultation| %>
             <div class="consultation-card card-container">
               <div class="d-flex justify-content-between">
               <h2>Past consultation: <%= consultation.start_time.strftime(" %l: %M %p") %></h2><h2><%= consultation.start_time.strftime("%A, %b %d") %></h2>
