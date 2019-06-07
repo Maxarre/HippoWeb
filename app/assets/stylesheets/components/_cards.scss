@@ -69,6 +69,7 @@ width: 8vw;
   margin-bottom: 25px;
 }
 
+
 .consultation-index {
   overflow-y: auto;
   overflow-x: hidden;
@@ -83,5 +84,25 @@ width: 8vw;
 
   &::-webkit-scrollbar-thumb {
     background-color: #109CF1;
+  }
+}
+
+.email-card {
+  color: #707683;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  width: 100%;
+  padding: 10px 30px;
+  h3 {
+    font-size: 20px;
+    font-weight: bolder;
+    color: #334D6E;
+  }
+  p, li {
+    font-weight: lighter;
   }
 }
