@@ -96,9 +96,9 @@ d = Consultation.new(patient_id: a.id, status: 'Upcoming', start_time: '07/06/20
 d.save!
 e = Email.new(consultation_id: b.id, title: 'Information after our first meeting', content: b.prescription)
 e.save!
-f = Email.new(consultation_id: b.id, title: 'Feedback from our consultation', content: b.prescription)
+f = Email.new(consultation_id: c.id, title: 'Feedback from our consultation', content: c.prescription)
 f.save!
-g = Email.new(consultation_id: b.id, title: 'Taking your meeting at the sleeping center', content: b.prescription)
+g = Email.new(consultation_id: d.id, title: 'Taking your meeting at the sleeping center', content: d.prescription)
 g.save!
 Collapse
 
