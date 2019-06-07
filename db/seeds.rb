@@ -100,9 +100,3 @@ f = Email.new(consultation_id: c.id, title: 'Feedback from our consultation', co
 f.save!
 g = Email.new(consultation_id: d.id, title: 'Taking your meeting at the sleeping center', content: d.prescription)
 g.save!
-Collapse
-
-
-
-
-Message Input
