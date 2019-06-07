@@ -7,15 +7,15 @@
 </div>
 
 <div class="calendar-container">
-  <div class="d-flex">
+  <div class="d-flex" style="margin-bottom: 20px">
   <% @consultations.each do |day_consultations| %>
     <div>
       <% if day_consultations.first.start_time.to_date == Date.today  %>
-        <h5 style="font-weight: bold">Today(<%= Date.today.strftime("%A, %b %d") %>)</h5>
+        <h5 style="font-weight: bold">Today (<%= Date.today.strftime("%A, %b %d") %>)</h5>
       <% elsif day_consultations.first.start_time.to_date == Date.today + 1.day %>
-        <h5 style="font-weight: bold">Tomorrow(<%= (Date.today + 1.day).strftime("%A, %b %d") %>)</h5>
+        <h5 style="font-weight: bold">Tomorrow (<%= (Date.today + 1.day).strftime("%A, %b %d") %>)</h5>
       <% elsif day_consultations.first.start_time.to_date == Date.today + 2.day %>
-        <h5 style="font-weight: bold">After-Tomorow(<%= (Date.today + 2.day).strftime("%A, %b %d") %>)</h5>
+        <h5 style="font-weight: bold">After-Tomorow (<%= (Date.today + 2.day).strftime("%A, %b %d") %>)</h5>
       <% else %>
         <h5 style="font-weight: bold"> <%= day_consultations.first.start_time.strftime("%A, %b %d") %></h5>
     <% end %>
