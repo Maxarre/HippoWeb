@@ -10,7 +10,7 @@
     <div class="card_free patient_description text-responsivity-patient-general">
       <div class="patient_general_info">
         <h2><%= @patient.first_name  %> <%= @patient.last_name  %></h2>
-        <h5 style="margin-bottom: 15px; font-size: 20px;"><%= @patient.date_of_birth.strftime("%m/%d/%Y")  %></h5>
+        <h5 style="font-size: 20px;"><%= @patient.date_of_birth.strftime("%m/%d/%Y")  %></h5>
         <div class="mail_link"><a href=""><i class="far fa-envelope"></i></a></div>
       </div>
       <div class="patient_detailed_info">
