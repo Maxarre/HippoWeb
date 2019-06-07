@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_06_134809) do
+ActiveRecord::Schema.define(version: 2019_06_07_085652) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2019_06_06_134809) do
     t.string "article_3_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "last_update_date"
     t.index ["consultation_id"], name: "index_emails_on_consultation_id"
   end
 
