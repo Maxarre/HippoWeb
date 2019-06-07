@@ -1,5 +1,6 @@
 class PatientsController < ApplicationController
   def index
+    @selected_patient = params[:patient]
     if params[:patient]
       @patient = Patient.where(id: params[:patient].to_i)
     else
