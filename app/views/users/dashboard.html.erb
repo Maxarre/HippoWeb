@@ -11,13 +11,13 @@
   <% @consultations.each do |day_consultations| %>
     <div>
       <% if day_consultations.first.start_time.to_date == Date.today  %>
-        <h2>Today</h2>
+        <h5 style="font-weight: bold">Today(<%= Date.today.strftime("%A, %b %d") %>)</h5>
       <% elsif day_consultations.first.start_time.to_date == Date.today + 1.day %>
-        <h2>Tomorow</h2>
+        <h5 style="font-weight: bold">Tomorrow(<%= (Date.today + 1.day).strftime("%A, %b %d") %>)</h5>
       <% elsif day_consultations.first.start_time.to_date == Date.today + 2.day %>
-        <h2>After-Tomorow</h2>
+        <h5 style="font-weight: bold">After-Tomorow(<%= (Date.today + 2.day).strftime("%A, %b %d") %>)</h5>
       <% else %>
-        <h2> <%= day_consultations.first.start_time.to_date %></h2>
+        <h5 style="font-weight: bold"> <%= day_consultations.first.start_time.strftime("%A, %b %d") %></h5>
     <% end %>
       <div class="consultation-each">
           <% day_consultations.each do |consultation| %>

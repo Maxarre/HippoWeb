@@ -1,7 +1,7 @@
 <div class="searchbar">
   <!-- <p class='toto-side'><i class="fas fa-search"></i> Search for a patient</p> -->
   <!-- <p class="right-side"><i class="far fa-bell"></i></p> -->
-  <%= form_tag patients_path, id: "search_form", method: :get do %>
+  <%= form_tag patients_path, id: "search_form blbl", method: :get do %>
     <%= select_tag "patient", options_from_collection_for_select(
       Patient.all, :id, :full_name),
       class: 'select2'
