@@ -1,6 +1,7 @@
 class Patient < ApplicationRecord
   belongs_to :user
   has_many :consultations
+  has_many :emails, through: :consultations
 
   def full_name
     "#{first_name} #{last_name}"
