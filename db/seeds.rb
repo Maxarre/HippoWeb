@@ -15,7 +15,7 @@ User.create(email: 'doctor@cox.com', password: '424242', first_name: 'Perry', la
 #   zipcode: '75011', date_of_birth: '26/09/1987', gender: 'female', email: 'jane.doe@gmail.com',
 #   user_id: 1)
 
-10.times do
+20.times do
   # @fname = :first_name
   patient = Patient.new(
     first_name: Faker::Name.first_name,

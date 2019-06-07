@@ -10,7 +10,7 @@
     <div class="card_free patient_description">
       <div class="patient_general_info">
         <h2><%= @patient.first_name  %> <%= @patient.last_name  %></h2>
-        <h5 style="margin-bottom: 15px; font-size: 20px;"><%= @patient.date_of_birth  %></h5>
+        <h5 style="margin-bottom: 15px; font-size: 20px;"><%= @patient.date_of_birth.strftime("%m/%d/%Y")  %></h5>
         <div class="mail_link"><a href=""><i class="far fa-envelope"></i></a></div>
         <h4 class="patient-category">Patient Category</h4>
       </div>
@@ -66,43 +66,41 @@
         <% @patient.consultations.each do |consultation| %>
             <div class="consultation-card card-container">
               <div class="d-flex justify-content-between">
-              <h2>Past consultation: <%= consultation.start_time.strftime(" %l: %M %p") %></h2><h2><%= consultation.start_time.strftime("%A, %b %d") %></h2>
+              <h2>Past consultation: <%= consultation.start_time.strftime(" %l: %M %p") %></h2><h2 style="padding-right: 60px;"><%= consultation.start_time.strftime("%A, %b %d") %></h2>
               </div>
               <p style="margin: 20px;" class="consultation-type <%= 'lightbluebutton' if consultation.consultation_type == 'First meeting' %> <%= 'bluebutton' if consultation.consultation_type == 'Operation' %> <%= 'yellowbutton' if consultation.consultation_type == 'Consultation' %>"><%= consultation.consultation_type %></p>
-              <div class="consultation-id-container" style="margin: 20px;">
-                <h3 class='form-title'>Patient's complain</h3>
-                  <div class='d-flex align-items-center' style="width: 90%; margin-bottom: 20px;">
-                    <div class='form-field'><%= consultation.patient_complain %></div>
-                    <ul>
-                      <li class='list-inline'><i class="fas fa-link"></i></li>
-                      <li class='list-inline'><i class="fas fa-paperclip"></i></li>
-                    </ul>
-                  </div>
-                  <h3 class='form-title'>Diagnostic</h3>
-                  <div class='d-flex align-items-center' style="width: 90%; margin-bottom: 20px;">
-                    <div class='form-field'><%= consultation.diagnostic %></div>
-                    <ul>
-                      <li class='list-inline'><i class="fas fa-link"></i></li>
-                      <li class='list-inline'><i class="fas fa-paperclip"></i></li>
-                    </ul>
-                  </div>
-                  <h3 class='form-title'>Care plan</h3>
-                  <div class='d-flex align-items-center' style="width: 90%; margin-bottom: 20px;">
-                    <div class='form-field'><%= consultation.care_plan %></div>
-                    <ul>
-                      <li class='list-inline'><i class="fas fa-link"></i></li>
-                      <li class='list-inline'><i class="fas fa-paperclip"></i></li>
-                    </ul>
-                  </div>
-                  <h3 class='form-title'>Prescription & information for the patients</h3>
-                  <div class='d-flex align-items-center' style="width: 90%">
-                    <div class='form-field'><%= consultation.prescription %></div>
-                    <ul>
-                      <li class='list-inline'><i class="fas fa-link"></i></li>
-                      <li class='list-inline'><i class="fas fa-paperclip"></i></li>
-                    </ul>
-                  </div>
-              </div>
+              <h3 class='form-title'>Patient's complain</h3>
+                <div class='d-flex align-items-center' style="width: 90%; margin-bottom: 20px;">
+                  <div class='form-field'><%= consultation.patient_complain %></div>
+                  <ul>
+                    <li class='list-inline'><i class="fas fa-link"></i></li>
+                    <li class='list-inline'><i class="fas fa-paperclip"></i></li>
+                  </ul>
+                </div>
+                <h3 class='form-title'>Diagnostic</h3>
+                <div class='d-flex align-items-center' style="width: 90%; margin-bottom: 20px;">
+                  <div class='form-field'><%= consultation.diagnostic %></div>
+                  <ul>
+                    <li class='list-inline'><i class="fas fa-link"></i></li>
+                    <li class='list-inline'><i class="fas fa-paperclip"></i></li>
+                  </ul>
+                </div>
+                <h3 class='form-title'>Care plan</h3>
+                <div class='d-flex align-items-center' style="width: 90%; margin-bottom: 20px;">
+                  <div class='form-field'><%= consultation.care_plan %></div>
+                  <ul>
+                    <li class='list-inline'><i class="fas fa-link"></i></li>
+                    <li class='list-inline'><i class="fas fa-paperclip"></i></li>
+                  </ul>
+                </div>
+                <h3 class='form-title'>Prescription & information for the patients</h3>
+                <div class='d-flex align-items-center' style="width: 90%">
+                  <div class='form-field'><%= consultation.prescription %></div>
+                  <ul>
+                    <li class='list-inline'><i class="fas fa-link"></i></li>
+                    <li class='list-inline'><i class="fas fa-paperclip"></i></li>
+                  </ul>
+                </div>
             </div>
         <% end %>
       </div>
