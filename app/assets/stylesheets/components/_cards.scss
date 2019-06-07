@@ -28,18 +28,28 @@ a:hover {
   width: 82vw;
 }
 
-.consultation-id-container {
-  display: flex;
-  flex-direction: column;
-  width: 110%;
-}
-
 .card-container {
 padding-left: 60px;
 padding-top: 50px;
 margin-bottom: 20px;
 background-color: white;
 box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.card-container-edit {
+padding-left: 60px;
+padding-top: 50px;
+margin-bottom: 20px;
+margin: 0px 50px;
+background-color: white;
+box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.mail_contener {
+  background-color: white;
+  box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.2);
+  padding: 50px;
+  margin: 20px;
 }
 
 .card-left {

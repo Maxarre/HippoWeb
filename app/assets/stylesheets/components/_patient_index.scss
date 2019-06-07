@@ -83,6 +83,22 @@
   }
 }
 
+.category-index-info {
+  text-align: center;
+  margin: 20px 0px;
+  line-height: 1em;
+  height: 70px;
+  overflow: auto;
+  p {
+    margin-bottom: 0px;
+    font-weight: 8px;
+    padding-left: 10px;
+  }
+  &::-webkit-scrollbar {
+      width: 1em;
+  }
+}
+
 .border-right {
   border-right: 1px solid lightgrey;
 }
@@ -101,3 +117,15 @@
   width: fit-content;
   line-height: 1;
 }
+
+.show-link {
+  a {
+  text-decoration: none;
+  color: #0E0000;
+  }
+ a:hover {
+  text-decoration: none;
+  color: #109CF1;
+  }
+}
+
