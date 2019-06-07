@@ -52,14 +52,14 @@
         <div class="dashboard_index">
           <div class="d-flex justify-content-between">
             <h5>Filter: <a href=""> All</a></h5>
-            <%= link_to "Nouveau Follow-up", edit_patient_consultation_path(@patient), class:"follow-up" %>
+            <%= link_to "Edit Follow-up", edit_patient_consultation_path(@patient), class:"follow-up" %>
           </div>
         </div>
          <div class="consultation-index">
           <% @patient.consultations.each do |consultation| %>
               <div class="consultation-card card-container">
                 <div class="d-flex justify-content-between">
-                <h2>Past consultation: <%= consultation.start_time.time.hour %>h<%= consultation.start_time.time.hour %></h2><h2><%= consultation.start_time.to_date %></h2>
+                <h2>Past consultation: <%= consultation.start_time.strftime(" %l: %M %p") %></h2><h2><%= consultation.start_time.strftime("%A, %b %d") %></h2>
                 </div>
                 <p style="margin: 20px;" class="consultation-type <%= 'lightbluebutton' if consultation.consultation_type == 'First meeting' %> <%= 'bluebutton' if consultation.consultation_type == 'Operation' %> <%= 'yellowbutton' if consultation.consultation_type == 'Consultation' %>"><%= consultation.consultation_type %></p>
                 <div class="consultation-id-container" style="margin: 20px;">
