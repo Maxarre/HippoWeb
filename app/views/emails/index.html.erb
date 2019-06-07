@@ -37,7 +37,7 @@
       <div class=sticky>
         <div class="tabs card_free">
           <div class="d-flex justify-content-around">
-            <div class="tab d-flex"><i class="fas fa-bars" id="down"></i><p><%= link_to 'Follow-up', patient_path(@patient)%></p></div>
+            <div class="tab d-flex"><i class="fas fa-bars" id="down"></i><p class="show-link"><%= link_to 'Follow-up', patient_path(@patient)%></p></div>
             <div class="tab d-flex"><i class="far fa-clipboard" id="down"></i><p>Medical Record</p></div>
             <div class="tab d-flex"><i class="fas fa-pills" id="down"></i><p>Treatment</p></div>
             <div class="tab d-flex"><i class="far fa-envelope" id="down"></i><p>Email History</p></div>
@@ -70,3 +70,5 @@
     </div>
   </div>
 </div>
+
+
