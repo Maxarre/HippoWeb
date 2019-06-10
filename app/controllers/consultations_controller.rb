@@ -21,6 +21,7 @@ class ConsultationsController < ApplicationController
   def edit
     # @consultation = Consultation.find(params[:id])
     @consultation = Consultation.last
+    # @consultation = Consultation.order('id desc').offset(1).first --> for the last - 1
     @patient = Patient.find(params[:id])
     # @consultation = @patient.consultations.where("consultation.consultation-type", "pending").first
   end
@@ -28,6 +29,7 @@ class ConsultationsController < ApplicationController
   def update
     # @consultation = Consultation.find(params[:id])
     @consultation = Consultation.last
+    # @consultation = Consultation.order('id desc').offset(1).first --> for the last - 1
     @consultation.update(consultation_params)
     @consultation.patient = Patient.find(params[:patient_id])
     redirect_to new_consultation_email_path(params[:id])
