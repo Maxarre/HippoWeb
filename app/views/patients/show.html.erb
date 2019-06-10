@@ -6,22 +6,22 @@
       <div class="mail_link"><a href=""><i class="far fa-envelope"></i></a></div>
     </div>
     <div class="patient_detailed_info">
-      <header>First Name</header>
-      <p><%= @patient.first_name  %></p>
-      <header>Last Name</header>
-      <p><%= @patient.last_name  %></p>
-      <header>Gender</header>
-      <p><%= @patient.gender  %></p>
-      <header>Address</header>
+      <h3>First Name</h3>
+      <h5><%= @patient.first_name  %></h5>
+      <h3>Last Name</h3>
+      <h5><%= @patient.last_name  %></h5>
+      <h3>Gender</h3>
+      <h5><%= @patient.gender  %></h5>
+      <h3>Address</h3>
       <div class="patient_address">
-      <p><%= @patient.address  %></p>
-      <p><%= @patient.city  %></p>
-      <p><%= @patient.zipcode  %></p>
+      <h5><%= @patient.address  %></h5>
+      <h5><%= @patient.city  %></h5>
+      <h5><%= @patient.zipcode  %></h5>
       </div>
-      <header>Email</header>
-      <p><%= @patient.email  %></p>
-      <header>Phone</header>
-      <p><%= @patient.phone  %></p>
+      <h3>Email</h3>
+      <h5><%= @patient.email  %></h5>
+      <h3>Phone</h3>
+      <h5><%= @patient.phone  %></h5>
     </div>
   </div>
   <div class="patient_index" style="margin-right: 10px;">
@@ -48,7 +48,7 @@
             </%></div></div>
             <div class="card_free display-patient-info">
               <div class="d-flex justify-content-between">
-                <div><h4 class="consultation-type-text <%= 'lightblue-text color-text' if consultation.consultation_type == 'First meeting' %> <%= 'blue-text color-text' if consultation.consultation_type == 'Operation' %> <%= 'yellow-text color-text' if consultation.consultation_type == 'Consultation' %>"><%= consultation.consultation_type %></h4></div>
+                <div><h2 class="consultation-type-text <%= 'lightblue-text color-text' if consultation.consultation_type == 'First meeting' %> <%= 'blue-text color-text' if consultation.consultation_type == 'Operation' %> <%= 'yellow-text color-text' if consultation.consultation_type == 'Consultation' %>"><%= consultation.consultation_type %></h2></div>
                 <div><h4 class="consultation-type-text <%= 'lightblue color-button' if consultation.consultation_type == 'First meeting' %> <%= 'blue color-button' if consultation.consultation_type == 'Operation' %> <%= 'yellow color-button' if consultation.consultation_type == 'Consultation' %>">Email Type</h4></div>
               </div>
               <div class="d-flex tag consultation-type-text lightblue-text color-text"><p>Tag</p><p>Tag</p><p>Tag</p></div>
@@ -62,18 +62,18 @@
             </%></div></div>
             <div class="card_free display-patient-info">
               <div class="d-flex justify-content-between">
-                 <div><h4 class="consultation-type-text <%= 'lightblue-text color-text' if consultation.consultation_type == 'First meeting' %> <%= 'blue-text color-text' if consultation.consultation_type == 'Operation' %> <%= 'yellow-text color-text' if consultation.consultation_type == 'Consultation' %>"><%= consultation.consultation_type %></h4></div>
+                 <div><h2 class="consultation-type-text <%= 'lightblue-text color-text' if consultation.consultation_type == 'First meeting' %> <%= 'blue-text color-text' if consultation.consultation_type == 'Operation' %> <%= 'yellow-text color-text' if consultation.consultation_type == 'Consultation' %>"><%= consultation.consultation_type %></h2></div>
                 <div><h4 class="consultation-type-text <%= 'lightblue color-button' if consultation.consultation_type == 'First meeting' %> <%= 'blue color-button' if consultation.consultation_type == 'Operation' %> <%= 'yellow color-button' if consultation.consultation_type == 'Consultation' %>">Email Type</h4></div>
               </div>
               <div class="d-flex tag consultation-type-text lightblue-text color-text"><p>Tag</p><p>Tag</p><p>Tag</p></div>
-              <h5><strong>Patient's complain</strong></h5>
+              <h4><strong>Patient's complain</strong></h4>
               <p><%= consultation.patient_complain %></p>
-              <h5><strong>Diagnostic</strong></h5>
+              <h4><strong>Diagnostic</strong></h4>
               <p><%= consultation.diagnostic %></p>
-              <h5><strong>Care plan</strong></h5>
+              <h4><strong>Care plan</strong></h4>
               <p><%= consultation.care_plan %></p>
-              <h5><strong>Prescription & information for the patients</strong></h5>
-              <%= consultation.prescription %></p>
+              <h4><strong>Prescription & information for the patients</strong></h4>
+              <p><%= consultation.prescription %></p>
               <i class="d-flex justify-content-center fas fa-chevron-up" style="padding-top: 10px; margin-bottom:-30px"></i>
           </div>
         </div>

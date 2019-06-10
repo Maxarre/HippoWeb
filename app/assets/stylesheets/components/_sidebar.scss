@@ -19,10 +19,6 @@
     color: #109CF1;
     padding-top: 20px;
   };
-  h5 {
-    font-size: 15px;
-    color: #7D7683;
-  };
   li {
     padding: 10px 0;
   };
@@ -54,10 +50,22 @@
 
 .position-doc-info {
   padding: 0 20px;
+  padding-top: 5px;
 }
 
 .position-doc-info-card {
   padding-top: 20px;
   padding: 0 20px;
   height: 80px;
+}
+
+.active {
+  text-decoration: none;
+  font-weight: bold;
+  color: #109CF1;
+}
+
+.erase:hover {
+  text-decoration: none;
+  opacity: 0.7;
 }

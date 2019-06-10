@@ -6,7 +6,7 @@
 </div>
 
 <div class="container-index">
-  <div style="width: 77vw">
+  <div>
     <div class="title d-flex border-bottom card_free" style="margin-bottom: 10px">
       <div class="category-index border-right" style="width: 15vw">
         <h5>Name</h5>
@@ -31,23 +31,23 @@
       <% @patient.each do |patient| %>
         <div class="content link d-flex border-bottom" style="padding-left: 10px;">
           <div class="d-flex category-index-info" style="width: 15vw;">
-            <p><%= "#{patient.first_name} #{patient.last_name}" %></p>
+            <h5><%= "#{patient.first_name} #{patient.last_name}" %></h5>
           </div>
           <div class="d-flex category-index-info" style="width: 18vw;">
-            <p><%= patient.email %></p>
+            <h5><%= patient.email %></h5>
           </div>
           <div class="d-flex category-index-info" style="width: 8vw;">
-            <p><%= patient.gender %></p>
+            <h5><%= patient.gender %></h5>
           </div>
           <div class="d-flex category-index-info" style="width: 9vw;">
             <% unless patient.consultations.empty? %>
-              <p><%= patient.consultations.last.consultation_type %></p>
+              <h5><%= patient.consultations.last.consultation_type %></h5>
             <% end %>
             <%#= @consultations.find_by(patient_id: patient.id).consultation_type %>
 
           </div>
           <div class="d-flex category-index-info" style="width: 11vw;">
-            <p><%= patient.job_title %></p>
+            <h5><%= patient.job_title %></h5>
           </div>
           <div class="d-flex category-index-info" style="width: 16vw">
 
