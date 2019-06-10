@@ -1,52 +1,38 @@
-<div style="margin-top: 15px;">
-  <div class="back-to-dashboard" style="max-width: 235px;">
-    <%= link_to dashboard_path, class:"erase d-flex" do %>
-      <i class="fas fa-chevron-left" id="down"></i>
-      <p>Back to dashboard</p>
-    <% end  %>
-  </div>
 
-  <div class="d-flex justify-content-around">
-    <div class="card_free patient_description text-responsivity-patient-general">
-      <div class="patient_general_info">
-        <h2><%= @patient.first_name  %> <%= @patient.last_name  %></h2>
-        <h5><%= @patient.date_of_birth.strftime("%m/%d/%Y") %></h5>
-        <div class="mail_link"><a href=""><i class="far fa-envelope"></i></a></div>
-      </div>
-      <div class="patient_detailed_info">
-        <header>First Name</header>
-        <p><%= @patient.first_name  %></p>
-        <header>Last Name</header>
-        <p><%= @patient.last_name  %></p>
-        <header>Gender</header>
-        <p><%= @patient.gender  %></p>
-        <header>Address</header>
-        <div class="patient_address">
-        <p><%= @patient.address  %></p>
-        <p><%= @patient.city  %></p>
-        <p><%= @patient.zipcode  %></p>
-        </div>
-        <header>Email</header>
-        <p><%= @patient.email  %></p>
-        <header>Phone</header>
-        <p><%= @patient.phone  %></p>
-      </div>
+<div class="d-flex justify-content-between">
+  <div class="card_free patient_description text-responsivity-patient-general" id="patient-color">
+    <div class="patient_general_info">
+      <h2><%= @patient.first_name  %> <%= @patient.last_name  %></h2>
+      <h5><%= @patient.date_of_birth.strftime("%m/%d/%Y") %></h5>
+      <div class="mail_link"><a href=""><i class="far fa-envelope"></i></a></div>
     </div>
-    <div class="patient_index">
-      <div class=sticky>
-        <div class="tabs card_free">
-          <div class="d-flex justify-content-around">
-            <div class="tab d-flex"><i class="fas fa-bars" id="down"></i><p>Follow-up</p></div>
-            <div class="tab d-flex"><i class="far fa-clipboard" id="down"></i><p>Medical Record</p></div>
-            <div class="tab d-flex"><i class="fas fa-pills" id="down"></i><p>Treatment</p></div>
-            <div class="tab d-flex"><i class="far fa-envelope" id="down"></i><p class="show-link"><%= link_to 'Email history', patient_emails_path(@patient) %></p></div>
-          </div>
-          <div class="d-flex">
-            <div class="full"></div>
-            <div class="empty"></div>
-            <div class="empty"></div>
-            <div class="empty"></div>
-          </div>
+    <div class="patient_detailed_info">
+      <header>First Name</header>
+      <p><%= @patient.first_name  %></p>
+      <header>Last Name</header>
+      <p><%= @patient.last_name  %></p>
+      <header>Gender</header>
+      <p><%= @patient.gender  %></p>
+      <header>Address</header>
+      <div class="patient_address">
+      <p><%= @patient.address  %></p>
+      <p><%= @patient.city  %></p>
+      <p><%= @patient.zipcode  %></p>
+      </div>
+      <header>Email</header>
+      <p><%= @patient.email  %></p>
+      <header>Phone</header>
+      <p><%= @patient.phone  %></p>
+    </div>
+  </div>
+  <div class="patient_index" style="margin-right: 10px;">
+    <div>
+      <div class="tabs">
+        <div class="d-flex justify-content-around">
+          <div class="tab d-flex"><i class="fas fa-bars" id="down"></i><p>Follow-up</p></div>
+          <div class="tab d-flex"><i class="far fa-clipboard" id="down"></i><p>Medical Record</p></div>
+          <div class="tab d-flex"><i class="fas fa-pills" id="down"></i><p>Treatment</p></div>
+          <div class="tab d-flex"><i class="far fa-envelope" id="down"></i><p class="show-link"><%= link_to 'Email history', patient_emails_path(@patient) %></p></div>
         </div>
         <div class="d-flex">
           <div class="full"></div>
@@ -55,54 +41,63 @@
           <div class="empty"></div>
         </div>
       </div>
+
+      <div class="d-flex">
+        <div class="full"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
       <div class="dashboard_index">
         <div class="d-flex justify-content-between" style="margin-bottom: 20px;">
           <h5>Filter: <a href=""> All</a></h5>
           <%= link_to "New Follow-up", edit_patient_consultation_path(@patient), class:"follow-up" %>
         </div>
       </div>
-       <div class="consultation-index">
-        <% @patient.consultations.where("start_time < ?", Time.now).each do |consultation| %>
-            <div class="consultation-card card-container">
-              <div class="d-flex justify-content-between">
-              <h2>Past consultation: <%= consultation.start_time.strftime(" %l: %M %p") %></h2><h2 style="padding-right: 60px;"><%= consultation.start_time.strftime("%A, %b %d") %></h2>
-              </div>
-              <p style="margin: 20px;" class="consultation-type <%= 'lightbluebutton' if consultation.consultation_type == 'First meeting' %> <%= 'bluebutton' if consultation.consultation_type == 'Operation' %> <%= 'yellowbutton' if consultation.consultation_type == 'Consultation' %>"><%= consultation.consultation_type %></p>
-              <h3 class='form-title'>Patient's complain</h3>
-                <div class='d-flex align-items-center' style="width: 90%; margin-bottom: 20px;">
-                  <div class='form-field'><%= consultation.patient_complain %></div>
-                  <ul>
-                    <li class='list-inline'><i class="fas fa-link"></i></li>
-                    <li class='list-inline'><i class="fas fa-paperclip"></i></li>
-                  </ul>
-                </div>
-                <h3 class='form-title'>Diagnostic</h3>
-                <div class='d-flex align-items-center' style="width: 90%; margin-bottom: 20px;">
-                  <div class='form-field'><%= consultation.diagnostic %></div>
-                  <ul>
-                    <li class='list-inline'><i class="fas fa-link"></i></li>
-                    <li class='list-inline'><i class="fas fa-paperclip"></i></li>
-                  </ul>
-                </div>
-                <h3 class='form-title'>Care plan</h3>
-                <div class='d-flex align-items-center' style="width: 90%; margin-bottom: 20px;">
-                  <div class='form-field'><%= consultation.care_plan %></div>
-                  <ul>
-                    <li class='list-inline'><i class="fas fa-link"></i></li>
-                    <li class='list-inline'><i class="fas fa-paperclip"></i></li>
-                  </ul>
-                </div>
-                <h3 class='form-title'>Prescription & information for the patients</h3>
-                <div class='d-flex align-items-center' style="width: 90%">
-                  <div class='form-field'><%= consultation.prescription %></div>
-                  <ul>
-                    <li class='list-inline'><i class="fas fa-link"></i></li>
-                    <li class='list-inline'><i class="fas fa-paperclip"></i></li>
-                  </ul>
-                </div>
-            </div>
-        <% end %>
+    </div>
+    <div class="dashboard_index">
+      <div class="d-flex justify-content-between" style="margin-bottom: 20px;">
+        <h5>Filter: <a href=""> All</a></h5>
+        <%= link_to "Edit Follow-up", edit_patient_consultation_path(@patient), class:"follow-up" %>
       </div>
+    </div>
+     <div class="consultation-index consultation-index-responsive">
+      <% @patient.consultations.where("start_time < ?", Time.now).each do |consultation| %>
+          <div class="consultation-card card-container">
+            <div class="d-flex justify-content-between">
+            <h4 style="margin-bottom: 20px;">Past consultation: <%= consultation.start_time.strftime(" %l: %M %p") %></h4><h4 style="padding-right: 60px;"><%= consultation.start_time.strftime("%A, %b %d") %></h4>
+            </div>
+            <p class="consultation-type <%= 'lightbluebutton' if consultation.consultation_type == 'First meeting' %> <%= 'bluebutton' if consultation.consultation_type == 'Operation' %> <%= 'yellowbutton' if consultation.consultation_type == 'Consultation' %>"><%= consultation.consultation_type %></p>
+            <h3 class='form-title'>Patient's complain</h3>
+              <div class='d-flex align-items-center' style="width: 90%; margin-bottom: 20px;">
+                <div class='form-field'><p><%= consultation.patient_complain %></p></div>
+                <ul>
+                  <li class='list-inline'><i class="fas fa-paperclip"></i></li>
+                </ul>
+              </div>
+              <h3 class='form-title'>Diagnostic</h3>
+              <div class='d-flex align-items-center' style="width: 90%; margin-bottom: 20px;">
+                <div class='form-field'><p><%= consultation.diagnostic %></p></div>
+                <ul>
+                  <li class='list-inline'><i class="fas fa-paperclip"></i></li>
+                </ul>
+              </div>
+              <h3 class='form-title'>Care plan</h3>
+              <div class='d-flex align-items-center' style="width: 90%; margin-bottom: 20px;">
+                <div class='form-field'><p><%= consultation.care_plan %></p></div>
+                <ul>
+                  <li class='list-inline'><i class="fas fa-paperclip"></i></li>
+                </ul>
+              </div>
+              <h3 class='form-title'>Prescription & information for the patients</h3>
+              <div class='d-flex align-items-center' style="width: 90%">
+                <div class='form-field'><p><%= consultation.prescription %></p></div>
+                <ul>
+                  <li class='list-inline'><i class="fas fa-paperclip"></i></li>
+                </ul>
+              </div>
+          </div>
+      <% end %>
     </div>
   </div>
 </div>
+
