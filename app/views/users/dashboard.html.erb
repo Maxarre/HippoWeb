@@ -1,7 +1,6 @@
 <div class="d-flex justify-content-between interface-position">
   <h5>Filter: <a href=""> All</a></h5>
   <div>
-    <%= link_to "+ Add Patient", new_patient_path, class: "btn btn-flat-add-patient" %>
     <%= link_to "+ Add Meeting", new_consultation_path, class: "btn btn-flat-add-meeting button-position" %>
   </div>
 </div>
@@ -22,9 +21,8 @@
       <div class="consultation-each">
           <% day_consultations.each do |consultation| %>
             <div class="meeting-card link <%= 'lightblueborder' if consultation.consultation_type == 'First meeting' %> <%= 'blueborder' if consultation.consultation_type == 'Operation' %> <%= 'yellowborder' if consultation.consultation_type == 'Consultation' %>">
-              <h3><%= consultation.consultation_type %></h3>
+              <div class="d-flex justify-content-between"><h3><%= consultation.consultation_type %></h3><h4><%= consultation.patient.first_name%> <%= consultation.patient.last_name  %></h4></div>
               <p>Consultation time: <strong><%= consultation.start_time.strftime("%H:%M") %> - <%= consultation.end_time.strftime("%H:%M") %></strong></p>
-              <ul><li class='list-inline'><%= consultation.patient.first_name%> <%= consultation.patient.last_name  %></li></ul>
               <%= link_to '', patient_path(consultation.patient) %>
             </div>
           <% end %>
