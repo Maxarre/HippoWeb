@@ -20,7 +20,7 @@
         <h5 style="font-weight: bold"> <%= day_consultations.first.start_time.strftime("%A, %b %d") %></h5>
     <% end %>
       <div class="consultation-each">
-          <% day_consultations.each do |consultation| %>
+          <% day_consultations.sort_by(&:start_time).each do |consultation| %>
             <div class="meeting-card link <%= 'lightblueborder' if consultation.consultation_type == 'First meeting' %> <%= 'blueborder' if consultation.consultation_type == 'Operation' %> <%= 'yellowborder' if consultation.consultation_type == 'Consultation' %>">
               <h3><%= consultation.consultation_type %></h3>
               <p>Consultation time: <strong><%= consultation.start_time.strftime("%H:%M") %> - <%= consultation.end_time.strftime("%H:%M") %></strong></p>
