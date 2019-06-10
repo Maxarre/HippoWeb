@@ -29,9 +29,10 @@ Rails.application.routes.draw do
   resources :consultations, only: [:create, :index, :show, :new]
   resources :patients, only: [:create, :new, :edit, :update, :show, :index] do
     resources :consultations, only: [:edit, :update]
-    resources :emails, only: [:show, :index]
+    resources :emails, only: [:show]
   end
   resources :consultations, only: [:new, :create]
+  resources :emails, only: [:index]
 
   resources :consultations, only: [:show, :index] do
     resources :emails, only: [:new, :create, :index]

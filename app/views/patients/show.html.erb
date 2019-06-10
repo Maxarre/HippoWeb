@@ -1,4 +1,3 @@
-
 <div class="d-flex justify-content-between">
   <div class="card_free patient_description text-responsivity-patient-general" id="patient-color">
     <div class="patient_general_info">
@@ -32,7 +31,7 @@
           <div class="tab d-flex"><i class="fas fa-bars" id="down"></i><p>Follow-up</p></div>
           <div class="tab d-flex"><i class="far fa-clipboard" id="down"></i><p>Medical Record</p></div>
           <div class="tab d-flex"><i class="fas fa-pills" id="down"></i><p>Treatment</p></div>
-          <div class="tab d-flex"><i class="far fa-envelope" id="down"></i><p class="show-link"><%= link_to 'Email history', patient_emails_path(@patient) %></p></div>
+          <div class="tab d-flex"><i class="far fa-envelope" id="down"></i><p class="show-link"><%= link_to 'Email history', patient_email_path(@patient) %></p></div>
         </div>
       </div>
     <div class="dashboard_index">
