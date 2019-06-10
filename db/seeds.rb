@@ -39,12 +39,12 @@ end
 type_array = ["First meeting", "Operation", "Consultation"]
 status_array = ["Upcoming", "Past"]
 i = 1
-80.times do
+40.times do
   consultation = Consultation.new(
     patient_id: i,
     status: status_array.sample,
     start_time: Faker::Time.forward(5, :morning),
-    end_time: Faker::Time.forward(5, :evening),
+    end_time: Time.new((:start_time) + 45 * 60),
     consultation_type: type_array.sample,
     required_documents: Faker::Lorem.paragraph_by_chars,
     patient_complain: Faker::Lorem.paragraph_by_chars,
@@ -55,6 +55,26 @@ i = 1
     patient_note_attachment: Faker::Books::Dune.quote,
     )
     i += 1
+  consultation.save!
+end
+
+x = 41
+40.times do
+  consultation = Consultation.new(
+    patient_id: i,
+    status: status_array.sample,
+    start_time: Faker::Time.forward(5, :afternoon),
+    end_time: Time.new((:start_time) + 45 * 60),
+    consultation_type: type_array.sample,
+    required_documents: Faker::Lorem.paragraph_by_chars,
+    patient_complain: Faker::Lorem.paragraph_by_chars,
+    diagnostic: Faker::Lorem.paragraph_by_chars,
+    care_plan: Faker::Lorem.paragraph_by_chars,
+    prescription: Faker::Lorem.paragraph_by_chars,
+    note_patient: Faker::Lorem.paragraph_by_chars,
+    patient_note_attachment: Faker::Books::Dune.quote,
+    )
+    x += 1
   consultation.save!
 end
 
