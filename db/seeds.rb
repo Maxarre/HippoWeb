@@ -33,8 +33,6 @@ User.create(email: 'doctor@cox.com', password: '424242', first_name: 'Perry', la
   patient.save!
 end
 
-p '20 patients created'
-
 # Consultation.create(patient_id: 1, start_time: '14h30',
 #   end_time: '15h30', consultation_type: 'Operation')
 
