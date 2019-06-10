@@ -1,9 +1,22 @@
 <div style="margin-top: 15px;">
   <div class="consultation-card card-container-edit">
     <div class="d-flex justify-content-between">
-    <h2><%= @consultation.start_time.strftime("%A, %b %d") %> </h2><h2 style="padding-right: 60px;"> <%= @consultation.start_time.strftime(" %l: %M %p") %> - <%= @consultation.end_time.strftime(" %l: %M %p") %></h2>
+    <h2>New follow-up (<%= @consultation.start_time.strftime("%A, %b %d") %>)</h2><h2 style="padding-right: 60px;"></h2>
     </div>
+
+
+
+
     <%= simple_form_for [@patient, @consultation] do |f| %>
+      <div class="consultation-taggs">
+       <select class="js-example-basic-multiple" name="states[]" multiple="multiple">
+        <% @all_tagg_list.each do |tagg| %>
+          <option value="<%= tagg %>"><%= tagg %></option>
+        <% end %>
+      </select>
+       <!-- <span><%#= render 'shared/form_tagg_new' %><span> -->
+      </div>
+
       <div class='d-flex align-items-center' style="width: 95%; margin-bottom: 20px;">
         <%= f.input :patient_complain, placeholder: 'Add notes for the complains', wrapper_html: { class: 'input-card' }, input_html: {style: 'height:10vh;'} %>
         <ul>
@@ -32,8 +45,14 @@
           <li class='list-inline'><i class="fas fa-paperclip"></i></li>
         </ul>
       </div>
+      <div class='d-flex align-items-center' style="width: 95%">
+        <%= f.input :note_patient, placeholder: 'Add notes for the patient', wrapper_html: { class: 'input-card' }, input_html: {style: 'height:10vh;'} %>
+        <ul>
+          <li class='list-inline'><i style="margin-top: 2rem;" class="fas fa-link"></i></li>
+          <li class='list-inline'><i class="fas fa-paperclip"></i></li>
+        </ul>
+      </div>
       <div class="d-flex justify-content-end"> <%= f.button :submit, class:"btn btn-flat-add-consultation",data: { disable_with: false }, value:"Next" %> </div>
     <% end %>
   </div>
 </div>
-

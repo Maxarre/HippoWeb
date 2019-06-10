@@ -9,3 +9,5 @@ initSelect2();
 import $ from 'jquery';
 
 window.$ = $
+
+$('.js-example-basic-multiple').select2()
