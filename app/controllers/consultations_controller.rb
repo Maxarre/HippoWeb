@@ -19,13 +19,15 @@ class ConsultationsController < ApplicationController
   end
 
   def edit
-    @consultation = Consultation.find(params[:id])
+    # @consultation = Consultation.find(params[:id])
+    @consultation = Consultation.last
     @patient = Patient.find(params[:id])
     # @consultation = @patient.consultations.where("consultation.consultation-type", "pending").first
   end
 
   def update
-    @consultation = Consultation.find(params[:id])
+    # @consultation = Consultation.find(params[:id])
+    @consultation = Consultation.last
     @consultation.update(consultation_params)
     @consultation.patient = Patient.find(params[:patient_id])
     redirect_to new_consultation_email_path(params[:id])
