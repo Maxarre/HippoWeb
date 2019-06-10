@@ -1,8 +1,20 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-      <div class="form-placement">
-        <h2>Log in</h2>
+<div class="home">
+  <div class="home-image d-flex">
+    <div>
+      <h1>hippoweb</h1>
+      <h3>For easier medical follow-ups</h3>
+      <div class="horizontal-line"></div>
+      <ul>
+        <li class="list-inline"><i class="fas fa-file"></i> Dematerialize your medical records</li>
+        <li class="list-inline"><i class="fas fa-hourglass-half"></i> Save time for all your medical reports</li>
+        <li class="list-inline"><i class="fas fa-envelope-open"></i> Improve the way you communicate with your patients</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="home-signup">
+    <div class="form-placement">
+        <h2>Enter your informations bellow</h2>
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-inputs">
             <%= f.input :email, required: false, autofocus: true, placeholder: "bob@gmail.com" %>
@@ -15,6 +27,5 @@
           <%= render "devise/shared/links" %>
         <% end %>
       </div>
-    </div>
   </div>
 </div>
