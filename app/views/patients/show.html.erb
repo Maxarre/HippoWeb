@@ -4,7 +4,7 @@
         <div id="ajaxmain">
           <div class="dashboard_index">
             <h1 style="font-size: 4vh; margin-bottom: 25px;">Follow up History</h1>
-            <div class="d-flex justify-content-between">
+            <div class="d-flex align-items-center justify-content-between">
               <div class="searchbar-deco">
                 <div class="searchbar" style="background-color: transparent;">
                 <%= form_tag patient_path, id: "search_form", method: :get do %>
@@ -17,10 +17,10 @@
                 </div>
                 <script>
                   window.onload = function() {
-                    <% if @selected_patient %>
+                    <%# if @selected_patient %>
                       $('.select2').val("<%= @selected_patient %>")
                       $('.select2').trigger('change')
-                    <% end %>
+                    <%# end %>
                     $('.select2').on('select2:select', function (e) {
                       console.log("hola")
                       console.log(e.params);
