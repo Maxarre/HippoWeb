@@ -39,25 +39,22 @@ class ConsultationsController < ApplicationController
 
   def add_tags
     @consultation = Consultation.find(params[:id])
+    @patient = @consultation.patient
     @consultation.tag_list
     params[:consultation][:tag_list].split(',').each do |t|
       @consultation.tag_list.add(t)
       @consultation.save
     end
     respond_to do |format|
-        format.html { redirect_to edit_patient_consultation_path(params[:id]) }
-        format.js  # <-- will render `app/views/reviews/create.js.erb`
-      end
+      format.html { redirect_to edit_patient_consultation_path(params[:id]) }
+      format.js
+    end
   end
 
   def remove_tags
     @consultation = Consultation.find(params[:id])
-    @consultation.tag_list.remove(tag)
+    @consultation.tag_list.remove(params[:tag_name])
     @consultation.save
-    respond_to do |format|
-        format.html { redirect_to edit_patient_consultation_path(params[:id]) }
-        format.js  # <-- will render `app/views/reviews/create.js.erb`
-      end
   end
 
   def destroy

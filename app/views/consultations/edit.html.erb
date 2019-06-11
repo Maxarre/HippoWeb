@@ -1,4 +1,6 @@
 <div style="margin-top: 15px;">
+  <div id="patient_id" data-target="<%= @patient.id %>"></div>
+  <div id="consultation_id" data-target="<%= @consultation.id %>"></div>
   <div class="consultation-card card-container-edit consultation-index-responsive">
     <div class="d-flex justify-content-between">
     <h2>New follow-up (<%= @consultation.start_time.strftime("%A, %b %d") %>)</h2><h2 style="padding-right: 60px;"></h2>
@@ -10,7 +12,7 @@
 
     <%= simple_form_for [@patient, @consultation] do |f| %>
       <div id="consultation-taggs">
-         <%= render 'shared/tagglist', consultation: @consultation %>
+         <%= render 'shared/tagglist', consultation: @consultation, patient: @patient %>
       </div>
 
       <div class='d-flex align-items-center' style="width: 95%; margin-bottom: 20px;">
