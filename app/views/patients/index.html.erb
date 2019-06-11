@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-between interface-position">
-  <div class="searchbar" style="background-color: transparent;">
+  <div class="searchbar" style="background-color: transparent; height: 50px;">
   <%= form_tag patients_path, id: "search_form", method: :get do %>
     <%= select_tag "patient", options_from_collection_for_select(
       Patient.all, :id, :full_name), class: 'select2', id: "select_a_patient" %>

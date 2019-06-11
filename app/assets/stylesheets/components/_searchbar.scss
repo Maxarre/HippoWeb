@@ -1,10 +1,4 @@
 .searchbar {
-  position: sticky;
-  top: 0px;
-  display: flex;
-  align-item: center;
-  background-color: #FAFAFA;
-  height: 50px;
   margin: auto 0px;
   p {
     font-size: 15px;
@@ -32,4 +26,7 @@
   }
 }
 
-
+.searchbar-deco {
+  padding: 10px;
+  background-color: #109CF1;
+}
