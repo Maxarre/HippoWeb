@@ -19,35 +19,13 @@
     <%= link_to emails_path, class:"erase d-flex" do %>
       <li class="list-inline <%= "active" if params[:action] == "index" && params[:controller] == "emails" %>"><i class="far fa-envelope"></i> Emails</li>
     <% end  %>
-    <div class="d-flex" style="padding-top: 30px;">
-      <div class="searchbar" style="background-color: white;">
-      <%= form_tag patients_path, id: "search_form", method: :get do %>
-        <%= select_tag "patient", options_from_collection_for_select(
-          Patient.all, :id, :full_name), class: 'select2', id: "select_a_patient" %>
-        </label>
-        <%= link_to patients_path do %>
-        <i style="padding-left: 5px" class="fas fa-times"></i>
-        <% end %>
-      <% end %>
-    </div>
-    <script>
-      window.onload = function() {
-        <% if @selected_patient %>
-          $('.select2').val("<%= @selected_patient %>")
-          $('.select2').trigger('change')
-        <% end %>
-        $('.select2').on('select2:select', function (e) {
-          console.log("hola")
-          console.log(e.params);
-          var data = e.params.data;
-          document.getElementById("search_form").submit()
-        });
-      }
-    </script>
-  </div>
+
     <li class='hl list-inline'></li>
-    <%= link_to dashboard_path, class:"erase d-flex" do %>
-    <li class="settings list-inline"><i class="fas fa-cog"></i> Settings</li>
-  <% end  %>
+    <li class="nav-item dropdown settings" style="list-style: none">
+        <i class="settings list-inline fas fa-cog dropdown-toggle" id="navbarDropdown", data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span> Settings</span></i>
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+      </div>
+    </li>
   </ul>
 </div>
