@@ -35,17 +35,15 @@ end
 
 # Consultation.create(patient_id: 1, start_time: '14h30',
 #   end_time: '15h30', consultation_type: 'Operation')
-
+time_array = [8..20]
 type_array = ["First meeting", "Operation", "Consultation"]
 status_array = ["Upcoming", "Past"]
 i = 1
-40.times do
+8.times do
   consultation = Consultation.new(
     patient_id: i,
     status: status_array.sample,
-    start_time: Faker::Time.forward(5, :morning),
-    # end_time: Time.new((:start_time) + 45 * 60),
-    end_time: Faker::Time.forward(5, :evening),
+    start_time: time_array.pop,
     consultation_type: type_array.sample,
     required_documents: Faker::Lorem.paragraph_by_chars,
     patient_complain: Faker::Lorem.paragraph_by_chars,
@@ -58,28 +56,6 @@ i = 1
     i += 1
   consultation.save!
 end
-
-x = 41
-40.times do
-  consultation = Consultation.new(
-    patient_id: i,
-    status: status_array.sample,
-    start_time: Faker::Time.forward(5, :afternoon),
-    # end_time: Time.new((:start_time) + 45 * 60),
-    end_time: Faker::Time.forward(5, :evening),
-    consultation_type: type_array.sample,
-    required_documents: Faker::Lorem.paragraph_by_chars,
-    patient_complain: Faker::Lorem.paragraph_by_chars,
-    diagnostic: Faker::Lorem.paragraph_by_chars,
-    care_plan: Faker::Lorem.paragraph_by_chars,
-    prescription: Faker::Lorem.paragraph_by_chars,
-    note_patient: Faker::Lorem.paragraph_by_chars,
-    patient_note_attachment: Faker::Books::Dune.quote,
-    )
-    x += 1
-  consultation.save!
-end
-
 
 
 # 10.times do
