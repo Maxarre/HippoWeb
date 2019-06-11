@@ -8,6 +8,10 @@ const initSelect2 = () => {
         text: 'None Selected'
       },
   });
+  $(".js-example-tags").select2({
+    tags: true,
+    tokenSeparators: [' ']
+  });
 };
 
 export { initSelect2 };
