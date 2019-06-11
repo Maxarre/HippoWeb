@@ -48,7 +48,7 @@
   border-radius: 3px;
   line-height: 1.5s;
   padding: 15px;
-  width: 300px;
+  width: 15vw;
   transition: 0.3s ease;
   text-align: center;
 }
@@ -88,23 +88,47 @@
   border-left: solid #334D6E
 }
 
-.yellowbutton {
+.yellow {
   background-color: #109CF1;
-  border-radius: 15px;
-  padding: 5px 15px;
-  color: white;
 }
 
-.bluebutton {
+.blue {
   background-color: #F5BB5C;
+}
+
+.lightblue {
+  background-color: #334D6E;
+}
+
+.yellow-text {
+  color: #109CF1;
+}
+
+.blue-text {
+  color: #F5BB5C;
+}
+
+.lightblue-text {
+  color: #334D6E;
+}
+
+.color-button {
+  margin-top: -10px;
   border-radius: 15px;
-  padding: 10px 5px;
+  padding: 5px;
   color: white;
 }
 
-.lightbluebutton {
-  background-color: #334D6E;
-  border-radius: 15px;
-  padding: 10px 5px;
-  color: white;
+.color-text {
+  font-weight: bolder;
+}
+
+.color-button-square {
+
+}
+
+.log-in {
+  background-color: #109CF1;
+  border: #109CF1;
+  width: 15vh;
 }

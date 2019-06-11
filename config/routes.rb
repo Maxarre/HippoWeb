@@ -29,12 +29,13 @@ Rails.application.routes.draw do
   resources :consultations, only: [:create, :index, :show, :new]
   resources :patients, only: [:create, :new, :edit, :update, :show, :index] do
     resources :consultations, only: [:edit, :update]
-    resources :emails, only: [:show, :index]
+    resources :emails, only: [:show]
   end
+
   resources :consultations, only: [:new, :create] do
     patch :add_tags, on: :member
   end
-
+  
   resources :consultations, only: [:show, :index] do
     resources :emails, only: [:new, :create, :index]
   end

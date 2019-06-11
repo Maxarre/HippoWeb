@@ -1,46 +1,38 @@
 <div class="calendar-container">
-  <div style="margin-top: 15px;">
-    <div class="back-to-dashboard" style="max-width: 235px;">
-      <%= link_to dashboard_path, class:"erase d-flex" do %>
-        <i class="fas fa-chevron-left" id="down"></i>
-        <p>Back to dashboard</p>
-      <% end  %>
-    </div>
-    <div class="card_free general-padding-20" style="width: 72%; margin-left: 20px;">
-      <h3>New meeting</h3>
-        <div class="general-padding-20">
-          <%= simple_form_for @consultation do |f| %>
-          <div class="d-flex justify-content-between">
-            <%= f.input :consultation_type, collection: ["First meeting", "Operation", "Consultation"] %>
-          </div>
-          <div class="d-flex justify-content-between">
-            <div>
-              <div style="height: 120px">
-                <h4>Patient</h4>
-                <%= f.association :patient, label_method: lambda { |patient| "#{patient.first_name} #{patient.last_name}"} %>
-              </div>
-              <div>
-                <%= f.input :start_time, as: :string, required: false, input_html: {class: "meetpicker"}, placeholder: "Select Start" %>
-              </div>
+  <div class="card_free general-padding-20" style="width: 72%; margin-left: 20px;">
+    <h1>New meeting</h1>
+      <div class="general-padding-20">
+        <%= simple_form_for @consultation do |f| %>
+        <div class="d-flex justify-content-between">
+          <%= f.input :consultation_type, collection: ["First meeting", "Operation", "Consultation"] %>
+        </div>
+        <div class="d-flex justify-content-between">
+          <div>
+            <div style="height: 120px">
+              <h4>Patient</h4>
+              <%= f.association :patient, label_method: lambda { |patient| "#{patient.first_name} #{patient.last_name}"} %>
             </div>
             <div>
-              <div style="height: 120px">
-                <h4>Unregistered patient</h4>
-                <%= link_to "New patient", new_patient_path, class: "btn btn-outline-primary margin-right-50" %>
-              </div>
-              <div>
-                <%= f.input :end_time, as: :string, required: false, input_html: {class: "meetpicker"}, placeholder: "Select End" %>
-              </div>
+              <%= f.input :start_time, as: :string, required: false, input_html: {class: "meetpicker"}, placeholder: "Select Start" %>
             </div>
           </div>
-          <div class="d-flex justify-content-between">
-            <%= f.input :note_patient %>
-          </div>
-          <div class="d-flex justify-content-end">
-            <%= f.button :submit, "Add new meeting", class: "btn btn-primary margin-right-50" %>
+          <div>
+            <div style="height: 120px">
+              <h4>Unregistered patient</h4>
+              <%= link_to "New patient", new_patient_path, class: "btn btn-outline-primary margin-right-50" %>
+            </div>
+            <div>
+              <%= f.input :end_time, as: :string, required: false, input_html: {class: "meetpicker"}, placeholder: "Select End" %>
+            </div>
           </div>
         </div>
-      <% end %>
-    </div>
+        <div class="d-flex justify-content-between">
+          <%= f.input :note_patient %>
+        </div>
+        <div class="d-flex justify-content-end">
+          <%= f.button :submit, "Add new meeting", class: "btn btn-primary margin-right-50" %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>

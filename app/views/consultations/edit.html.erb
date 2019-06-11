@@ -1,5 +1,5 @@
 <div style="margin-top: 15px;">
-  <div class="consultation-card card-container-edit">
+  <div class="consultation-card card-container-edit consultation-index-responsive">
     <div class="d-flex justify-content-between">
     <h2>New follow-up (<%= @consultation.start_time.strftime("%A, %b %d") %>)</h2><h2 style="padding-right: 60px;"></h2>
     </div>
@@ -20,30 +20,26 @@
       </div>
 
       <div class='d-flex align-items-center' style="width: 95%; margin-bottom: 20px;">
-        <%= f.input :patient_complain, placeholder: 'Add notes for the complains', wrapper_html: { class: 'input-card' }, input_html: {style: 'height:10vh;'} %>
+        <%= f.input :patient_complain, placeholder: 'Add notes for the complains', wrapper_html: { class: 'input-card' }, input_html: {style: 'height:16vh;'} %>
         <ul>
-          <li class='list-inline'><i style="margin-top: 2rem;"class="fas fa-link"></i></li>
           <li class='list-inline'><i class="fas fa-paperclip"></i></li>
         </ul>
       </div>
       <div class='d-flex align-items-center' style="width: 95%; margin-bottom: 20px;">
-        <%= f.input :diagnostic, placeholder: 'Add notes for the diagnostic', wrapper_html: { class: 'input-card' }, input_html: {style: 'height:10vh;'} %>
+        <%= f.input :diagnostic, placeholder: 'Add notes for the diagnostic', wrapper_html: { class: 'input-card' }, input_html: {style: 'height:16vh;'} %>
         <ul>
-          <li class='list-inline'><i style="margin-top: 2rem;" class="fas fa-link"></i></li>
           <li class='list-inline'><i class="fas fa-paperclip"></i></li>
         </ul>
       </div>
       <div class='d-flex align-items-center' style="width: 95%; margin-bottom: 20px;">
-        <%= f.input :care_plan, placeholder: 'Add notes for the care plan', wrapper_html: { class: 'input-card' }, input_html: {style: 'height:10vh;'} %>
+        <%= f.input :care_plan, placeholder: 'Add notes for the care plan', wrapper_html: { class: 'input-card' }, input_html: {style: 'height:16vh;'} %>
         <ul>
-          <li class='list-inline'><i style="margin-top: 2rem;" class="fas fa-link"></i></li>
           <li class='list-inline'><i class="fas fa-paperclip"></i></li>
         </ul>
       </div>
       <div class='d-flex align-items-center' style="width: 95%">
-        <%= f.input :prescription, placeholder: 'Add prescription for the patient', wrapper_html: { class: 'input-card' }, input_html: {style: 'height:10vh;'} %>
+        <%= f.input :prescription, placeholder: 'Add prescription for the patient', wrapper_html: { class: 'input-card' }, input_html: {style: 'height:16vh;'} %>
         <ul>
-          <li class='list-inline'><i style="margin-top: 2rem;" class="fas fa-link"></i></li>
           <li class='list-inline'><i class="fas fa-paperclip"></i></li>
         </ul>
       </div>

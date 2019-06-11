@@ -1,11 +1,11 @@
 class EmailsController < ApplicationController
   def index
-    @patient = Patient.find(params[:patient_id])
     @emails = Email.all
   end
 
   def show
-    @email = Email.find(params[:id])
+    @patient = Patient.find(params[:patient_id])
+    @emails = Email.all
   end
 
   def new

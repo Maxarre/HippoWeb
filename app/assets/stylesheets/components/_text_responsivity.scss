@@ -1,23 +1,35 @@
-.text-responsivity-patient-info {
-  h5 {
-    font-size: 2.5vh;
-  }
+p {
+  font-size: 1.5vh;
+}
+
+h1 {
+  font-size: 3.2vh
+}
+
+h2, header {
+  font-size: 2.8vh
+}
+
+h3 {
+  font-size: 2.2vh
+}
+
+h4, a {
+  font-size: 2vh;
+}
+
+h5 {
+  font-size: 1.8vh;
+}
+
+.consultation-each {
   p {
-    font-size: 1.5vh
+    font-size: 2vh;
   }
 }
 
-.text-responsivity-patient-general {
-  h2{
-    font-size: 3vh;
-  }
-  h5{
-    font-size: 2vh;
-  }
-  header{
-    font-size: 2vh;
-  }
-  p{
-    font-size: 1.5vh;
+.settings {
+  i, span {
+    font-size: 2.2vh;
   }
 }

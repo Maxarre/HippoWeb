@@ -1,16 +1,18 @@
 .patient_description {
-  position: sticky;
-  top: 60px;
-  height: 87vh;
-  width: 25%;
+  height: 100vh;
+  width: 20%;
   padding-top: 20px;
   padding-left: 40px;
   padding-right: 40px;
+  position: sticky;
+  top: 0px;
 }
 
-.patient_general_info {
-  padding-top: 20px;
-  padding-bottom: 20px;
+#patient-color {
+  background-color: rgb(250, 250, 250);
+}
+
+.patient_general_info {;
   border-bottom: solid 1px #8F99A3;
   text-align: center;
   h2 {
@@ -20,9 +22,8 @@
 
 .patient_detailed_info {
   padding-top: 20px;
-  color: #8F99A3;
   line-height: 2;
-  header {
+  h3 {
     font-weight: bold;
   }
 }

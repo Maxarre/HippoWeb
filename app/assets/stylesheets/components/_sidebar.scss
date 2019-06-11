@@ -13,15 +13,11 @@
   min-width: 250px;
   .settings {
     position: absolute;
-    bottom: 20px;
+    bottom: 10px;
   };
   h2 {
     color: #109CF1;
     padding-top: 20px;
-  };
-  h5 {
-    font-size: 15px;
-    color: #7D7683;
   };
   li {
     padding: 10px 0;
@@ -38,7 +34,7 @@
     height: 1px !important;
     width: 18vw;
     position: absolute;
-    bottom: 75px;
+    bottom: 60px;
     left: 0px;
     padding: 0px;
   };
@@ -54,10 +50,35 @@
 
 .position-doc-info {
   padding: 0 20px;
+  padding-top: 5px;
 }
 
 .position-doc-info-card {
   padding-top: 20px;
   padding: 0 20px;
   height: 80px;
+}
+
+.active {
+  text-decoration: none;
+  font-weight: bold;
+  color: #109CF1;
+}
+
+.erase:hover {
+  text-decoration: none;
+  opacity: 0.7;
+}
+
+.navbar-lewagon {
+  justify-content: space-between;
+  background: white;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand i {
+  width: 40px;
 }

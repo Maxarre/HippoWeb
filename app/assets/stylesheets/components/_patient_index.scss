@@ -10,14 +10,13 @@
 }
 
 .patient_index{
-  width: 70%;
+  width: 78%;
 }
 
 .tab {
   width: 25%;
   text-align: center;
   p, i {
-    font-size: 20px;
     margin-top: 12px;
     margin-bottom: 12px;
   }
@@ -59,13 +58,11 @@
 }
 
 .dashboard_index {
-  margin-top: 30px;
-  margin-right: 30px;
-  margin-left: 30px;
+  margin-top: 20px;
 }
 
 .container-index {
-  margin-top: 50px;
+  margin-top: 10px;
   margin-left: 20px;
   margin-right: 20px;
 }
@@ -85,9 +82,9 @@
 
 .category-index-info {
   text-align: center;
-  margin: 20px 0px;
+  margin: 10px 0px;
   line-height: 1em;
-  height: 70px;
+  height: 50px;
   overflow: auto;
   p {
     margin-bottom: 0px;
@@ -116,6 +113,14 @@
 .consultation-type {
   width: fit-content;
   line-height: 1;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.consultation-type-text {
+  width: fit-content;
+  line-height: 1;
 }
 
 .show-link {
@@ -129,3 +134,23 @@
   }
 }
 
+.tag {
+  p {
+    padding-right: 20px;
+  }
+}
+
+.display-patient-info {
+  margin:20px 0px;
+  padding: 4vh;
+  width: 60vw;
+}
+
+.position_date {
+  border-bottom: solid 2px #C2CFE0;
+  width: 40px;
+  position: absolute;
+  right: -40px;
+  top: 40px;
+  margin: auto;
+}
