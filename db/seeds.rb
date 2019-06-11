@@ -39,11 +39,12 @@ time_array = [8..20]
 type_array = ["First meeting", "Operation", "Consultation"]
 status_array = ["Upcoming", "Past"]
 i = 1
-8.times do
+80.times do
   consultation = Consultation.new(
     patient_id: i,
     status: status_array.sample,
-    start_time: time_array.pop,
+    start_time: Faker::Time.forward(3, :morning),
+    end_time: Faker::Time.forward(3, :evening),
     consultation_type: type_array.sample,
     required_documents: Faker::Lorem.paragraph_by_chars,
     patient_complain: Faker::Lorem.paragraph_by_chars,
