@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 2019_06_07_085652) do
   create_table "consultations", force: :cascade do |t|
     t.bigint "patient_id"
     t.string "status"
-    t.date "meeting_date"
-    t.time "start_time"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.string "consultation_type"
     t.text "required_documents"
     t.text "patient_complain"
