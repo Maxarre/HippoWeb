@@ -34,7 +34,7 @@ Rails.application.routes.draw do
 
   resources :consultations, only: [:new, :create] do
     patch :add_tags, on: :member
-    patch "remove_tags/:tag_id", to:"consultations#remove_tags", as: "remove_tags", on: :member
+    post "remove_tags", to:"consultations#remove_tags", as: "remove_tags", on: :member
   end
 
   resources :consultations, only: [:show, :index] do
