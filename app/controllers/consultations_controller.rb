@@ -50,6 +50,16 @@ class ConsultationsController < ApplicationController
       end
   end
 
+  def remove_tags
+    @consultation = Consultation.find(params[:id])
+    @consultation.tag_list.remove(tag)
+    @consultation.save
+    respond_to do |format|
+        format.html { redirect_to edit_patient_consultation_path(params[:id]) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
+  end
+
   def destroy
   end
 

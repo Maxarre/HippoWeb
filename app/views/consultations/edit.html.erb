@@ -6,9 +6,9 @@
 
 
 
-      <%= simple_form_for @consultation, url: add_tags_consultation_path(@consultation), remote: true do |f| %>
+      <%= simple_form_for @consultation, url: add_tags_consultation_path(@consultation), html: {class: 'type-taggs'}, remote: true do |f|%>
         <!-- Add tags as a comma separated list -->
-        <%= f.input :tag_list, label: "Add tags", hint: "Add your tags, separated by commas", input_html: { value: nil } %>
+        <%= f.input :tag_list, label: "Add tags", hint: "Add your tags, separated by commas", input_html: { class: 'input-tagg', value: nil} %>
       <% end %>
 
     <%= simple_form_for [@patient, @consultation] do |f| %>
