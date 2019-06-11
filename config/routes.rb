@@ -31,7 +31,9 @@ Rails.application.routes.draw do
     resources :consultations, only: [:edit, :update]
     resources :emails, only: [:show, :index]
   end
-  resources :consultations, only: [:new, :create]
+  resources :consultations, only: [:new, :create] do
+    patch :add_tags, on: :member
+  end
 
   resources :consultations, only: [:show, :index] do
     resources :emails, only: [:new, :create, :index]

@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newTaggModal">+ New tagg</button>
+
 <div class="modal fade" id="newTaggModal" tabindex="-1" role="dialog" aria-labelledby="newTaggModal" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -9,7 +9,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <%= simple_form_for @consultation do |f| %>
+        <%= simple_form_for @consultation, url: add_tags_consultation_path(@consultation) do |f| %>
           <!-- Add tags as a comma separated list -->
           <%= f.input :tag_list, label: "Add tags", hint: "Add your tags, separated by commas" %>
       </div>
