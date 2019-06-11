@@ -1,44 +1,72 @@
 <div class="dashboard_index">
-  <div class="d-flex justify-content-between" style="margin-bottom: 20px;">
-    <h5>Filter: <a href=""> All</a></h5>
+  <h1 style="font-size: 4vh; margin-bottom: 25px;">Follow up History</h1>
+  <div class="d-flex justify-content-between">
+    <div class="searchbar-deco">
+      <div class="searchbar" style="background-color: transparent;">
+      <%= form_tag patient_path, id: "search_form", method: :get do %>
+        <%= select_tag "consultation", options_from_collection_for_select(
+          Consultation.all, :id, :consultation_type), class: 'select2', id: "select_a_patient" %>
+        <%= link_to patients_path do %>
+        <i style="padding-left: 5px" class="fas fa-times"></i>
+        <% end %>
+      <% end %>
+      </div>
+      <script>
+        window.onload = function() {
+          <% if @selected_patient %>
+            $('.select2').val("<%= @selected_patient %>")
+            $('.select2').trigger('change')
+          <% end %>
+          $('.select2').on('select2:select', function (e) {
+            console.log("hola")
+            console.log(e.params);
+            var data = e.params.data;
+            document.getElementById("search_form").submit()
+          });
+        }
+      </script>
+    </div>
     <%= link_to "Edit Follow-up", edit_patient_consultation_path(@patient), class:"follow-up" %>
   </div>
 </div>
-<% @patient.consultations.where("start_time < ?", Time.now).each do |consultation| %>
-  <div class="show">
-    <div class="d-flex justify-content-between" data-id="<%= consultation.id %>" id="resume_<%= consultation.id %>" onclick="display_full(event)">
-      <div class="avatar-date d-flex <%= 'lightblue' if consultation.consultation_type == 'First meeting' %> <%= 'blue' if consultation.consultation_type == 'Operation' %> <%= 'yellow' if consultation.consultation_type == 'Consultation' %>"><div style="margin:auto"><%= consultation.start_time.strftime("%e")%><div style="margin:auto"></%><%= consultation.start_time.strftime("%b")%></div>
-        <div class="position_date"></div>
-      </%></div></div>
-      <div class="card_free display-patient-info">
-        <div class="d-flex justify-content-between">
-          <div><h4 class="consultation-type-text <%= 'lightblue-text color-text' if consultation.consultation_type == 'First meeting' %> <%= 'blue-text color-text' if consultation.consultation_type == 'Operation' %> <%= 'yellow-text color-text' if consultation.consultation_type == 'Consultation' %>"><%= consultation.consultation_type %></h4></div>
-          <div><h4 class="consultation-type-text <%= 'lightblue color-button' if consultation.consultation_type == 'First meeting' %> <%= 'blue color-button' if consultation.consultation_type == 'Operation' %> <%= 'yellow color-button' if consultation.consultation_type == 'Consultation' %>">Email Type</h4></div>
+<div class="show-follow-up">
+  <% @patient.consultations.where("start_time < ?", Time.now).each do |consultation| %>
+    <div class="show">
+      <div class="d-flex justify-content-between" data-id="<%= consultation.id %>" id="resume_<%= consultation.id %>" onclick="display_full(event)">
+        <div class="avatar-date d-flex <%= 'lightblue' if consultation.consultation_type == 'First meeting' %> <%= 'blue' if consultation.consultation_type == 'Operation' %> <%= 'yellow' if consultation.consultation_type == 'Consultation' %>"><div style="margin:auto"><%= consultation.start_time.strftime("%e")%><div style="margin:auto"></%><%= consultation.start_time.strftime("%b")%></div>
+          <div class="position_date"></div>
+        </%></div></div>
+        <div class="card_free display-patient-info">
+          <div class="d-flex justify-content-between">
+            <div><h2 class="consultation-type-text <%= 'lightblue-text color-text' if consultation.consultation_type == 'First meeting' %> <%= 'blue-text color-text' if consultation.consultation_type == 'Operation' %> <%= 'yellow-text color-text' if consultation.consultation_type == 'Consultation' %>"><%= consultation.consultation_type %></h2></div>
+            <div><h4 class="consultation-type-text <%= 'lightblue color-button' if consultation.consultation_type == 'First meeting' %> <%= 'blue color-button' if consultation.consultation_type == 'Operation' %> <%= 'yellow color-button' if consultation.consultation_type == 'Consultation' %>">Email Type</h4></div>
+          </div>
+          <div class="d-flex tag consultation-type-text lightblue-text color-text"><p>Tag</p><p>Tag</p><p>Tag</p></div>
+          <p><%= consultation.patient_complain %></p>
+          <i class="d-flex justify-content-center fas fa-chevron-down" style="padding-top: 10px; margin-bottom:-30px"></i>
         </div>
-        <div class="d-flex tag consultation-type-text lightblue-text color-text"><p>Tag</p><p>Tag</p><p>Tag</p></div>
-        <p><%= consultation.patient_complain %></p>
-        <i class="d-flex justify-content-center fas fa-chevron-down" style="padding-top: 10px; margin-bottom:-30px"></i>
+      </div>
+      <div class="justify-content-between" data-id="<%= consultation.id %>" id="full_<%= consultation.id %>" onclick="display_resume(event)" style="display: none">
+        <div class="avatar-date d-flex <%= 'lightblue' if consultation.consultation_type == 'First meeting' %> <%= 'blue' if consultation.consultation_type == 'Operation' %> <%= 'yellow' if consultation.consultation_type == 'Consultation' %>"><div style="margin:auto"><%= consultation.start_time.strftime("%e")%><div style="margin:auto"></%><%= consultation.start_time.strftime("%b")%></div>
+          <div class="position_date"></div>
+        </%></div></div>
+        <div class="card_free display-patient-info">
+          <div class="d-flex justify-content-between">
+             <div><h2 class="consultation-type-text <%= 'lightblue-text color-text' if consultation.consultation_type == 'First meeting' %> <%= 'blue-text color-text' if consultation.consultation_type == 'Operation' %> <%= 'yellow-text color-text' if consultation.consultation_type == 'Consultation' %>"><%= consultation.consultation_type %></h2></div>
+            <div><h4 class="consultation-type-text <%= 'lightblue color-button' if consultation.consultation_type == 'First meeting' %> <%= 'blue color-button' if consultation.consultation_type == 'Operation' %> <%= 'yellow color-button' if consultation.consultation_type == 'Consultation' %>">Email Type</h4></div>
+          </div>
+          <div class="d-flex tag consultation-type-text lightblue-text color-text"><p>Tag</p><p>Tag</p><p>Tag</p></div>
+          <h4><strong>Patient's complain</strong></h4>
+          <p><%= consultation.patient_complain %></p>
+          <h4><strong>Diagnostic</strong></h4>
+          <p><%= consultation.diagnostic %></p>
+          <h4><strong>Care plan</strong></h4>
+          <p><%= consultation.care_plan %></p>
+          <h4><strong>Prescription & information for the patients</strong></h4>
+          <p><%= consultation.prescription %></p>
+          <i class="d-flex justify-content-center fas fa-chevron-up" style="padding-top: 10px; margin-bottom:-30px"></i>
+        </div>
       </div>
     </div>
-    <div class="justify-content-between" data-id="<%= consultation.id %>" id="full_<%= consultation.id %>" onclick="display_resume(event)" style="display: none">
-      <div class="avatar-date d-flex <%= 'lightblue' if consultation.consultation_type == 'First meeting' %> <%= 'blue' if consultation.consultation_type == 'Operation' %> <%= 'yellow' if consultation.consultation_type == 'Consultation' %>"><div style="margin:auto"><%= consultation.start_time.strftime("%e")%><div style="margin:auto"></%><%= consultation.start_time.strftime("%b")%></div>
-        <div class="position_date"></div>
-      </%></div></div>
-      <div class="card_free display-patient-info">
-        <div class="d-flex justify-content-between">
-           <div><h4 class="consultation-type-text <%= 'lightblue-text color-text' if consultation.consultation_type == 'First meeting' %> <%= 'blue-text color-text' if consultation.consultation_type == 'Operation' %> <%= 'yellow-text color-text' if consultation.consultation_type == 'Consultation' %>"><%= consultation.consultation_type %></h4></div>
-          <div><h4 class="consultation-type-text <%= 'lightblue color-button' if consultation.consultation_type == 'First meeting' %> <%= 'blue color-button' if consultation.consultation_type == 'Operation' %> <%= 'yellow color-button' if consultation.consultation_type == 'Consultation' %>">Email Type</h4></div>
-        </div>
-        <div class="d-flex tag consultation-type-text lightblue-text color-text"><p>Tag</p><p>Tag</p><p>Tag</p></div>
-        <h5><strong>Patient's complain</strong></h5>
-        <p><%= consultation.patient_complain %></p>
-        <h5><strong>Diagnostic</strong></h5>
-        <p><%= consultation.diagnostic %></p>
-        <h5><strong>Care plan</strong></h5>
-        <p><%= consultation.care_plan %></p>
-        <h5><strong>Prescription & information for the patients</strong></h5>
-        <%= consultation.prescription %></p>
-        <i class="d-flex justify-content-center fas fa-chevron-up" style="padding-top: 10px; margin-bottom:-30px"></i>
-    </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
