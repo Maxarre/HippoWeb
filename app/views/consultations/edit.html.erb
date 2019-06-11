@@ -3,12 +3,8 @@
     <div class="d-flex justify-content-between">
     <h2>New follow-up (<%= @consultation.start_time.strftime("%A, %b %d") %>)</h2><h2 style="padding-right: 60px;"></h2>
     </div>
-
-
-
-
     <%= simple_form_for [@patient, @consultation] do |f| %>
-      <div class="consultation-taggs">
+      <div class="consultation-taggs w-25">
         <%= f.input :tags, collection: ActsAsTaggableOn::Tag.all, input_html: {class: "js-example-tags", multiple: true } %>
        <!-- <span><%#= render 'shared/form_tagg_new' %><span> -->
         <ul>

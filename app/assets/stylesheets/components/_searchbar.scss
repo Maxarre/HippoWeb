@@ -1,9 +1,10 @@
 .searchbar {
   margin: auto 0px;
+  flex: 1 0 auto;
   p {
     font-size: 15px;
     color: #7D7683;
-    width: 82vw;
+    // width: 82vw;
   }
   form {
     width: 100%;
@@ -15,15 +16,15 @@
     line-height: 3em;
   }
 
-  .right-side {
-    position: absolute;
-    right: 5px;
-  }
+  // .right-side {
+  //   position: absolute;
+  //   right: 5px;
+  // }
 
-  .left-side {
-    position: absolute;
-    left: 5px;
-  }
+  // .left-side {
+  //   position: absolute;
+  //   left: 5px;
+  // }
 }
 
 .searchbar-deco {
