@@ -6,6 +6,10 @@ class EmailsController < ApplicationController
   def show
     @patient = Patient.find(params[:patient_id])
     @emails = Email.all
+    respond_to do |format|
+      format.html { redirect_to patient_email_path(@patient) } # show.html.erb
+      format.js # show.js.erb
+    end
   end
 
   def new
