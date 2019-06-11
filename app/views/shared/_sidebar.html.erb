@@ -16,7 +16,7 @@
     <%= link_to patients_path, class:"erase d-flex" do %>
       <li class="list-inline <%= "active" if params[:action] == "index" && params[:controller] == "patients" %>"><i class="far fa-user"></i> Patients</li>
     <% end  %>
-    <%= link_to emails_path, class:"erase d-flex" do %>
+    <%= link_to consultation_emails_path(:consultation_id), class:"erase d-flex" do %>
       <li class="list-inline <%= "active" if params[:action] == "index" && params[:controller] == "emails" %>"><i class="far fa-envelope"></i> Emails</li>
     <% end  %>
 
