@@ -1,0 +1,14 @@
+var updateTagglist = (newList) => {
+  const tagglist = document.getElementById('consultation-taggs');
+  tagglist.innerHTML = newList;
+}
+
+
+var form = document.querySelector('.type-taggs');
+var input = document.querySelector('.input-tagg');
+form.addEventListener('submit', (event) => {
+  console.log(input);
+});
+
+
+updateTagglist("<%= j render 'shared/tagglist', consultation: @consultation %>");
