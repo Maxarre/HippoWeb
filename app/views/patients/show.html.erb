@@ -31,7 +31,7 @@
           <div class="tab d-flex"><i class="fas fa-bars" id="down"></i><p>Follow-up</p></div>
           <div class="tab d-flex"><i class="far fa-clipboard" id="down"></i><p>Medical Record</p></div>
           <div class="tab d-flex"><i class="fas fa-pills" id="down"></i><p>Treatment</p></div>
-          <div class="tab d-flex"><i class="far fa-envelope" id="down"></i><p class="show-link"><%= link_to 'Email history', patient_email_path(@patient) %></p></div>
+          <div class="tab d-flex"><i class="far fa-envelope" id="down"></i><p class="show-link"><%= link_to 'Email history', patient_email_path(@patient), remote: true %></p></div>
         </div>
       </div>
       <div class="dashboard_index">
