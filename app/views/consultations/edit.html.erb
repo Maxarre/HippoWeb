@@ -6,17 +6,14 @@
 
 
 
+      <%= simple_form_for @consultation, url: add_tags_consultation_path(@consultation), remote: true do |f| %>
+        <!-- Add tags as a comma separated list -->
+        <%= f.input :tag_list, label: "Add tags", hint: "Add your tags, separated by commas", input_html: { value: nil } %>
+      <% end %>
 
     <%= simple_form_for [@patient, @consultation] do |f| %>
-      <div class="consultation-taggs">
-        <%= f.input :tags, collection: ActsAsTaggableOn::Tag.all, input_html: {class: "js-example-tags", multiple: true } %>
-       <!-- <span><%#= render 'shared/form_tagg_new' %><span> -->
-        <ul>
-          <% @consultation.tag_list.each do |tag| %>
-            <li class="badge badge-secondary"><%= tag %></li>
-          <% end %>
-        </ul>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newTaggModal">+ New tagg</button>
+      <div id="consultation-taggs">
+         <%= render 'shared/tagglist', consultation: @consultation %>
       </div>
 
       <div class='d-flex align-items-center' style="width: 95%; margin-bottom: 20px;">
@@ -52,8 +49,5 @@
       </div>
       <div class="d-flex justify-content-end"> <%= f.button :submit, class:"btn btn-flat-add-consultation",data: { disable_with: false }, value:"Next" %> </div>
     <% end %>
-
-<span><%= render 'shared/form_tagg_new' %><span>
-
   </div>
 </div>

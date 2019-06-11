@@ -1,0 +1,6 @@
+const updateTagglist = (newList) => {
+  const tagglist = document.getElementById('consultation-taggs');
+  tagglist.innerHTML = newList;
+}
+
+updateTagglist("<%= j render 'shared/tagglist', consultation: @consultation %>");

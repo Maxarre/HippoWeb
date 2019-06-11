@@ -6,8 +6,3 @@ import { initSelect2 } from '../plugins/init_select2';
 
 initSelect2();
 
-// import $ from 'jquery';
-
-// window.$ = $
-
-// $('.js-example-basic-multiple').select2()
