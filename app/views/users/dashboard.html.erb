@@ -19,21 +19,13 @@
         <h5 style="font-weight: bold"> <%= day_consultations.first.start_time.strftime("%A, %b %d") %></h5>
     <% end %>
       <div class="consultation-each">
-        <% (8..20).to_a.each do |hour| %>
-          <% consultation =  day_consultations.select { |c| c.start_time.hour == hour }.first  %>
-          <% if consultation.present? %>
-          <%= hour %>
+          <% day_consultations.sort_by(&:start_time).each do |consultation| %>
             <div class="meeting-card link <%= 'lightblueborder' if consultation.consultation_type == 'First meeting' %> <%= 'blueborder' if consultation.consultation_type == 'Operation' %> <%= 'yellowborder' if consultation.consultation_type == 'Consultation' %>">
               <div class="d-flex justify-content-between"><h3><%= consultation.patient.first_name %> <%= consultation.patient.last_name  %></h3><h4><%= consultation.consultation_type %></h4></div>
               <p>Consultation time: <strong><%= consultation.start_time.strftime("%H:%M") %> - <%= consultation.end_time.strftime("%H:%M") %></strong></p>
               <%= link_to '', patient_path(consultation.patient) %>
             </div>
-            <% else %>
-            <div class="empty-meeting">
-              <%= hour %>
-            </div>
           <% end %>
-        <% end %>
         </div>
       </div>
     <% end %>

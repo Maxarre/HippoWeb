@@ -1,14 +1,15 @@
 <div style="margin-top: 35px;">
   <div class="container-index">
-    <div class="email-index" style="position: relative;">
+    <div class="email-index">
       <% @emails.each do |email| %>
-        <div class="email-card link d-flex justify-content-between">
-          <h4 style="width: 50%">Email title: <%= email.title %></h4>
-          <h5 style="width: 30%">Sent date: <strong><%= email.consultation.end_time.strftime("%H:%M") %> <%= email.consultation.end_time.strftime("%m/%d/%Y") %></strong></h5>
-          <h5 style="width: 20%"><%= email.consultation.patient.first_name%> <%= email.consultation.patient.last_name %></h5>
+        <div class="email-card link">
+          <h4>Email title: <%= email.title %></h4>
+          <p>Sent date: <%= email.consultation.end_time %></p>
+          <ul><li class='list-inline'><%= email.consultation.patient.first_name%> <%= email.consultation.patient.last_name %></li></ul>
+          <span></span>
+          <%#= link_to '', patient_path %>
         </div>
       <% end %>
     </div>
   </div>
 </div>
-
