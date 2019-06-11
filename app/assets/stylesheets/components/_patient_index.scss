@@ -10,37 +10,18 @@
 }
 
 .patient_index{
-  width: 78%;
+  width: 80%;
+}
+
+.tabs {
+  margin-top: 5vh;
 }
 
 .tab {
-  width: 25%;
-  text-align: center;
-  p, i {
-    margin-top: 12px;
-    margin-bottom: 12px;
-  }
-  p {
-    margin-right: auto;
-    margin-left: 5px;
-  }
+  margin-top: 1vh;
   i {
-    margin-left: auto;
-    margin-right: 5px;
+    margin-right: 10px;
   }
-}
-
-.empty {
-  width: 25%;
-  height: 2px;
-  margin-top: -5px;
-}
-
-.full {
-  width: 25%;
-  height: 2px;
-  background-color: #404751;
-  margin-top: -5px;
 }
 
 .erase {
@@ -58,7 +39,7 @@
 }
 
 .dashboard_index {
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .container-index {

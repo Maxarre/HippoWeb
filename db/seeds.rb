@@ -35,7 +35,7 @@ end
 
 # Consultation.create(patient_id: 1, start_time: '14h30',
 #   end_time: '15h30', consultation_type: 'Operation')
-
+time_array = [8..20]
 type_array = ["First meeting", "Operation", "Consultation"]
 status_array = ["Upcoming", "Past"]
 i = 1
@@ -43,8 +43,8 @@ i = 1
   consultation = Consultation.new(
     patient_id: i,
     status: status_array.sample,
-    start_time: Faker::Time.forward(5, :morning),
-    end_time: Faker::Time.forward(5, :evening),
+    meeting_date: Faker::Date.forward(10),
+    start_time: time_array.sample,
     consultation_type: type_array.sample,
     required_documents: Faker::Lorem.paragraph_by_chars,
     patient_complain: Faker::Lorem.paragraph_by_chars,
@@ -57,7 +57,6 @@ i = 1
     i += 1
   consultation.save!
 end
-
 
 
 # 10.times do
@@ -82,15 +81,15 @@ end
 
 a = Patient.new(user_id: 1, first_name: 'John', last_name: 'Doe', phone: '06 67 76 97 19', job_title: 'Public servent', address: '76 rue de moscou', city: 'Paris', zipcode: '75008', date_of_birth: '04/06/1980', gender: 'Male', email: 'john.doe@gmail.com')
 a.save!
-b = Consultation.new(patient_id: a.id, status: 'Past', start_time: '06/09/2018 08:30PM', end_time: '06/09/2018 09:00PM', consultation_type: "First meeting", patient_complain: "So I’ve been dealing with insomnia for a while, it hasn’t been a massive issue, because I’m on break from school but it’s increasing my circadian rhythm pretty badly. I’ve been able to deal with it for a good while and been pulling all nighters without sleeping and going to sleep early to kind of course correct if that makes sense.", diagnostic: "Chronic insomnia caused by stress: Concerns about work, school, health, finances or family can keep your mind active at night, making it difficult to sleep.", care_plan: "Changing your sleep habits and addressing any issues that may be associated with insomnia, such as stress, medical conditions or medications, can restore restful sleep for many people.", prescription: "Stimulus control therapy. This method helps remove factors that condition your mind to resist sleep. For example, you might be coached to set a consistent bedtime and wake time and avoid naps, use the bed only for sleep and sex, and leave the bedroom if you can't go to sleep within 20 minutes, only returning when you're sleepy.
+b = Consultation.new(patient_id: a.id, status: 'Past', meeting_date: '06/09/2018', start_time: '08:30PM', consultation_type: "First meeting", patient_complain: "So I’ve been dealing with insomnia for a while, it hasn’t been a massive issue, because I’m on break from school but it’s increasing my circadian rhythm pretty badly. I’ve been able to deal with it for a good while and been pulling all nighters without sleeping and going to sleep early to kind of course correct if that makes sense.", diagnostic: "Chronic insomnia caused by stress: Concerns about work, school, health, finances or family can keep your mind active at night, making it difficult to sleep.", care_plan: "Changing your sleep habits and addressing any issues that may be associated with insomnia, such as stress, medical conditions or medications, can restore restful sleep for many people.", prescription: "Stimulus control therapy. This method helps remove factors that condition your mind to resist sleep. For example, you might be coached to set a consistent bedtime and wake time and avoid naps, use the bed only for sleep and sex, and leave the bedroom if you can't go to sleep within 20 minutes, only returning when you're sleepy.
 Relaxation techniques. Progressive muscle relaxation, biofeedback and breathing exercises are ways to reduce anxiety at bedtime. Practicing these techniques can help you control your breathing, heart rate, muscle tension and mood so that you can relax.
 Sleep restriction. This therapy decreases the time you spend in bed and avoids daytime naps, causing partial sleep deprivation, which makes you more tired the next night. Once your sleep has improved, your time in bed is gradually increased.
 Remaining passively awake. Also called paradoxical intention, this therapy for learned insomnia is aimed at reducing the worry and anxiety about being able to get to sleep by getting in bed and trying to stay awake rather than expecting to fall asleep.
 Light therapy. If you fall asleep too early and then awaken too early, you can use light to push back your internal clock. You can go outside during times of the year when it's light outside in the evenings, or you can use a light box. Talk to your doctor about recommendations.", note_patient: 'If a change in habbit does not help, give drugs.')
 b.save!
-c = Consultation.new(patient_id: a.id, status: 'Past', start_time: '18/02/2019 08:30PM', end_time: '18/02/2019 09:00PM', consultation_type: "Consultation", patient_complain:"I still barely sleep. I tried to change my habbits but the results are the same. I want to ponder new medicines as alternatives", diagnostic: 'A change of habbits was not a solution. It is a chronic case needing more attention.', care_plan: 'Let us put the patient under observation for one night at the sleeping center', prescription: "Simply contact Healthcare Coordination, and we’ll help you find a new primary care physician or specialist. You can also make an appointment with your current doctor. Do it all with one call: 01 43 43 27 27", note_patient: '')
+c = Consultation.new(patient_id: a.id, status: 'Past', meeting_date: '18/02/2019', start_time: '08:30PM', consultation_type: "Consultation", patient_complain:"I still barely sleep. I tried to change my habbits but the results are the same. I want to ponder new medicines as alternatives", diagnostic: 'A change of habbits was not a solution. It is a chronic case needing more attention.', care_plan: 'Let us put the patient under observation for one night at the sleeping center', prescription: "Simply contact Healthcare Coordination, and we’ll help you find a new primary care physician or specialist. You can also make an appointment with your current doctor. Do it all with one call: 01 43 43 27 27", note_patient: '')
 c.save!
-d = Consultation.new(patient_id: a.id, status: 'Upcoming', start_time: '07/06/2019 06:30PM', end_time: '07/06/2019 07:00PM', consultation_type: "Consultation", note_patient: 'Dr. Dorian sent us the results.')
+d = Consultation.new(patient_id: a.id, status: 'Upcoming', meeting_date: '07/06/2019', start_time: '06:30PM', consultation_type: "Consultation", note_patient: 'Dr. Dorian sent us the results.')
 d.save!
 e = Email.new(consultation_id: b.id, title: 'Information after our first meeting', content: b.prescription)
 e.save!

@@ -3,9 +3,6 @@
     <div class="d-flex justify-content-between">
     <h2>New follow-up (<%= @consultation.start_time.strftime("%A, %b %d") %>)</h2><h2 style="padding-right: 60px;"></h2>
     </div>
-
-
-
       <%= simple_form_for @consultation, url: add_tags_consultation_path(@consultation), html: {class: 'type-taggs'}, remote: true do |f|%>
         <!-- Add tags as a comma separated list -->
         <%= f.input :tag_list, label: "Add tags", hint: "Add your tags, separated by commas", input_html: { class: 'input-tagg', value: nil} %>

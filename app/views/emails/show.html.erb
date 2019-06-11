@@ -47,7 +47,7 @@
             <%#= link_to "New email", new_consultation_email_path(@consultation), class:"follow-up" %>
           </div>
         </div>
-         <div class="email-index">
+        <div class="email-index">
           <% @patient.emails.each do |email| %>
             <div class="email-card link">
               <h3>Email title: <%= email.title %></h3>
