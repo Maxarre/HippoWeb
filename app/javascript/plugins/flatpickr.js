@@ -9,9 +9,16 @@ flatpickr(".datepicker", {
 
 flatpickr(".meetpicker", {
   altInput: true,
+  allowInput: true,
+  altFormat: "d F Y",
+})
+
+flatpickr(".hourpicker", {
+  altInput: true,
+  noCalendar: true,
   enableTime: true,
   allowInput: true,
-  altFormat: "d F Y - H:i",
+  altFormat: "H:i",
   time_24hr: true,
   minTime: "08:00",
   maxTime: "20:00",
