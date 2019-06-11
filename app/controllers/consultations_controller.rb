@@ -19,7 +19,7 @@ class ConsultationsController < ApplicationController
   end
 
   def edit
-    @consultation = Consultation.find(params[:id])
+    # @consultation = Consultation.find(params[:id])
     @consultation.patient = Patient.find(params[:patient_id])
     @all_tagg_list = ActsAsTaggableOn::Tag.all
     # @consultation = Consultation.find(params[:id])
