@@ -5,7 +5,9 @@
         <div class="email-card link">
           <h4>Email title: <%= email.title %></h4>
           <p>Sent date: <%= email.consultation.end_time %></p>
-          <p><%= email.consultation.patient.first_name%> <%= email.consultation.patient.last_name  %></p>
+          <ul><li class='list-inline'><%= email.consultation.patient.first_name%> <%= email.consultation.patient.last_name %></li></ul>
+          <span></span>
+          <%#= link_to '', patient_path %>
         </div>
       <% end %>
     </div>

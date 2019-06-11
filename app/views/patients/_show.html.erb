@@ -1,0 +1,44 @@
+<div class="dashboard_index">
+  <div class="d-flex justify-content-between" style="margin-bottom: 20px;">
+    <h5>Filter: <a href=""> All</a></h5>
+    <%= link_to "Edit Follow-up", edit_patient_consultation_path(@patient), class:"follow-up" %>
+  </div>
+</div>
+<% @patient.consultations.where("start_time < ?", Time.now).each do |consultation| %>
+  <div class="show">
+    <div class="d-flex justify-content-between" data-id="<%= consultation.id %>" id="resume_<%= consultation.id %>" onclick="display_full(event)">
+      <div class="avatar-date d-flex <%= 'lightblue' if consultation.consultation_type == 'First meeting' %> <%= 'blue' if consultation.consultation_type == 'Operation' %> <%= 'yellow' if consultation.consultation_type == 'Consultation' %>"><div style="margin:auto"><%= consultation.start_time.strftime("%e")%><div style="margin:auto"></%><%= consultation.start_time.strftime("%b")%></div>
+        <div class="position_date"></div>
+      </%></div></div>
+      <div class="card_free display-patient-info">
+        <div class="d-flex justify-content-between">
+          <div><h4 class="consultation-type-text <%= 'lightblue-text color-text' if consultation.consultation_type == 'First meeting' %> <%= 'blue-text color-text' if consultation.consultation_type == 'Operation' %> <%= 'yellow-text color-text' if consultation.consultation_type == 'Consultation' %>"><%= consultation.consultation_type %></h4></div>
+          <div><h4 class="consultation-type-text <%= 'lightblue color-button' if consultation.consultation_type == 'First meeting' %> <%= 'blue color-button' if consultation.consultation_type == 'Operation' %> <%= 'yellow color-button' if consultation.consultation_type == 'Consultation' %>">Email Type</h4></div>
+        </div>
+        <div class="d-flex tag consultation-type-text lightblue-text color-text"><p>Tag</p><p>Tag</p><p>Tag</p></div>
+        <p><%= consultation.patient_complain %></p>
+        <i class="d-flex justify-content-center fas fa-chevron-down" style="padding-top: 10px; margin-bottom:-30px"></i>
+      </div>
+    </div>
+    <div class="justify-content-between" data-id="<%= consultation.id %>" id="full_<%= consultation.id %>" onclick="display_resume(event)" style="display: none">
+      <div class="avatar-date d-flex <%= 'lightblue' if consultation.consultation_type == 'First meeting' %> <%= 'blue' if consultation.consultation_type == 'Operation' %> <%= 'yellow' if consultation.consultation_type == 'Consultation' %>"><div style="margin:auto"><%= consultation.start_time.strftime("%e")%><div style="margin:auto"></%><%= consultation.start_time.strftime("%b")%></div>
+        <div class="position_date"></div>
+      </%></div></div>
+      <div class="card_free display-patient-info">
+        <div class="d-flex justify-content-between">
+           <div><h4 class="consultation-type-text <%= 'lightblue-text color-text' if consultation.consultation_type == 'First meeting' %> <%= 'blue-text color-text' if consultation.consultation_type == 'Operation' %> <%= 'yellow-text color-text' if consultation.consultation_type == 'Consultation' %>"><%= consultation.consultation_type %></h4></div>
+          <div><h4 class="consultation-type-text <%= 'lightblue color-button' if consultation.consultation_type == 'First meeting' %> <%= 'blue color-button' if consultation.consultation_type == 'Operation' %> <%= 'yellow color-button' if consultation.consultation_type == 'Consultation' %>">Email Type</h4></div>
+        </div>
+        <div class="d-flex tag consultation-type-text lightblue-text color-text"><p>Tag</p><p>Tag</p><p>Tag</p></div>
+        <h5><strong>Patient's complain</strong></h5>
+        <p><%= consultation.patient_complain %></p>
+        <h5><strong>Diagnostic</strong></h5>
+        <p><%= consultation.diagnostic %></p>
+        <h5><strong>Care plan</strong></h5>
+        <p><%= consultation.care_plan %></p>
+        <h5><strong>Prescription & information for the patients</strong></h5>
+        <%= consultation.prescription %></p>
+        <i class="d-flex justify-content-center fas fa-chevron-up" style="padding-top: 10px; margin-bottom:-30px"></i>
+    </div>
+  </div>
+<% end %>
