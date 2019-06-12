@@ -1,52 +1,26 @@
-<div style="margin-top: 15px;">
-  <div id="patient_id" data-target="<%= @patient.id %>"></div>
-  <div id="consultation_id" data-target="<%= @consultation.id %>"></div>
-  <div class="consultation-card card-container-edit consultation-index-responsive">
-    <div class="d-flex justify-content-between">
-    <h2>New follow-up (<%= @consultation.start_time.strftime("%A, %b %d") %>)</h2><h2 style="padding-right: 60px;"></h2>
-    </div>
-      <%= simple_form_for @consultation, url: add_tags_consultation_path(@consultation), html: {class: 'type-taggs'}, remote: true do |f|%>
-        <!-- Add tags as a comma separated list -->
-        <%= f.input :tag_list, label: "Add tags", hint: "Add your tags, separated by commas", input_html: { class: 'input-tagg', value: nil} %>
-      <% end %>
-
-    <%= simple_form_for [@patient, @consultation] do |f| %>
-      <div id="consultation-taggs">
-         <%= render 'shared/tagglist', consultation: @consultation, patient: @patient %>
-      </div>
-
-      <div class='d-flex align-items-center' style="width: 95%; margin-bottom: 20px;">
+<div class="container">
+  <div class="display-patient-info">
+    <div><h2 class="consultation-type-text <%= 'lightblue-text color-text' if @consultation.consultation_type == 'First meeting' %> <%= 'blue-text color-text' if @consultation.consultation_type == 'Operation' %> <%= 'yellow-text color-text' if @consultation.consultation_type == 'Consultation' %>"><%= @consultation.consultation_type %> Follow-up  (<%= @consultation.start_time.strftime("%A, %b %d") %>)</h2></div>
+    <div style="margin: 0px 20px;">
+      <div id="patient_id" data-target="<%= @patient.id %>"></div>
+      <div id="consultation_id" data-target="<%= @consultation.id %>"></div>
+        <%= simple_form_for @consultation, url: add_tags_consultation_path(@consultation), html: {class: 'type-taggs'}, remote: true do |f|%>
+          <%= f.input :tag_list, label: "Add tags", hint: "Add your tags, separated by commas", input_html: { class: 'input-tagg', value: nil} %>
+        <% end %>
+        <%= simple_form_for [@patient, @consultation] do |f| %>
+        <div id="consultation-taggs">
+           <%= render 'shared/tagglist', consultation: @consultation, patient: @patient %>
+        </div>
         <%= f.input :patient_complain, placeholder: 'Add notes for the complains', wrapper_html: { class: 'input-card' }, input_html: {style: 'height:16vh;'} %>
-        <ul>
-          <li class='list-inline'><i class="fas fa-paperclip"></i></li>
-        </ul>
-      </div>
-      <div class='d-flex align-items-center' style="width: 95%; margin-bottom: 20px;">
         <%= f.input :diagnostic, placeholder: 'Add notes for the diagnostic', wrapper_html: { class: 'input-card' }, input_html: {style: 'height:16vh;'} %>
-        <ul>
-          <li class='list-inline'><i class="fas fa-paperclip"></i></li>
-        </ul>
-      </div>
-      <div class='d-flex align-items-center' style="width: 95%; margin-bottom: 20px;">
         <%= f.input :care_plan, placeholder: 'Add notes for the care plan', wrapper_html: { class: 'input-card' }, input_html: {style: 'height:16vh;'} %>
-        <ul>
-          <li class='list-inline'><i class="fas fa-paperclip"></i></li>
-        </ul>
-      </div>
-      <div class='d-flex align-items-center' style="width: 95%">
         <%= f.input :prescription, placeholder: 'Add prescription for the patient', wrapper_html: { class: 'input-card' }, input_html: {style: 'height:16vh;'} %>
-        <ul>
-          <li class='list-inline'><i class="fas fa-paperclip"></i></li>
-        </ul>
-      </div>
-      <div class='d-flex align-items-center' style="width: 95%">
         <%= f.input :note_patient, placeholder: 'Add notes for the patient', wrapper_html: { class: 'input-card' }, input_html: {style: 'height:10vh;'} %>
-        <ul>
-          <li class='list-inline'><i style="margin-top: 2rem;" class="fas fa-link"></i></li>
-          <li class='list-inline'><i class="fas fa-paperclip"></i></li>
-        </ul>
-      </div>
-      <div class="d-flex justify-content-end"> <%= f.button :submit, class:"btn btn-flat-add-consultation",data: { disable_with: false }, value:"Next" %> </div>
-    <% end %>
+        <div class="d-flex justify-content-between">
+          <%= link_to "SKIP", dashboard_path, class: "btn btn-outline-secondary height" %>
+          <%= f.button :submit, class:"btn btn-flat-add-consultation", data: { disable_with: false }, value:"Next" %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
