@@ -20,12 +20,14 @@
     font-weight: bolder;
     color: rgba(250, 250, 250, 1);
     letter-spacing: 3px;
+    text-shadow: 2px 2px #565656;
     }
   h3 {
     font-size: 30px;
     margin: 15px 0px;
     color: rgba(250, 250, 250, 0.9);
     letter-spacing: 3px;
+    text-shadow: 2px 2px #565656;
     }
   ul {
     padding-left: 0px;
@@ -38,11 +40,18 @@
     padding-left: 0px;
     margin-right: 15px;
     letter-spacing: 1px;
-
+    color: white;
+    text-shadow: 2px 2px #565656;
+    opacity: 0.9;
+    }
     .fas {
       margin: 0 10px;
       font-size: 24px;
-      }
+      color: white;
+      opacity: 0.9;
+    }
+    h2 {
+      color: #404751;
     }
   }
 
@@ -55,9 +64,13 @@
 }
 
 
-  .horizontal-line {
-    height: 1px;
-    background-color: rgba(250, 250, 250, 0.7);
-    width: 10vw;
-    margin: 50px 0px
-  }
+.horizontal-line {
+  height: 1px;
+  background-color: rgba(250, 250, 250, 0.7);
+  width: 10vw;
+  margin: 50px 0px
+}
+
+.offilog {
+  color: #bfc0bf !important;
+}
