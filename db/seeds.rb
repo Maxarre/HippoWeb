@@ -51,7 +51,6 @@ i = 1
     diagnostic: Faker::Lorem.paragraph_by_chars,
     care_plan: Faker::Lorem.paragraph_by_chars,
     prescription: Faker::Lorem.paragraph_by_chars,
-    note_patient: Faker::Lorem.paragraph_by_chars,
     patient_note_attachment: Faker::Books::Dune.quote,
     )
     i += 1
