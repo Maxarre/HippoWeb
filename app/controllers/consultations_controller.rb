@@ -21,6 +21,7 @@ class ConsultationsController < ApplicationController
   def edit
     @patient = Patient.find(params[:patient_id])
     @consultation = @patient.consultations.last
+    @consultation_templates = YAML.load_file("db/consultation_templates.yml")
     @consultation.patient = Patient.find(params[:patient_id])
     @all_tagg_list = ActsAsTaggableOn::Tag.all
     # @consultation = Consultation.find(params[:id])
@@ -41,6 +42,7 @@ class ConsultationsController < ApplicationController
     @consultation = Consultation.find(params[:id])
     @patient = @consultation.patient
     @consultation.tag_list
+    @consultation_templates = YAML.load_file("db/consultation_templates.yml")
     params[:consultation][:tag_list].split(',').each do |t|
       @consultation.tag_list.add(t)
       @consultation.save
