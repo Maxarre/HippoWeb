@@ -2,13 +2,13 @@
       <div id="consultation-taggs">
          <%= render 'shared/tagglist', consultation: @consultation, patient: @patient %>
       </div>
-        <% input_value = @consultation.tag_list.empty? ? "" : @consultation_templates["diabetic"][0]%>
+        <% input_value = @consultation.tag_list.empty? ? "" : @consultation_templates["insomnia"][0]%>
         <%= f.input :patient_complain, placeholder: 'Add notes for the complains', input_html: { class: 'input-card', style: 'height:16vh;', value: input_value}, label: false %>
-        <% input_value = @consultation.tag_list.empty? ? "" : @consultation_templates["diabetic"][1]%>
+        <% input_value = @consultation.tag_list.empty? ? "" : @consultation_templates["insomnia"][1]%>
         <%= f.input :patient_complain, placeholder: 'Add notes for the complains', input_html: { class: 'input-card', style: 'height:16vh;', value: input_value } %>
-        <% input_value = @consultation.tag_list.empty? ? "" : @consultation_templates["diabetic"][2]%>
+        <% input_value = @consultation.tag_list.empty? ? "" : @consultation_templates["insomnia"][2]%>
         <%= f.input :patient_complain, placeholder: 'Add notes for the complains', input_html: { class: 'input-card', style: 'height:16vh;', value: input_value } %>
-        <% input_value = @consultation.tag_list.empty? ? "" : @consultation_templates["diabetic"][3]%>
+        <% input_value = @consultation.tag_list.empty? ? "" : @consultation_templates["insomnia"][3]%>
         <%= f.input :patient_complain, placeholder: 'Add notes for the complains', input_html: { class: 'input-card', style: 'height:16vh;', value: input_value } %>
 
   <div class='d-flex align-items-center' style="width: 95%; margin-bottom: 20px;">
