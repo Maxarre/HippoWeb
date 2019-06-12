@@ -42,6 +42,7 @@ class ConsultationsController < ApplicationController
     @consultation = Consultation.find(params[:id])
     @patient = @consultation.patient
     @consultation.tag_list
+    @i = 0
     @consultation_templates = YAML.load_file("db/consultation_templates.yml")
     params[:consultation][:tag_list].split(',').each do |t|
       @consultation.tag_list.add(t)

@@ -10,41 +10,41 @@
         <%= f.input :tag_list, label: "Add tags", hint: "Add your tags, separated by commas", input_html: { class: 'input-tagg', value: nil} %>
       <% end %>
 
-    <%= simple_form_for [@patient, @consultation], remote: true do |f| %>
+    <%= simple_form_for [@patient, @consultation], html: {class: 'form-tags'}, remote: true do |f| %>
       <div id="consultation-taggs">
          <%= render 'shared/tagglist', consultation: @consultation, patient: @patient %>
       </div>
 
       <div class='d-flex align-items-center' style="width: 95%; margin-bottom: 20px;">
-        <% value = @consultation.tag_list.empty? ? "" : @consultation_templates["diabetic"]["patient_complain"]%>
+        <% value = @consultation.tag_list.empty? ? "" : @consultation_templates["diabetic"][0]%>
         <%= f.input :patient_complain, placeholder: 'Add notes for the complains', wrapper_html: { class: 'input-card' }, input_html: {style: 'height:16vh;', value: value} %>
         <ul>
           <li class='list-inline'><i class="fas fa-paperclip"></i></li>
         </ul>
       </div>
-      <div class='d-flex align-items-center' style="width: 95%; margin-bottom: 20px;">
-        <% value = @consultation.tag_list.empty? ? "" : @consultation_templates["diabetic"]["diagnostic"]%>
+      <div class='d-flex align-items-center form-input' style="width: 95%; margin-bottom: 20px;">
+        <% value = @consultation.tag_list.empty? ? "" : @consultation_templates["diabetic"][1]%>
         <%= f.input :diagnostic, placeholder: 'Add notes for the diagnostic', wrapper_html: { class: 'input-card' }, input_html: {style: 'height:16vh;', value: value} %>
         <ul>
           <li class='list-inline'><i class="fas fa-paperclip"></i></li>
         </ul>
       </div>
-      <div class='d-flex align-items-center' style="width: 95%; margin-bottom: 20px;">
-        <% value = @consultation.tag_list.empty? ? "" : @consultation_templates["diabetic"]["care_plan"]%>
+      <div class='d-flex align-items-center form-input' style="width: 95%; margin-bottom: 20px;">
+        <% value = @consultation.tag_list.empty? ? "" : @consultation_templates["diabetic"][2]%>
         <%= f.input :care_plan, placeholder: 'Add notes for the care plan', wrapper_html: { class: 'input-card' }, input_html: {style: 'height:16vh;', value: value} %>
         <ul>
           <li class='list-inline'><i class="fas fa-paperclip"></i></li>
         </ul>
       </div>
-      <div class='d-flex align-items-center' style="width: 95%">
-        <% value = @consultation.tag_list.empty? ? "" : @consultation_templates["diabetic"]["prescription"]%>
+      <div class='d-flex align-items-center form-input' style="width: 95%">
+        <% value = @consultation.tag_list.empty? ? "" : @consultation_templates["diabetic"][3]%>
         <%= f.input :prescription, placeholder: 'Add prescription for the patient', wrapper_html: { class: 'input-card' }, input_html: {style: 'height:16vh;', value: value} %>
         <ul>
           <li class='list-inline'><i class="fas fa-paperclip"></i></li>
         </ul>
       </div>
-      <div class='d-flex align-items-center' style="width: 95%">
-        <% value = @consultation.tag_list.empty? ? "" : @consultation_templates["diabetic"]["note_patient"]%>
+      <div class='d-flex align-items-center form-input' style="width: 95%">
+        <% value = @consultation.tag_list.empty? ? "" : @consultation_templates["diabetic"][4]%>
         <%= f.input :note_patient, placeholder: 'Add notes for the patient', wrapper_html: { class: 'input-card' }, input_html: {style: 'height:10vh;'} %>
         <ul>
           <li class='list-inline'><i style="margin-top: 2rem;" class="fas fa-link"></i></li>

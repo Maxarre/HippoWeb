@@ -19,7 +19,7 @@ Light therapy. If you fall asleep too early and then awaken too early, you can u
 b.save!
 c = Consultation.new(patient_id: a.id, status: 'Past', start_time: '18/02/2019 08:30PM', end_time: '18/02/2019 09:00PM', consultation_type: "Consultation", patient_complain:"I still barely sleep. I tried to change my habbits but the results are the same. I want to ponder new medicines as alternatives", diagnostic: 'A change of habbits was not a solution. It is a chronic case needing more attention.', care_plan: 'Let us put the patient under observation for one night at the sleeping center', prescription: "Simply contact Healthcare Coordination, and we’ll help you find a new primary care physician or specialist. You can also make an appointment with your current doctor. Do it all with one call: 01 43 43 27 27", note_patient: '')
 c.save!
-d = Consultation.new(patient_id: a.id, status: 'Upcoming', start_time: '12/06/2019 09:00AM', end_time: '12/06/2019 09:30AM', consultation_type: "Consultation", note_patient: 'Dr. Dorian sent us the results.')
+d = Consultation.new(patient_id: a.id, status: 'Upcoming', start_time: '12/06/2019 09:00AM', end_time: '12/06/2019 09:30AM', consultation_type: "Consultation")
 d.save!
 e = Email.new(consultation_id: b.id, title: 'Information after our first meeting', content: b.prescription)
 e.save!

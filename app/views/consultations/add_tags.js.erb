@@ -3,5 +3,22 @@ const updateTagglist = (newList) => {
   tagglist.innerHTML = newList;
 }
 
+// const form = document.querySelector(".type-taggs");
+
+// const inputForms = document.querySelectorAll(".input-card");
+
+
+// inputForms.forEach((input) => {
+//   input.value = "j <%= @consultation_templates["diabetic"][@i] %>";
+//   console.log(input.value)
+//   <% @i = @i + 1 %>
+// })
+const updateTagForm = (newForm) => {
+  const tagform = document.querySelector(".form-tags");
+  tagform.innerHTML = newForm;
+}
+
+updateTagForm("<%= j render 'shared/taginput', consultation: @consultation, patient: @patient %>");
+
 updateTagglist("<%= j render 'shared/tagglist', consultation: @consultation, patient: @patient %>");
 removeTag();
