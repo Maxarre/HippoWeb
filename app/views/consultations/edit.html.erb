@@ -10,7 +10,7 @@
         <%= f.input :tag_list, label: "Add tags", hint: "Add your tags, separated by commas", input_html: { class: 'input-tagg', value: nil} %>
       <% end %>
 
-    <%= simple_form_for [@patient, @consultation], html: {class: 'form-tags'} do |f| %>
+    <%= simple_form_for [@patient, @consultation], html: { class: 'form-tags' } do |f| %>
       <div id="consultation-taggs">
          <%= render 'shared/tagglist', consultation: @consultation, patient: @patient %>
       </div>
