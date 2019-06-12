@@ -68,7 +68,6 @@
   text-align: center;
   margin: 10px 0px;
   line-height: 1em;
-  height: 50px;
   overflow: auto;
   p {
     margin-bottom: 0px;
@@ -78,6 +77,15 @@
   &::-webkit-scrollbar {
       width: 1em;
   }
+}
+
+.content {
+  height: 60px;
+}
+
+.content:hover {
+  height: auto;
+  background-color: #8CC5F3;
 }
 
 .border-right {
