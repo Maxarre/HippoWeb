@@ -17,6 +17,7 @@ class EmailsController < ApplicationController
     @email = Email.new
     @patient = @consultation.patient
     @email.consultation_id = @consultation.id
+    @content = "Dear M. #{@consultation.patient.last_name},\n\nThis is the debriefing of our consultation dated the #{@consultation.start_time.strftime('%m/%d/%Y')}.\n\n\nYour complain:\n#{@consultation.patient_complain}\n\nThe diagnostic:\n#{@consultation.diagnostic}\n\nThe care plan:\n#{@consultation.care_plan}\n\nPrescrptions:\n#{@consultation.prescription}\n\n\nBest regards,\n\nDr.Cox"
     respond_to do |format|
       format.html
       format.js
