@@ -1,9 +1,13 @@
 diabetic:
-  0: "t'as vu martin"
-  1: "le dernier episode de got"
-  2: "vert gris il"
-  3: "est"
-  4: "yolo poto"
+insomnia:
+ 0: "It is a bad cycle, I can't sleep because I'm anxious, and when I don't sleep the symptoms of anxiety and the dizziness are much worse. I feel that my lack of sleep every night is preventing me from getting any better and I just want to sort it out.  A common night for me is lay there for 2-3 hours trying to get to sleep, then once I'm asleep waking up every hour or so with bad anxiety in the middle of the night. I try to tire myself out during the day physically but I can just never seem to feel tired. It is so frustrating, I get more anxious as it gets later in the day as I know I will have to go to bed soon."
+ 1: " Depending on your situation, the diagnosis of insomnia and the search for its cause may include:
+Physical exam. If the cause of insomnia is unknown, your doctor may do a physical exam to look for signs of medical problems that may be related to insomnia. Occasionally, a blood test may be done to check for thyroid problems or other conditions that may be associated with poor sleep.
+Sleep habits review. In addition to asking you sleep-related questions, your doctor may have you complete a questionnaire to determine your sleep-wake pattern and your level of daytime sleepiness. You may also be asked to keep a sleep diary for a couple of weeks.
+Sleep study. If the cause of your insomnia isn't clear, or you have signs of another sleep disorder, such as sleep apnea or restless legs syndrome, you may need to spend a night at a sleep center. Tests are done to monitor and record a variety of body activities while you sleep, including brain waves, breathing, heartbeat, eye movements and body movements."
+ 2: "Cognitive behavioral therapy for insomnia (CBT-I) can help you control or eliminate negative thoughts and actions that keep you awake and is generally recommended as the first line of treatment for people with insomnia. Typically, CBT-I is equally or more effective than sleep medications."
+ 3: "Eszopiclone (Lunesta)."
+ 4: "Prescription sleeping pills can have side effects, such as causing daytime grogginess and increasing the risk of falling, or they can be habit-forming, so talk to your doctor about these medications and other possible side effects."
 
 
   # patient_complain: "t'as vu martin"
