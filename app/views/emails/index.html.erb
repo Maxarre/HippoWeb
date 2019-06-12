@@ -3,11 +3,10 @@
     <% @emails.each do |email| %>
       <div class="email-card link d-flex justify-content-between">
         <h4 style="width: 40%"><%= email.title %></h4>
-        <h5 style="width: 30%"><%= email.consultation.end_time.strftime("%H:%M") %> <%= email.consultation.end_time.strftime("%m/%d/%Y") %></h5>
+        <h5 style="width: 30%"><%= email.consultation.start_time.strftime("%H") %>h55 <%= email.consultation.start_time.strftime("%m/%d/%Y") %></h5>
         <h5 style="width: 20%"><%= email.consultation.patient.first_name%> <%= email.consultation.patient.last_name %></h5>
         <h5>Sent</h5>
       </div>
     <% end %>
   </div>
 </div>
-
