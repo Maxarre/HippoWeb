@@ -1,29 +1,6 @@
 <div class="dashboard_index">
   <h1 style="font-size: 4vh; margin-bottom: 25px;">Follow up History</h1>
   <div class="d-flex align-items-center justify-content-between">
-    <div class="searchbar" style="background-color: transparent;">
-    <%= form_tag patient_path, id: "search_form", method: :get do %>
-      <%= select_tag "consultation", options_from_collection_for_select(
-        Consultation.all, :id, :consultation_type), class: 'select2', id: "select_a_patient" %>
-      <%= link_to patients_path do %>
-      <i style="padding-left: 5px" class="fas fa-times"></i>
-      <% end %>
-    <% end %>
-    </div>
-    <script>
-      window.onload = function() {
-        <%# if @selected_patient %>
-          $('.select2').val("<%= @selected_patient %>")
-          $('.select2').trigger('change')
-        <%# end %>
-        $('.select2').on('select2:select', function (e) {
-          console.log("hola")
-          console.log(e.params);
-          var data = e.params.data;
-          document.getElementById("search_form").submit()
-        });
-      }
-    </script>
     <%= link_to "Edit Follow-up", edit_patient_consultation_path(@patient), class:"follow-up", remote: true %>
   </div>
 </div>

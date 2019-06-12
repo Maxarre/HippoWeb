@@ -9,7 +9,7 @@
             </div>
           </div>
           <div class="show-follow-up">
-            <% @patient.consultations.where("start_time < ?", Time.now).each do |consultation| %>
+            <% @patient.consultations.select{ |consultation| (consultation.start_time < DateTime.now) && !consultation.patient_complain.nil? }.each do |consultation| %>
               <div class="show">
                 <div class="d-flex justify-content-between" data-id="<%= consultation.id %>" id="resume_<%= consultation.id %>" onclick="display_full(event)">
                   <div class="avatar-date d-flex <%= 'lightblue' if consultation.consultation_type == 'First meeting' %> <%= 'blue' if consultation.consultation_type == 'Operation' %> <%= 'yellow' if consultation.consultation_type == 'Consultation' %>"><div style="margin:auto"><%= consultation.start_time.strftime("%e")%><div style="margin:auto"></%><%= consultation.start_time.strftime("%b")%></div>

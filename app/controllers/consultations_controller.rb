@@ -25,8 +25,8 @@ class ConsultationsController < ApplicationController
     @consultation.patient = Patient.find(params[:patient_id])
     @all_tagg_list = ActsAsTaggableOn::Tag.all
     respond_to do |format|
-      format.html { redirect_to edit_patient_consultation_path(@patient) } # show.html.erb
-      format.js # show.js.erb
+      format.html { redirect_to edit_patient_consultation_path(@patient) }
+      format.js
     end
     # @consultation = Consultation.find(params[:id])
     # @consultation = Consultation.last
