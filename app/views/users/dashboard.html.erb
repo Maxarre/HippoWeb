@@ -1,5 +1,9 @@
-<div class="d-flex justify-content-end interface-position">
-  <div>
+<div class="interface-position">
+  <div class="d-flex justify-content-between">
+    <div>
+      <%= link_to "Weekly", new_consultation_path, class: "btn weekly-monthly to-the-right" %>
+      <%= link_to "Monthly", new_consultation_path, class: "btn weekly-monthly" %>
+    </div>
     <%= link_to "+ Add Meeting", new_consultation_path, class: "btn btn-flat-add-meeting" %>
   </div>
 </div>

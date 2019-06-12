@@ -9,7 +9,7 @@
 }
 
 .calendar-container {
-  width: 82.9vw;
+  // width: 82.9vw;
   margin: 0px 20px;
   overflow-x: auto;
   overflow-y: auto;
@@ -64,4 +64,24 @@
 .date-dash {
   font-weight: 300;
   text-align: center;
+}
+
+.to-the-right {
+  margin: 0px  50px;
+}
+
+.weekly-monthly {
+  color: #109CF1;
+  padding: 4px 60px;
+  border-radius: 4px;
+  background: #F4F4F4;
+  border: solid 1px #109CF1;
+  transition: background 0.3s ease;
+  font-weight: bold;
+  font-weight: lighter;
+}
+
+.weekly-monthly:hover {
+  opacity: 0.7;
+  color: #109CF1;
 }
