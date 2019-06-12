@@ -1,6 +1,13 @@
 diabetic:
-  patient_complain: "t'as vu martin"
-  diagnostic: "le dernier episode de got"
-  care_plan: "vert gris il"
-  prescription: "est"
-  note_patient: "yolo poto"
+  0: "t'as vu martin"
+  1: "le dernier episode de got"
+  2: "vert gris il"
+  3: "est"
+  4: "yolo poto"
+
+
+  # patient_complain: "t'as vu martin"
+  # diagnostic: "le dernier episode de got"
+  # care_plan: "vert gris il"
+  # prescription: "est"
+  # note_patient: "yolo poto"

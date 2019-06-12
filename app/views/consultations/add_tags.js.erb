@@ -3,5 +3,12 @@ const updateTagglist = (newList) => {
   tagglist.innerHTML = newList;
 }
 
+const updateTagForm = (newForm) => {
+  const tagform = document.querySelector(".form-tags");
+  tagform.innerHTML = newForm;
+}
+
+updateTagForm("<%= j render 'shared/taginput', consultation: @consultation, patient: @patient %>");
+
 updateTagglist("<%= j render 'shared/tagglist', consultation: @consultation, patient: @patient %>");
 removeTag();
