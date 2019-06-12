@@ -16,41 +16,42 @@
       </div>
 
       <div class='d-flex align-items-center' style="width: 95%; margin-bottom: 20px;">
-        <% value = @consultation.tag_list.empty? ? "" : @consultation_templates["diabetic"][0]%>
-        <%= f.input :patient_complain, placeholder: 'Add notes for the complains', wrapper_html: { class: 'input-card' }, input_html: {style: 'height:16vh;', value: value} %>
+        <% input_value = @consultation.tag_list.empty? ? "" : @consultation_templates["diabetic"][0]%>
+        <%= f.input :patient_complain, placeholder: 'Add notes for the complains', input_html: { class: 'input-card', style: 'height:16vh;', value: input_value } %>
         <ul>
           <li class='list-inline'><i class="fas fa-paperclip"></i></li>
         </ul>
       </div>
-      <div class='d-flex align-items-center form-input' style="width: 95%; margin-bottom: 20px;">
-        <% value = @consultation.tag_list.empty? ? "" : @consultation_templates["diabetic"][1]%>
-        <%= f.input :diagnostic, placeholder: 'Add notes for the diagnostic', wrapper_html: { class: 'input-card' }, input_html: {style: 'height:16vh;', value: value} %>
+      <div class='d-flex align-items-center' style="width: 95%; margin-bottom: 20px;">
+        <% input_value = @consultation.tag_list.empty? ? "" : @consultation_templates["diabetic"][1]%>
+        <%= f.input :patient_complain, placeholder: 'Add notes for the complains', input_html: { class: 'input-card', style: 'height:16vh;', value: input_value } %>
         <ul>
           <li class='list-inline'><i class="fas fa-paperclip"></i></li>
         </ul>
       </div>
-      <div class='d-flex align-items-center form-input' style="width: 95%; margin-bottom: 20px;">
-        <% value = @consultation.tag_list.empty? ? "" : @consultation_templates["diabetic"][2]%>
-        <%= f.input :care_plan, placeholder: 'Add notes for the care plan', wrapper_html: { class: 'input-card' }, input_html: {style: 'height:16vh;', value: value} %>
+      <div class='d-flex align-items-center' style="width: 95%; margin-bottom: 20px;">
+        <% input_value = @consultation.tag_list.empty? ? "" : @consultation_templates["diabetic"][2]%>
+        <%= f.input :patient_complain, placeholder: 'Add notes for the complains', input_html: { class: 'input-card', style: 'height:16vh;', value: input_value } %>
+        <ul>
+          <li class='list-inline'><i class="fas fa-paperclip"></i></li>
+        </ul>
+      </div>
+      <div class='d-flex align-items-center' style="width: 95%; margin-bottom: 20px;">
+        <% input_value = @consultation.tag_list.empty? ? "" : @consultation_templates["diabetic"][3]%>
+        <%= f.input :patient_complain, placeholder: 'Add notes for the complains', input_html: { class: 'input-card', style: 'height:16vh;', value: input_value } %>
         <ul>
           <li class='list-inline'><i class="fas fa-paperclip"></i></li>
         </ul>
       </div>
       <div class='d-flex align-items-center form-input' style="width: 95%">
-        <% value = @consultation.tag_list.empty? ? "" : @consultation_templates["diabetic"][3]%>
-        <%= f.input :prescription, placeholder: 'Add prescription for the patient', wrapper_html: { class: 'input-card' }, input_html: {style: 'height:16vh;', value: value} %>
-        <ul>
-          <li class='list-inline'><i class="fas fa-paperclip"></i></li>
-        </ul>
-      </div>
-      <div class='d-flex align-items-center form-input' style="width: 95%">
-        <% value = @consultation.tag_list.empty? ? "" : @consultation_templates["diabetic"][4]%>
-        <%= f.input :note_patient, placeholder: 'Add notes for the patient', wrapper_html: { class: 'input-card' }, input_html: {style: 'height:10vh;'} %>
+        <% input_value = @consultation.tag_list.empty? ? "" : @consultation_templates["diabetic"][4]%>
+        <%= f.input :note_patient, placeholder: 'Add notes for the patient', input_html: { class: 'input-card' }, input_html: {style: 'height:10vh;'}, value: input_value} %>
         <div class="d-flex justify-content-between">
           <%= link_to "SKIP", dashboard_path, class: "btn btn-outline-secondary height" %>
           <%= f.button :submit, class:"btn btn-flat-add-consultation", data: { disable_with: false }, value:"Next" %>
         </div>
       <% end %>
+
     </div>
   </div>
 </div>

@@ -15,7 +15,13 @@ const removeTag = () => {
        success: () => {
       }
      });
-    event.currentTarget.outerHTML = ""
+    event.currentTarget.outerHTML = "";
+    const inputValues = document.querySelectorAll(".input-card")
+    inputValues.forEach((input) => {
+        console.log(input);
+        console.log(input.value);
+        input.value = "";
+      });
     });
   });
 }
