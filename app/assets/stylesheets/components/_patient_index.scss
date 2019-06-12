@@ -15,6 +15,9 @@
 
 .tabs {
   margin-top: 5vh;
+  i {
+    color: white;
+  }
 }
 
 .tab {
@@ -124,7 +127,7 @@
 .display-patient-info {
   margin:20px 0px;
   padding: 4vh;
-  width: 60vw;
+  width: 55vw;
 }
 
 .position_date {

@@ -37,9 +37,11 @@ Rails.application.routes.draw do
     post "remove_tags", to:"consultations#remove_tags", as: "remove_tags", on: :member
   end
 
-  resources :consultations, only: [:show, :index] do
-    resources :emails, only: [:new, :create, :index]
-  end
+  # resources :patients, only: [:show] do
+    resources :consultations, only: [:show, :index] do
+      resources :emails, only: [:new, :create, :index]
+    end
+  # end
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
