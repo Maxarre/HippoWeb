@@ -1,4 +1,4 @@
-<%= simple_form_for [@patient, @consultation], remote: true do |f| %>
+<%= simple_form_for [@patient, @consultation] do |f| %>
   <div id="consultation-taggs">
      <%= render 'shared/tagglist', consultation: @consultation, patient: @patient %>
   </div>
