@@ -15,7 +15,12 @@ class EmailsController < ApplicationController
   def new
     @consultation = Consultation.find(params[:consultation_id])
     @email = Email.new
+    @patient = @consultation.patient
     @email.consultation_id = @consultation.id
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def create
