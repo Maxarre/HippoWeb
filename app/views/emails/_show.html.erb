@@ -1,18 +1,18 @@
 <div class="dashboard_index">
   <h1 style="font-size: 4vh; margin-bottom: 25px;">Email History</h1>
-  <div class="d-flex justify-content-between">
-    <h5>Filter: <a href=""> All</a></h5>
-    <%#= link_to "New email", new_consultation_email_path(@consultation), class:"follow-up" %>
-  </div>
 </div>
 <div class="email-index">
   <% patient.emails.each do |email| %>
-    <div class="email-card link">
-      <h3>Email title: <%= email.title %></h3>
-      <p>Sent date: <%= email.consultation.end_time %></p>
-      <ul><li class='list-inline'><%= email.consultation.patient.first_name%> <%= email.consultation.patient.last_name  %></li></ul>
-      <span></span>
-      <%#= link_to '', patient_path %>
+    <div class="email-card-show link">
+      <div class="d-flex justify-content-between">
+      <% if email.title.present? %>
+      <h4><%= email.title %></h4>
+      <% else %>
+      <h4>Email Title</h4>
+      <% end %>
+      <h4><%= email.consultation.patient.first_name%> <%= email.consultation.patient.last_name  %></h4>
+      </div>
+      <h4>Sent at <%= email.consultation.start_time.strftime("%H") %>h55 </h4>
     </div>
   <% end %>
 </div>

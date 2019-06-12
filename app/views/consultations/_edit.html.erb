@@ -1,4 +1,4 @@
-<div class="display-patient-info">
+<div class="display-patient-info-bis">
   <div><h2 class="consultation-type-text <%= 'lightblue-text color-text' if @consultation.consultation_type == 'First meeting' %> <%= 'blue-text color-text' if @consultation.consultation_type == 'Operation' %> <%= 'yellow-text color-text' if @consultation.consultation_type == 'Consultation' %>"><%= @consultation.consultation_type %> Follow-up  (<%= @consultation.start_time.strftime("%A, %b %d") %>)</h2></div>
   <div style="margin: 0px 20px;">
     <div id="patient_id" data-target="<%= @patient.id %>"></div>
