@@ -8,7 +8,6 @@ class ConsultationsController < ApplicationController
     @consultation = Consultation.find(params[:id])
   end
 
-
   def new
     @consultation = Consultation.new
   end
@@ -16,9 +15,10 @@ class ConsultationsController < ApplicationController
   def create
     @consultation = Consultation.new(consultation_params)
     year = params[:consultation][:start_time].to_date.year
-    month= params[:consultation][:start_time].to_date.month
-    day= params[:consultation][:start_time].to_date.day
-    hour = params[:hour].to_i
+    month = params[:consultation][:start_time].to_date.month
+    day = params[:consultation][:start_time].to_date.day
+    hour = params[:consultation][:hour].to_i if !params[:consultation][:hour].nil?
+    hour = params[:hour].to_i if !params[:hour].nil?
     start_time = DateTime.new(year, month, day, hour, 0, 0)
     @consultation.start_time = start_time
     @consultation.save

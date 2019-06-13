@@ -13,28 +13,29 @@
 
 <div class="calendar-container">
   <div class="d-flex" style="margin-bottom: 20px">
-  <% @consultations.each do |day_consultations| %>
-    <div>
+    <% @consultations.each do |day_consultations| %>
       <div>
-        <h2 class="date-dash"> <%= day_consultations.first.start_time.strftime("%d") %> </h2>
-        <h2 class="date-dash"> <%= day_consultations.first.start_time.strftime("%A")%></h2>
-      </div>
-      <div class="consultation-each">
-        <% (8..20).to_a.each do |hour| %>
-          <% consultation =  day_consultations.select { |c| c.start_time.hour == hour }.first  %>
-          <% if consultation.present? %>
-            <div class="meeting-card link <%= 'lightblueborder' if consultation.consultation_type == 'First meeting' %> <%= 'blueborder' if consultation.consultation_type == 'Operation' %> <%= 'yellowborder' if consultation.consultation_type == 'Consultation' %>">
-            <div class="d-flex justify-content-between">
-              <p><%= consultation.start_time.strftime("%H") %>h00</p><span class="consultation-type-text <%= 'lightblue-text' if consultation.consultation_type == 'First meeting' %> <%= 'blue-text' if consultation.consultation_type == 'Operation' %> <%= 'yellow-text' if consultation.consultation_type == 'Consultation' %>"><%= consultation.consultation_type %></span>
-            </div>
-            <h4><%= consultation.patient.first_name %> <%= consultation.patient.last_name  %></h4>
-            <%= link_to '', patient_path(consultation.patient) %>
-          </div>
-          <% else %>
-            <div class="empty-meeting" data-toggle="modal" data-target="#meeting-modal-<%= hour %>-<%= day_consultations.first.id %>">
-              <p><%= hour %>h00</p>
-            </div>
-            <%= render 'shared/modal_complete_meeting', hour: hour, date: day_consultations.first.start_time.strftime("%b %d, %Y"), id: day_consultations.first.id %>
+        <div>
+          <h2 class="date-dash"> <%= day_consultations.first.start_time.strftime("%d") %> </h2>
+          <h2 class="date-dash"> <%= day_consultations.first.start_time.strftime("%A")%></h2>
+        </div>
+        <div class="consultation-each">
+          <% (8..20).to_a.each do |hour| %>
+            <% consultation =  day_consultations.select { |c| c.start_time.hour == hour }.first  %>
+            <% if consultation.present? %>
+              <div class="meeting-card link <%= 'lightblueborder' if consultation.consultation_type == 'First meeting' %> <%= 'blueborder' if consultation.consultation_type == 'Operation' %> <%= 'yellowborder' if consultation.consultation_type == 'Consultation' %>">
+                <div class="d-flex justify-content-between">
+                  <p><%= consultation.start_time.strftime("%H") %>h00</p><span class="consultation-type-text <%= 'lightblue-text' if consultation.consultation_type == 'First meeting' %> <%= 'blue-text' if consultation.consultation_type == 'Operation' %> <%= 'yellow-text' if consultation.consultation_type == 'Consultation' %>"><%= consultation.consultation_type %></span>
+                </div>
+                <h4><%= consultation.patient.first_name %> <%= consultation.patient.last_name  %></h4>
+                <%= link_to '', patient_path(consultation.patient) %>
+              </div>
+            <% else %>
+              <div class="empty-meeting" data-toggle="modal" data-target="#meeting-modal-<%= hour %>-<%= day_consultations.first.id %>">
+                <p><%= hour %>h00</p>
+              </div>
+              <%= render 'shared/modal_complete_meeting', hour: hour, date: day_consultations.first.start_time.strftime("%b %d, %Y"), id: day_consultations.first.id %>
+            <% end %>
           <% end %>
         </div>
       </div>
@@ -60,7 +61,7 @@
           <div class="d-flex justify-content-between">
             <div>
               <div style="height: 120px">
-                <h4>Patient</h4>
+                <h4> Patient</h4>
                 <%= f.association :patient, label_method: lambda { |patient| "#{patient.first_name} #{patient.last_name}"} %>
               </div>
               <div>
@@ -78,7 +79,7 @@
               </div>
               <div>
                 <label for="">Hour</label><br>
-                <input type="text" required="false" class="hour-meeting timepicker" placeholder="hour of the meeting" value="<%= params[:hour] %>">
+                <input name="hour" type="text" required="false" class="hour-meeting timepicker" placeholder="hour of the meeting" value="<%= params[:hour] %>">
               </div>
             </div>
           </div>

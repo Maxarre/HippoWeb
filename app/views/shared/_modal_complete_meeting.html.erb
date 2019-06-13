@@ -31,7 +31,7 @@
                 </div>
                 <div>
                   <label for="">Hour</label><br>
-                  <input type="text" required="false" class="hour-meeting timepicker" placeholder="hour of the meeting" value="<%= hour %>">
+                  <%= f.input :hour, as: :string, required: false, input_html: {class: "timepicker hour-meeting"}, input_html: {value: hour}, placeholder: 'Hour' %>
                 </div>
               </div>
             </div>
