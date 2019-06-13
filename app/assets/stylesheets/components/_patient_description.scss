@@ -1,12 +1,12 @@
 .patient_description {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  height: 100vh;
-  width: 20%;
-  padding-top: 20px;
-  padding-left: 40px;
-  padding-right: 40px;
-  position: sticky;
-  top: 0px;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  h4, h3, i, p {
+    margin-bottom: 0;
+    color:white;
+  }
 }
 
 #patient-color {
@@ -21,17 +21,17 @@
 }
 
 .patient_general_info {
-  border-bottom: solid 1px rgba(255, 255, 255, .7);
+  border-right: solid 1px rgba(255, 255, 255, .7);
   text-align: center;
-  padding-bottom: 1vh;
+  width: 20%;
+  padding: auto 0px;
+  border:auto;
   h2 {
     font-weight: bold;
-    padding-bottom: 1vh;
  }
 }
 
 .patient_detailed_info {
-  padding-top: 1vh;
   line-height: 2;
   h3 {
     font-weight: bold;
