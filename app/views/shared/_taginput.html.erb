@@ -3,7 +3,7 @@
          <%= render 'shared/tagglist', consultation: @consultation, patient: @patient %>
       </div>
         <% input_value = @consultation.tag_list.empty? ? "" : @consultation_templates["insomnia"][0]%>
-        <%= f.input :patient_complain, placeholder: 'Add notes for the complains', input_html: { class: 'input-card', style: 'height:16vh;', value: input_value}, label: false %>
+        <%= f.input :patient_complain, placeholder: 'Add notes for the complains', input_html: { class: 'input-card', style: 'height:16vh;', value: input_value} %>
         <% input_value = @consultation.tag_list.empty? ? "" : @consultation_templates["insomnia"][1]%>
         <%= f.input :diagnostic, placeholder: 'Add notes for the diagnostic', input_html: { class: 'input-card', style: 'height:16vh;', value: input_value } %>
         <% input_value = @consultation.tag_list.empty? ? "" : @consultation_templates["insomnia"][2]%>
