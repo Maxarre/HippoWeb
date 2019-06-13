@@ -3,16 +3,16 @@
 </div>
 <div class="email-index">
   <% patient.emails.each do |email| %>
-    <div class="email-card-show link">
-      <div class="d-flex justify-content-between">
-      <% if email.title.present? %>
-      <h4><%= email.title %></h4>
-      <% else %>
-      <h4>Email Title</h4>
-      <% end %>
-
+    <div class="email-card-show">
+      <div class="d-flex justify-content-between" style="padding-bottom: 10px;">
+        <% if email.title.present? %>
+        <h4><strong><%= email.title %></strong></h4>
+        <% else %>
+        <h4>Email Title</h4>
+        <% end %>
+        <h5><%= email.consultation.start_time.strftime("%H") %>h55 <i class="fa fa-paper-plane" aria-hidden="true"></i></h5>
       </div>
-      <h4>Sent at <%= email.consultation.start_time.strftime("%H") %>h55 </h4>
+        <h5>Follow up from: <%= email.consultation.start_time.strftime(" %e/%m/%y") %></h5>
     </div>
   <% end %>
 </div>
