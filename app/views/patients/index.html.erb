@@ -74,7 +74,8 @@
           <div class="d-flex category-index-info" style="width: 16vw">
 
             <% unless patient.consultations.empty? %>
-              <p><%= patient.consultations.last.patient_note_attachment %></p>
+              <% note_attachememnt = patient.consultations.last.patient_note_attachment %>
+              <p><%= note_attachememnt.nil? ? note_attachememnt : "#{note_attachememnt.first(60)} ..."%></p>
             <% end %>
             <%#= @consultations.find_by(patient_id: patient.id).patient_note_attachment %>
           </div>
