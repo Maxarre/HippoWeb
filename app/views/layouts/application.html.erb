@@ -33,7 +33,7 @@
   </head>
   <body>
   <div class="d-flex">
-    <%= render 'shared/sidebar' %>
+    <%= render 'shared/sidebar' unless params["controller"].include?('devise') %>
     <div class="appcontainer">
       <%= yield %>
     </div>
