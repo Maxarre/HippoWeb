@@ -11,14 +11,16 @@
          <%= render 'shared/tagglist', consultation: @consultation, patient: @patient %>
       </div>
         <% input_value = @consultation.tag_list.empty? ? "" : @consultation_templates["insomnia"][0]%>
-        <%= f.input :patient_complain, placeholder: 'Add notes for the complains', input_html: { class: 'input-card', style: 'height:16vh;', value: input_value}, label: false %>
+        <%= f.input :patient_complain, placeholder: 'Add notes for the complains', input_html: { class: 'input-card', style: 'height:16vh;', value: input_value} %>
         <% input_value = @consultation.tag_list.empty? ? "" : @consultation_templates["insomnia"][1]%>
-        <%= f.input :patient_complain, placeholder: 'Add notes for the complains', input_html: { class: 'input-card', style: 'height:16vh;', value: input_value } %>
+        <%= f.input :diagnostic, placeholder: 'Add notes for the diagnostic', input_html: { class: 'input-card', style: 'height:16vh;', value: input_value } %>
         <% input_value = @consultation.tag_list.empty? ? "" : @consultation_templates["insomnia"][2]%>
-        <%= f.input :patient_complain, placeholder: 'Add notes for the complains', input_html: { class: 'input-card', style: 'height:16vh;', value: input_value } %>
+        <%= f.input :care_plan, placeholder: 'Add notes for the care plan', input_html: { class: 'input-card', style: 'height:16vh;', value: input_value } %>
 
         <% input_value = @consultation.tag_list.empty? ? "" : @consultation_templates["insomnia"][3]%>
-        <%= f.input :patient_complain, placeholder: 'Add notes for the complains', input_html: { class: 'input-card', style: 'height:16vh;', value: input_value } %>
+        <%= f.input :prescription, placeholder: 'Add notes for the prescription', input_html: { class: 'input-card', style: 'height:16vh;', value: input_value } %>
+        <% input_value = @consultation.tag_list.empty? ? "" : @consultation_templates["insomnia"][4]%>
+        <%= f.input :note_patient, placeholder: 'Add notes for the patient', input_html: { class: 'input-card', style: 'height:16vh;', value: input_value } %>
       <div class="d-flex justify-content-between">
         <%= link_to "SKIP", patient_path(@patient), class: "btn btn-outline-secondary height" %>
         <%= f.button :submit, class: "btn btn-flat-add-consultation", data: { disable_with: false }, value:"Next" %>
