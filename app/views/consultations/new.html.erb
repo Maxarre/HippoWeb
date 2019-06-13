@@ -14,9 +14,9 @@
             </div>
             <div>
               <% if params[:date].nil?%>
-                <%= f.input :start_time, as: :string, required: false, input_html: {class: "meetpicker"}, placeholder: "Select Start" %>
+                <%= f.input :start_time, as: :string, required: false, input_html: {class: "meetpicker"} %>
               <% else %>
-                <%= f.input :start_time, as: :string, required: false, input_html: {class: "meetpicker"}, placeholder: "Select Start", input_html: {value: params[:date]} %>
+                <%= f.input :start_time, as: :string, required: false, input_html: {class: "meetpicker"}, input_html: {value: params[:date]} %>
               <% end %>
             </div>
           </div>
