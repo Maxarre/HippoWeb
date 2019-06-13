@@ -6,17 +6,10 @@
   margin-bottom: 10px;
   width: 15vw;
   height: 7vh;
-  line-height: 0.8;
-  position: relative;
-    p {
-      font-size:1.4vh;
-    }
-    span {
-      font-size:1.6vh;
-      position: absolute;
-      top: 5px;
-      right: 5px;
-    }
+  line-height: 0.6;
+  h4, p {
+    margin-bottom: 4px;
+  }
 }
 
 .meeting-card:hover {
