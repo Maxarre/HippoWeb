@@ -23,6 +23,8 @@
   }
   &::-webkit-scrollbar {
     text-align:center;
+    height: 10px;
+    width: 10px;
   }
   &::-webkit-scrollbar-track {
       -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
@@ -58,7 +60,7 @@
   margin-bottom: 10px;
   width: 15vw;
   background-color: #c2dbef;
-  opacity: 0.7;
+  opacity: 0.5;
   height: 7vh;
 }
 
@@ -68,7 +70,7 @@
 }
 
 .to-the-right {
-  margin: 0px  50px;
+  margin-right: 30px;
 }
 
 #weekly {
