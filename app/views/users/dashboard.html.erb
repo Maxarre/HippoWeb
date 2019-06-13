@@ -29,9 +29,11 @@
               <%= link_to '', patient_path(consultation.patient) %>
             </div>
             <% else %>
-            <div class="empty-meeting">
-              <p><%= hour %>h00</p>
-            </div>
+            <%= link_to new_consultation_path(hour: hour, date: day_consultations.first.start_time.strftime("%b %d, %Y")), style: "text-decoration:none" do%>
+              <div class="empty-meeting">
+                <p><%= hour %>h00</p>
+              </div>
+            <% end %>
           <% end %>
         <% end %>
         </div>

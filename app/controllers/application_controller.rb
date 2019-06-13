@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
 
   layout :layout_by_resource
 
+  def default_url_options
+    { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
+
   private
 
   def layout_by_resource
