@@ -15,9 +15,10 @@ class ConsultationsController < ApplicationController
   def create
     @consultation = Consultation.new(consultation_params)
     year = params[:consultation][:start_time].to_date.year
-    month= params[:consultation][:start_time].to_date.month
-    day= params[:consultation][:start_time].to_date.day
-    hour = params[:hour].to_i
+    month = params[:consultation][:start_time].to_date.month
+    day = params[:consultation][:start_time].to_date.day
+    hour = params[:consultation][:hour].to_i if !params[:consultation][:hour].nil?
+    hour = params[:hour].to_i if !params[:hour].nil?
     start_time = DateTime.new(year, month, day, hour, 0, 0)
     @consultation.start_time = start_time
     @consultation.save
@@ -34,10 +35,6 @@ class ConsultationsController < ApplicationController
       format.html { redirect_to edit_patient_consultation_path(@patient) }
       format.js
     end
-    # @consultation = Consultation.find(params[:id])
-    # @consultation = Consultation.last
-    # @consultation = Consultation.order('id desc').offset(1).first --> for the last - 1
-    # @consultation = @patient.consultations.where("consultation.consultation-type", "pending").first
   end
 
   def update
@@ -78,4 +75,5 @@ class ConsultationsController < ApplicationController
   def consultation_params
     params.require(:consultation).permit(:patient_id, :status, :consultation_type, :required_documents, :patient_complain, :diagnostic, :care_plan, :prescription, :note_patient, :patient_note_attachment)
   end
+
 end

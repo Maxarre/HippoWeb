@@ -1,0 +1,48 @@
+  <!-- Modal -->
+  <div class="modal fade" id="meeting-modal-<%= hour %>-<%= id %>" tabindex="-1" role="dialog" aria-labelledby="meeting-modal-<%= hour %>Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="meeting-modal-<%= hour %>Label">New meeting</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <%= simple_form_for Consultation.new do |f| %>
+            <div class="d-flex justify-content-between">
+              <%= f.input :consultation_type, collection: ["First meeting", "Operation", "Consultation"] %>
+            </div>
+            <div class="d-flex justify-content-between">
+              <div>
+                <div style="height: 120px">
+                  <h4>Patient</h4>
+                  <%= f.association :patient, label_method: lambda { |patient| "#{patient.first_name} #{patient.last_name}"} %>
+                </div>
+                <div>
+                  <%= f.input :start_time, as: :string, required: false, input_html: {class: "meetpicker"}, input_html: {value: date} %>
+                </div>
+              </div>
+              <div>
+                <div style="height: 120px">
+                  <h4>Unregistered patient</h4>
+                  <%= link_to "New patient", new_patient_path, class: "btn btn-outline-primary margin-right-50" %>
+                </div>
+                <div>
+                  <label for="">Hour</label><br>
+                  <%= f.input :hour, as: :string, required: false, input_html: {class: "timepicker hour-meeting"}, input_html: {value: hour}, placeholder: 'Hour' %>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex justify-content-between">
+              <%= f.input :note_patient %>
+            </div>
+            <div class="d-flex justify-content-end">
+              <%= f.button :submit, "Add new meeting", class: "btn btn-primary margin-right-50" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
