@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def default_url_options
+    { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
+
   def layout_by_resource
     if devise_controller?
       "static"
