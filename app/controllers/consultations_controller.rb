@@ -34,6 +34,10 @@ class ConsultationsController < ApplicationController
       format.html { redirect_to edit_patient_consultation_path(@patient) }
       format.js
     end
+    # @consultation = Consultation.find(params[:id])
+    # @consultation = Consultation.last
+    # @consultation = Consultation.order('id desc').offset(1).first --> for the last - 1
+    # @consultation = @patient.consultations.where("consultation.consultation-type", "pending").first
   end
 
   def update
