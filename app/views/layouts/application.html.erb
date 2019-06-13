@@ -35,7 +35,9 @@
   </head>
   <body>
     <div class="d-flex">
-      <%= render 'shared/sidebar' %>
+      <% if current_user %>
+        <%= render 'shared/sidebar' %>
+      <% end %>
       <div class="appcontainer">
         <%= yield %>
       </div>
