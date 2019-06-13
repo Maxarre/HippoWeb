@@ -7,6 +7,7 @@
       altFormat: "d F Y",
     })
 
+<<<<<<< HEAD
     flatpickr(".meetpicker", {
       altInput: true,
       allowInput: true,
@@ -20,3 +21,11 @@
         noCalendar: true,
         dateFormat: "H"
     })
+=======
+flatpickr(".meetpicker", {
+  altInput: true,
+  allowInput: true,
+  altFormat: "d F Y",
+  time_24hr: true,
+})
+>>>>>>> 7665ad5ea34b1e3938764c806b82289232d2dd45

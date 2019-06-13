@@ -8,10 +8,16 @@
   @import "font-awesome-sprockets";
   @import "font-awesome";
 
+<<<<<<< HEAD
   // Your CSS partials
   @import "components/index";
   @import "pages/index";
   @import "consultations/index";
+=======
+// Your CSS partials
+@import "components/index";
+@import "pages/index";
+>>>>>>> 7665ad5ea34b1e3938764c806b82289232d2dd45
 
   body {
     font-family: 'Poppins', sans-serif;
