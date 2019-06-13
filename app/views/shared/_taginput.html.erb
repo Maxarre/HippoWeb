@@ -10,4 +10,8 @@
         <%= f.input :patient_complain, placeholder: 'Add notes for the complains', input_html: { class: 'input-card', style: 'height:16vh;', value: input_value } %>
         <% input_value = @consultation.tag_list.empty? ? "" : @consultation_templates["insomnia"][3]%>
         <%= f.input :patient_complain, placeholder: 'Add notes for the complains', input_html: { class: 'input-card', style: 'height:16vh;', value: input_value } %>
+        <div class="d-flex justify-content-between">
+        <%= link_to "SKIP", patient_path(@patient), class: "btn btn-outline-secondary height" %>
+        <%= f.button :submit, class: "btn btn-flat-add-consultation", data: { disable_with: false }, value:"Next" %>
+      </div>
 <% end %>
