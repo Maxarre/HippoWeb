@@ -1,5 +1,5 @@
 <div class="dashboard_index">
-  <h1 style="font-size: 4vh; margin-bottom: 25px;">Email History</h1>
+  <h1 style="font-size: 4vh; margin-bottom: 25px;"><strong><%= @patient.first_name  %> <%= @patient.last_name  %></strong> - Email History</h1>
 </div>
 <div class="email-index">
   <% patient.emails.each do |email| %>
@@ -10,7 +10,7 @@
       <% else %>
       <h4>Email Title</h4>
       <% end %>
-      <h4><%= email.consultation.patient.first_name%> <%= email.consultation.patient.last_name  %></h4>
+
       </div>
       <h4>Sent at <%= email.consultation.start_time.strftime("%H") %>h55 </h4>
     </div>

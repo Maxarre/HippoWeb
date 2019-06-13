@@ -10,18 +10,16 @@
 }
 
 .patient_index{
-  width: 80%;
 }
 
 .tabs {
-  margin-top: 5vh;
+  width: 60%;
   i {
     color: white;
   }
 }
 
 .tab {
-  margin-top: 1vh;
   i {
     margin-right: 10px;
   }
@@ -99,6 +97,11 @@
 .sticky {
   position: sticky;
   top: 60px;
+}
+
+.sticky-bar {
+  position: sticky;
+  top: 0px;
 }
 
 .consultation-type {
