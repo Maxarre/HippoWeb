@@ -13,3 +13,10 @@ flatpickr(".meetpicker", {
   altFormat: "d F Y",
   time_24hr: true,
 })
+
+
+flatpickr(".timepicker",{
+    enableTime: true,
+    noCalendar: true,
+    dateFormat: "H"
+})
