@@ -14,6 +14,12 @@ class ConsultationsController < ApplicationController
 
   def create
     @consultation = Consultation.new(consultation_params)
+    year = params[:consultation][:start_time].to_date.year
+    month= params[:consultation][:start_time].to_date.month
+    day= params[:consultation][:start_time].to_date.day
+    hour = params[:hour].to_i
+    start_time = DateTime.new(year, month, day, hour, 0, 0)
+    @consultation.start_time = start_time
     @consultation.save
     redirect_to dashboard_path
   end
@@ -70,6 +76,6 @@ class ConsultationsController < ApplicationController
   private
 
   def consultation_params
-    params.require(:consultation).permit(:patient_id, :status, :start_time, :end_time, :consultation_type, :required_documents, :patient_complain, :diagnostic, :care_plan, :prescription, :note_patient, :patient_note_attachment)
+    params.require(:consultation).permit(:patient_id, :status, :consultation_type, :required_documents, :patient_complain, :diagnostic, :care_plan, :prescription, :note_patient, :patient_note_attachment)
   end
 end
