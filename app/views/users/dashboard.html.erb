@@ -4,7 +4,11 @@
       <%= link_to "Week", dashboard_path, class: "btn weekly-monthly to-the-right", id: "weekly" %>
       <%= link_to "Month", dashboard_path, class: "btn weekly-monthly" %>
     </div>
-    <%= link_to "+ Add Meeting", new_consultation_path, class: "btn btn-flat-add-meeting" %>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-flat-add-meeting" data-toggle="modal" data-target="#meeting2Modal">
+      + Add Meeting
+    </button>
+    <%#= link_to "+ Add Meeting", new_consultation_path, class: "btn btn-flat-add-meeting" %>
   </div>
 </div>
 
@@ -29,11 +33,12 @@
               <%= link_to '', patient_path(consultation.patient) %>
             </div>
             <% else %>
-            <%= link_to new_consultation_path(hour: hour, date: day_consultations.first.start_time.strftime("%b %d, %Y")), style: "text-decoration:none" do%>
-              <div class="empty-meeting">
+
+            <%#= link_to new_consultation_path(hour: hour, date: day_consultations.first.start_time.strftime("%b %d, %Y")), style: "text-decoration:none" do%>
+              <div class="empty-meeting" data-toggle="modal" data-target="#meeting-modal-<%= hour %>-<%= day_consultations.first.id %>">
                 <p><%= hour %>h00</p>
               </div>
-            <% end %>
+              <%= render 'shared/modal_complete_meeting', hour: hour, date: day_consultations.first.start_time.strftime("%b %d, %Y"), id: day_consultations.first.id %>
           <% end %>
         <% end %>
         </div>
@@ -41,4 +46,3 @@
     <% end %>
   </div>
 </div>
-
