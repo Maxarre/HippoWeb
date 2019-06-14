@@ -1,14 +1,14 @@
 <div class="d-flex sticky-bar justify-content-between">
   <div class="patient_description d-flex" id="patient-color">
       <div class="patient_general_info">
-        <h4>Your patient <strong><%= @patient.first_name  %> <%= @patient.last_name  %></strong></h4>
+        <h4>Votre patient <strong><%= @patient.first_name  %> <%= @patient.last_name  %></strong></h4>
       </div>
       <div class="d-flex justify-content-between tabs">
         <div class="tab d-flex"></div>
-        <div class="tab d-flex"><i class="fas fa-bars" id="down"></i><p class="show-link"><%= link_to 'Follow-up', patient_path(@patient), remote: true %></p></div>
-        <div class="tab d-flex"><i class="far fa-clipboard" id="down"></i><p>Medical Record</p></div>
-        <div class="tab d-flex"><i class="fas fa-pills" id="down"></i><p>Treatment</p></div>
-        <div class="tab d-flex"><i class="far fa-envelope" id="down"></i><p class="show-link"><%= link_to 'Email history', patient_email_path(@patient), remote: true %></p></div>
+        <div class="tab d-flex"><i class="fas fa-bars" id="down"></i><p class="show-link"><%= link_to 'Suivi médical', patient_path(@patient), remote: true %></p></div>
+        <div class="tab d-flex"><i class="far fa-clipboard" id="down"></i><p>Dossier médical</p></div>
+        <div class="tab d-flex"><i class="fas fa-pills" id="down"></i><p>Traitements</p></div>
+        <div class="tab d-flex"><i class="far fa-envelope" id="down"></i><p class="show-link"><%= link_to "Historique d'emails", patient_email_path(@patient), remote: true %></p></div>
       </div>
   </div>
 </div>

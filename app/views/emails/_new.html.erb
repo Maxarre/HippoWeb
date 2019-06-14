@@ -1,14 +1,14 @@
 <div class="mail_contener">
-  <h2>New follow-up email</h2>
-  <%= link_to "Open template", dashboard_path, class:"open-template-button"%>
+  <h2>Nouvel email</h2>
+  <%= link_to "Ouvrir un template", dashboard_path, class:"open-template-button"%>
   <%= simple_form_for [consultation, email] do |f| %>
-  <div><%= f.input :subject, placeholder: 'Add a subject for recipients', wrapper_html: { class: 'input-card' }, input_html: {value: 'Dr.Cox cares about you!' } %></div>
-  <div><%= f.input :title, placeholder: 'Add a title for your email', wrapper_html: { class: 'input-card' }, input_html: {value: 'Meeting debriefing' } %></div>
+  <div><%= f.input :subject, placeholder: 'Sujet', wrapper_html: { class: 'input-card' }, input_html: {value: 'Dr.Cox cares about you!' } %></div>
+  <div><%= f.input :title, placeholder: 'Titre', wrapper_html: { class: 'input-card' }, input_html: {value: 'Meeting debriefing' } %></div>
   <div class="d-flex align-items-center">
     <%= f.input :content, wrapper_html: { class: 'input-card' }, input_html: {value: @content , style: 'height:60vh;'} %>
   </div>
   <div class="d-flex justify-content-between">
-    <%= link_to "SKIP", patient_path(patient), class: "btn btn-outline-secondary margin-right-50" %>
+    <%= link_to "PASSER", patient_path(patient), class: "btn btn-outline-secondary margin-right-50" %>
     <%= f.button :submit, class:"btn-flat-add-patient" %>
     </div>
   <% end %>

@@ -1,12 +1,12 @@
 <div class="interface-position">
   <div class="d-flex justify-content-between" style="margin: 0px 20px">
     <div>
-      <%= link_to "Week", dashboard_path, class: "btn weekly-monthly to-the-right", id: "weekly" %>
-      <%= link_to "Month", dashboard_path, class: "btn weekly-monthly" %>
+      <%= link_to "Semaine", dashboard_path, class: "btn weekly-monthly to-the-right", id: "weekly" %>
+      <%= link_to "Mois", dashboard_path, class: "btn weekly-monthly" %>
     </div>
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-flat-add-meeting" data-toggle="modal" data-target="#meeting2Modal">
-      + Add Meeting
+      + Nouvelle consultation
     </button>
   </div>
 </div>
@@ -48,7 +48,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content" style="height: 120%; width: 120%;">
       <div class="modal-header">
-        <h5 class="modal-title" id="meeting2ModalLabel" style="font-size:3vh">New meeting</h5>
+        <h5 class="modal-title" id="meeting2ModalLabel" style="font-size:3vh">Nouvelle consultation</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -78,11 +78,11 @@
             </div>
             <div style="width: 45%">
               <div style="height: 80px">
-                <h4 style="font-size: 1rem; color:black;">Unregistered patient</h4>
-                <%= link_to "New patient", new_patient_path, class: "btn btn-outline-primary margin-right-50" %>
+                <h4 style="font-size: 1rem; color:black;">Nouveau patient</h4>
+                <%= link_to "Nouveau patient", new_patient_path, class: "btn btn-outline-primary margin-right-50" %>
               </div>
               <div>
-                <label for="">Hour</label><br>
+                <label for="">Heure</label><br>
                 <input name="hour" type="text" required="false" class="hour-meeting timepicker form-control" style="background-color: white;" value="<%= params[:hour] %>">
               </div>
             </div>
@@ -96,7 +96,7 @@
 
 
           <div class="d-flex justify-content-end">
-            <%= f.button :submit, "Add new meeting", class: "btn btn-primary" %>
+            <%= f.button :submit, "Ajouter", class: "btn btn-primary" %>
           </div>
         <% end %>
       </div>
