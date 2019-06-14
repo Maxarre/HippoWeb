@@ -120,6 +120,12 @@ f.save!
 g = Email.new(consultation_id: d.id, title: 'Taking your meeting at the sleeping center', content: d.prescription)
 g.save!
 
+Consultation.all.each do |c|
+  if c.start_time.day == 16
+    c.destroy
+  end
+end
+
 # 10.times do
 #   consultation = Consultation.new(
 #     patient_id: i,
