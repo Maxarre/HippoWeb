@@ -10,10 +10,11 @@
   align-items: center ;
   justify-content: center;
   line-height: 3em;
-  background-image: linear-gradient(rgba(71, 146, 229, 0.8), rgba(71, 146, 229, 0.8)),
+  background-image: linear-gradient(175deg, rgba(15, 81, 154, 0.8), rgba(71, 146, 229, 0.8)),
     url("https://cdn.welcometothejungle.co/uploads/article/image/1245/151612/la-medtech-la-medecine-de-demain.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  // rgba(71, 146, 229, 0.8)
   h1 {
     font-size: 49px;
     margin: 20px 0px;
