@@ -16,11 +16,13 @@ User.create(email: 'henry@martin.com', password: '424242', first_name: 'Henry', 
 #   zipcode: '75011', date_of_birth: '26/09/1987', gender: 'female', email: 'jane.doe@gmail.com',
 #   user_id: 1)
 
-80.times do
+fn_array = ['Gabriel', 'Emma', 'Louis', 'Raphaël', 'Jules', 'Adam', 'Lucas', 'Léo', 'Louise', 'Jade', 'Hugo', 'Arthur', 'Nathan', 'Alice', 'Liam', 'Ethan', 'Paul', 'Chloé', 'Lina', 'Mila', 'Tom', 'Léa', 'Manon', 'Sacha', 'Noah', 'Gabin', 'Nolan', 'Enzo', 'Mohamed', 'Rose', 'Anna', 'Inès', 'Aaron', 'Camille', 'Lola', 'Timéo', 'Théo', 'Ambre', 'Léna', 'Zoé', 'Mathis', 'Juliette', 'Axel', 'Julia', 'Victor', 'Lou', 'Antoine', 'Valentin', 'Sarah', 'Lucie']
+ln_array = ['Martin', 'Legrand', 'Bernard', 'Garnier', 'Dubois', 'Faure', 'Thomas', 'Rousseau', 'Robert', 'Blanc', 'Richard', 'Guerin', 'Petit', 'Muller', 'Durand', 'Henry', 'Leroy', 'Roussel', 'Moreau', 'Nicolas', 'Simon', 'Perrin', 'Laurent', 'Morin', 'Lefebvre', 'Mathieu', 'Michel', 'Clement', 'Garcia', 'Gauthier', 'David', 'Dumont', 'Bertrand', 'Lopez', 'Roux', 'Fontaine', 'Vincent', 'Chevalier', 'Fournier', 'Robin', 'Morel', 'Masson', 'Girard', 'Sanchez', 'Andre', 'Gerard', 'Lefevre', 'Nguyen', 'Mercier', 'Boyer', 'Dupont', 'Denis', 'Lambert', 'Lemaire', 'Bonnet', 'Duval', 'Francois', 'Joly', 'Martinez', 'Gautier']
+160.times do
   # @fname = :first_name
   patient = Patient.new(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
+    first_name: fn_array.sample,
+    last_name: ln_array.sample,
     phone: Faker::PhoneNumber.phone_number,
     job_title: Faker::Job.title,
     address: Faker::Address.street_address,
@@ -40,7 +42,7 @@ time_array = [8..20]
 type_array = ["First meeting", "Operation", "Consultation"]
 status_array = ["Upcoming", "Past"]
 i = 1
-26.times do
+53.times do
   consultation = Consultation.new(
     patient_id: i,
     status: status_array.sample,
@@ -59,8 +61,8 @@ i = 1
 end
 
 
-i = 27
-26.times do
+i = 54
+53.times do
   consultation = Consultation.new(
     patient_id: i,
     status: status_array.sample,
@@ -79,8 +81,8 @@ i = 27
   consultation.save!
 end
 
-i = 53
-26.times do
+i = 108
+53.times do
   consultation = Consultation.new(
     patient_id: i,
     status: status_array.sample,
