@@ -1,4 +1,4 @@
-  <div class="display-patient-info-bis">
+<div class="display-patient-info-bis">
   <div><h2 class="consultation-type-text <%= 'lightblue-text color-text' if @consultation.consultation_type == 'First meeting' %> <%= 'blue-text color-text' if @consultation.consultation_type == 'Operation' %> <%= 'yellow-text color-text' if @consultation.consultation_type == 'Consultation' %>"><%= @consultation.consultation_type %> Follow-up  (<%= @consultation.start_time.strftime("%A, %b %d") %>)</h2></div>
   <div style="margin: 0px 20px;">
     <div id="patient_id" data-target="<%= @patient.id %>"></div>
@@ -11,16 +11,16 @@
          <%= render 'shared/tagglist', consultation: @consultation, patient: @patient %>
       </div>
         <% input_value = @consultation.tag_list.empty? ? "" : @consultation_templates["insomnia"][0]%>
-        <%= f.input :patient_complain, placeholder: 'Add notes for the complains', input_html: { class: 'input-card', style: 'height:16vh;', value: input_value} %>
+        <%= f.input :patient_complain, placeholder: 'Add notes for the complains', input_html: { class: 'input-card', style: 'height:20vh;', value: input_value} %>
         <% input_value = @consultation.tag_list.empty? ? "" : @consultation_templates["insomnia"][1]%>
-        <%= f.input :diagnostic, placeholder: 'Add notes for the diagnostic', input_html: { class: 'input-card', style: 'height:16vh;', value: input_value } %>
+        <%= f.input :diagnostic, placeholder: 'Add notes for the diagnostic', input_html: { class: 'input-card', style: 'height:20vh;', value: input_value } %>
         <% input_value = @consultation.tag_list.empty? ? "" : @consultation_templates["insomnia"][2]%>
         <%= f.input :care_plan, placeholder: 'Add notes for the care plan', input_html: { class: 'input-card', style: 'height:16vh;', value: input_value } %>
 
         <% input_value = @consultation.tag_list.empty? ? "" : @consultation_templates["insomnia"][3]%>
-        <%= f.input :prescription, placeholder: 'Add notes for the prescription', input_html: { class: 'input-card', style: 'height:16vh;', value: input_value } %>
+        <%= f.input :prescription, placeholder: 'Add notes for the prescription', input_html: { class: 'input-card', style: 'height:20vh;', value: input_value } %>
         <% input_value = @consultation.tag_list.empty? ? "" : @consultation_templates["insomnia"][4]%>
-        <%= f.input :note_patient, placeholder: 'Add notes for the patient', input_html: { class: 'input-card', style: 'height:16vh;', value: input_value } %>
+        <%= f.input :note_patient, placeholder: 'Add notes for the patient', input_html: { class: 'input-card', style: 'height:20vh;', value: input_value } %>
       <div class="d-flex justify-content-between">
         <%= link_to "SKIP", patient_path(@patient), class: "btn btn-outline-secondary height" %>
         <%= f.button :submit, class: "btn btn-flat-add-consultation", data: { disable_with: false }, value:"Next" %>

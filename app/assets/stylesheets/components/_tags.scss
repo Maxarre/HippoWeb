@@ -2,13 +2,15 @@
     padding: 7px 13px;
     border-radius: 30px;
     margin: 2px 2px;
+    border: solid 1px #109CF1;
+    background-color: white;
+    color: #109CF1;
     .fas {
-      color: white;
+      color: #109CF1;
       margin-right: 10px;
       text-align: left;
       font-weight: bolder;
     }
-    color: rgba(0, 0, 0, 0.4);
   }
 
   .tag-correction {
