@@ -25,7 +25,7 @@
             <% if consultation.present? %>
               <div class="meeting-card link <%= 'lightblueborder' if consultation.consultation_type == 'First meeting' %> <%= 'blueborder' if consultation.consultation_type == 'Operation' %> <%= 'yellowborder' if consultation.consultation_type == 'Consultation' %>">
                 <div class="d-flex justify-content-between">
-                  <p><%= consultation.start_time.strftime("%H") %>h00</p><span class="consultation-type-text <%= 'lightblue-text' if consultation.consultation_type == 'Premier RDV' %> <%= 'blue-text' if consultation.consultation_type == 'Operation' %> <%= 'yellow-text' if consultation.consultation_type == 'Consultation' %>"><%= consultation.consultation_type %></span>
+                  <p><%= consultation.start_time.strftime("%H") %>h00</p><span class="consultation-type-text <%= 'lightblue-text' if consultation.consultation_type == 'First meeting' %> <%= 'blue-text' if consultation.consultation_type == 'Operation' %> <%= 'yellow-text' if consultation.consultation_type == 'Consultation' %>"><%= consultation.consultation_type %></span>
                 </div>
                 <h4><%= consultation.patient.first_name %> <%= consultation.patient.last_name  %></h4>
                 <%= link_to '', patient_path(consultation.patient) %>
@@ -59,7 +59,7 @@
 
 
           <div class="d-flex justify-content-between">
-            <%= f.input :consultation_type, collection: ["Premier RDV", "Opération", "Consultation"] %>
+            <%= f.input :consultation_type, collection: ["First meeting", "Operation", "Consultation"] %>
           </div>
 
 
