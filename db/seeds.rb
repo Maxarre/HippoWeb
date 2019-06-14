@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require "faker"
 
-User.create(email: 'doctor@cox.com', password: '424242', first_name: 'Perry', last_name: 'Cox', phone: '0697042328', office_address: '0 rue Crespin du Gast', office_info: 'Code: 4210', photo: "https://upload.wikimedia.org/wikipedia/en/thumb/8/87/Cox-season9.jpg/250px-Cox-season9.jpg")
+User.create(email: 'henry@martin.com', password: '424242', first_name: 'Henry', last_name: 'Martin', phone: '0697042328', office_address: '0 rue Crespin du Gast', office_info: 'Code: 4210', photo: "https://upload.wikimedia.org/wikipedia/en/thumb/8/87/Cox-season9.jpg/250px-Cox-season9.jpg")
 
 
 
@@ -99,7 +99,7 @@ i = 53
   consultation.save!
 end
 
-a = Patient.new(user_id: 1, first_name: 'John', last_name: 'Doe', phone: '06 67 76 97 19', job_title: 'Public servent', address: '76 rue de moscou', city: 'Paris', zipcode: '75008', date_of_birth: '04/06/1980', gender: 'Male', email: 'john.doe@gmail.com')
+a = Patient.new(user_id: 1, first_name: 'Raphaël', last_name: 'Lenfant', phone: '06 67 76 97 19', job_title: 'Public servent', address: '76 rue de moscou', city: 'Paris', zipcode: '75008', date_of_birth: '04/06/1980', gender: 'Male', email: 'henry.martin@gmail.com')
 a.save!
 b = Consultation.new(patient_id: a.id, status: 'Past', start_time: '06/09/2018 08:30PM', end_time: '06/09/2018 09:00PM', consultation_type: "First meeting", patient_complain: "So I’ve been dealing with insomnia for a while, it hasn’t been a massive issue, because I’m on break from school but it’s increasing my circadian rhythm pretty badly. I’ve been able to deal with it for a good while and been pulling all nighters without sleeping and going to sleep early to kind of course correct if that makes sense.", diagnostic: "Chronic insomnia caused by stress: Concerns about work, school, health, finances or family can keep your mind active at night, making it difficult to sleep.", care_plan: "Changing your sleep habits and addressing any issues that may be associated with insomnia, such as stress, medical conditions or medications, can restore restful sleep for many people.", prescription: "Stimulus control therapy. This method helps remove factors that condition your mind to resist sleep. For example, you might be coached to set a consistent bedtime and wake time and avoid naps, use the bed only for sleep and sex, and leave the bedroom if you can't go to sleep within 20 minutes, only returning when you're sleepy.
 Relaxation techniques. Progressive muscle relaxation, biofeedback and breathing exercises are ways to reduce anxiety at bedtime. Practicing these techniques can help you control your breathing, heart rate, muscle tension and mood so that you can relax.
@@ -109,7 +109,7 @@ Light therapy. If you fall asleep too early and then awaken too early, you can u
 b.save!
 c = Consultation.new(patient_id: a.id, status: 'Past', start_time: '18/02/2019 08:30PM', end_time: '18/02/2019 09:00PM', consultation_type: "Consultation", patient_complain:"I still barely sleep. I tried to change my habbits but the results are the same. I want to ponder new medicines as alternatives", diagnostic: 'A change of habbits was not a solution. It is a chronic case needing more attention.', care_plan: 'Let us put the patient under observation for one night at the sleeping center', prescription: "Simply contact Healthcare Coordination, and we’ll help you find a new primary care physician or specialist. You can also make an appointment with your current doctor. Do it all with one call: 01 43 43 27 27", note_patient: '')
 c.save!
-d = Consultation.new(patient_id: a.id, status: 'Upcoming', start_time: '12/06/2019 09:00AM', end_time: '12/06/2019 09:30AM', consultation_type: "Consultation")
+d = Consultation.new(patient_id: a.id, status: 'Upcoming', start_time: '14/06/2019 09:00AM', end_time: '14/06/2019 09:30AM', consultation_type: "Consultation")
 d.save!
 e = Email.new(consultation_id: b.id, title: 'Information after our first meeting', content: b.prescription)
 e.save!
