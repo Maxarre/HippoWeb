@@ -107,7 +107,7 @@ b = Consultation.new(patient_id: a.id, status: 'Past', start_time: '06/09/2018 0
 b.save!
 c = Consultation.new(patient_id: a.id, status: 'Past', start_time: '18/02/2019 08:30PM', end_time: '18/02/2019 09:00PM', consultation_type: "Consultation", patient_complain:"J'ai pris de la mélatonine associée à du magnésium sur les conseils pour bien mieux dormir donnés par mon pharmacien mais ca ne marche pas.", diagnostic: 'Avant de prescrire des médicaments plus lourds il est nécessaire de mettre le patient en observation.', care_plan: 'Mise en relation avec Dr. Cox du centre de sommeil de la ville', prescription: "", note_patient: 'Demander Dr. Cox')
 c.save!
-d = Consultation.new(patient_id: a.id, status: 'Upcoming', start_time: '25/06/2019 09:00AM', end_time: '25/06/2019 09:30AM', consultation_type: "Consultation")
+d = Consultation.new(patient_id: a.id, status: 'Upcoming', start_time: '02/07/2019 09:00AM', end_time: '02/07/2019 09:30AM', consultation_type: "Consultation")
 d.save!
 e = Email.new(consultation_id: b.id, title: 'Information suite à notre rencontre', content: b.prescription)
 e.save!
