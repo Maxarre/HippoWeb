@@ -117,7 +117,7 @@ g = Email.new(consultation_id: d.id, title: 'Votre rdv avec le centre du sommeil
 g.save!
 
 Consultation.all.each do |c|
-  if c.start_time.day == 16
+  if c.start_time.day == 07
     c.destroy
   end
 end
