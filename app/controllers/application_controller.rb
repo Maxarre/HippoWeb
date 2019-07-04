@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!
-  before_filter :expire_hsts
 
   layout :layout_by_resource
 
@@ -17,9 +16,5 @@ class ApplicationController < ActionController::Base
     else
       "application"
     end
-  end
-
-  def expire_hsts
-    response.headers["Strict-Transport-Security"] = 'max-age=0'
   end
 end
